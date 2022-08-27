@@ -60,7 +60,6 @@ return packer.startup(function()
 	use 'matze/vim-move' -- move lines and text
 	use "ahmedkhalf/project.nvim"
 	use 'lewis6991/impatient.nvim'
-	use 'github/copilot.vim'
 	use 'norcalli/nvim-colorizer.lua'
 	use "nvim-lua/plenary.nvim"
 	use "simrat39/symbols-outline.nvim"

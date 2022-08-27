@@ -1,4 +1,3 @@
-vim.g.mapleader = "-"
 local opts = { noremap = true, silent = true }
 local fopts = { noremap = false, silent = true }
 
@@ -34,10 +33,10 @@ keymap("n", "<C-Down>", "<cmd> resize -2<CR>", opts)
 keymap("n", "<C-Left>", "<cmd> vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", "<cmd> vertical resize +2<CR>", opts)
 
-keymap("n", "<C-A-h>", "<C-w>h", opts)
-keymap("n", "<C-A-j>", "<C-w>j", opts)
-keymap("n", "<C-A-k>", "<C-w>k", opts)
-keymap("n", "<C-A-l>", "<C-w>l", opts)
+keymap("n", "<C-A-Left>", "<C-w>h", opts)
+keymap("n", "<C-A-Down>", "<C-w>j", opts)
+keymap("n", "<C-A-Up>", "<C-w>k", opts)
+keymap("n", "<C-A-Right>", "<C-w>l", opts)
 
 
 
@@ -94,6 +93,7 @@ keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
 
 
 
