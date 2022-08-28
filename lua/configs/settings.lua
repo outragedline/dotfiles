@@ -3,7 +3,6 @@ local set = vim.opt --short vim.opt in set variable
 --  user options {
 set.number = true  -- enable line number
 set.confirm = true -- confirm on exit
-set.cc = "80"  -- enable an warning line at the 80th character
 set.smartindent = true  -- autoindent new lines
 set.ignorecase = false
 set.scrolloff=8 -- at  least 8 lines will appear  on the top and bottom of the screen
