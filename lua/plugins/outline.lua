@@ -1,8 +1,7 @@
--- init.lua
-vim.g.symbols_outline = {
+local opts = {
     highlight_hovered_item = true,
     show_guides = true,
-    auto_preview = true,
+    auto_preview = false,
     position = 'right',
     relative_width = true,
     width = 25,
@@ -51,3 +50,11 @@ vim.g.symbols_outline = {
         TypeParameter = {icon = "𝙏", hl = "TSParameter"}
     }
 }
+
+local outline_status_ok, outline = pcall(require,"symbols-outline")
+if not outline_status_ok then
+	return
+end
+
+
+outline.setup(opts)

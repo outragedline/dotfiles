@@ -89,6 +89,7 @@ return packer.startup(function()
 	use "mfussenegger/nvim-dap"
 	use "ravenxrz/DAPInstall.nvim"
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use 'mfussenegger/nvim-jdtls'
 
 	-- snippets
 	use "L3MON4D3/LuaSnip"

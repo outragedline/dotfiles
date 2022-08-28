@@ -35,7 +35,7 @@ set.smartcase = true
 -- filetype {
 set.filetype =  "on"
 set.filetype =  "plugin"
-set.filetype =  "indent" 
+set.filetype =  "indent"
 -- }
 
 
@@ -47,7 +47,7 @@ set.foldenable = false -- dont close folds whe open file
 
 --other {
 -- i dont know  what it  do, but its  good,i hope... 
-set.tabstop=2 
+set.tabstop=2
 set.softtabstop=2
 set.shiftwidth=2
 set.writebackup = false
