@@ -1,6 +1,5 @@
-This is my neovim config, you can use it if you want
+This is my neovin config, if you want to use, you can install with that command in archlinux
 
-I use it in archlinux, you can install all the dependencies with the install.sh
+bash <(curl -s https://raw.githubusercontent.com/outragedline/nvim/main/install.sh)
 
-if you are in another distro, you can see the dependencies and install manually
-# nvim
+In another distro you can see the dependecies and install manually
