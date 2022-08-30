@@ -85,15 +85,6 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 
-	if client.name == "jdt.ls" then
-		vim.lsp.codelens.refresh()
-		if JAVA_DAP_ACTIVE then
-			require("jdtls").setup_dap { hotcodereplace = "auto" }
-			require("jdtls.dap").setup_dap_main_class_configs()
-		end
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
-	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

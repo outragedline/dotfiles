@@ -47,6 +47,8 @@ keymap("v", ">", ">gv", opts) -- indent lines
 keymap("v", "p", '_dP', fopts) --"paste"  in visual mode replace selected text with the yanked text
 
 
+-- terminal mappings
+keymap( 't', '<esc>', [[<C-\><C-n>]], opts)
 
 --tools
 keymap('n', "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)
@@ -122,3 +124,7 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+
+-- Packer
+keymap("n", "<leader>ps", "<cmd>PackerSync<cr>", opts)

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -Syu neovim nodejs-lts-gallium python3 python-pip ripgrep fd lua fzf gcc  npm tree-sitter lua-language-server git
+sudo pacman -Syu neovim nodejs-lts-gallium python3 python-pip ripgrep fd lua fzf gcc  npm tree-sitter lua-language-server git jdk17-openjdk maven
 
 pip install wheel pynvim autopep8 flake8
 
