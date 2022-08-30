@@ -143,3 +143,20 @@ keymap("n", "<F4>", "<Cmd>JdtCompile full<CR>", opts)
 keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
 keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+
+
+
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+keymap("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
