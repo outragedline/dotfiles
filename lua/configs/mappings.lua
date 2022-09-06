@@ -14,8 +14,8 @@ local keymap = vim.api.nvim_set_keymap
 
 keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save file
 keymap("n", "<A-s>", "<cmd> wa<CR>", opts) -- save all files
-keymap("n", "<C-x>", "<cmd> qa <CR>", opts) -- close all files
-keymap("n", "<C-q>", "<cmd> q<CR>", fopts) -- close current file
+keymap("n", "<C-A-x>", "<cmd> qa <CR>", opts) -- close all files
+keymap("n", "<C-A-q>", "<cmd> q<CR>", fopts) -- close current file
 keymap("n", "<C-u>", "<cmd> u <CR>", opts) --undo
 keymap("n", "<C-r>", "<cmd> redo <CR>", opts) --redo
 
@@ -48,13 +48,17 @@ keymap("v", "p", '_dP', fopts) --"paste"  in visual mode replace selected text w
 
 
 -- terminal mappings
-keymap( 't', '<esc>', [[<C-\><C-n>]], opts)
+keymap('t', '<esc>', [[<C-\><C-n>]], opts)
+keymap('t', '<C-x>', [[<C-\><C-n>]], opts)
+
+
 
 --tools
 keymap('n', "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)
 keymap('n', "<F4>", "<cmd> RunCode<CR>", opts)
 keymap('n', "<F5>", "<cmd> RunProject<CR>", opts)
 keymap('n', "<C-o>", "<cmd> SymbolsOutline<CR>", opts)
+keymap('n', '<leader>ch', '<cmd>noh<cr>', opts)
 
 
 
@@ -71,8 +75,8 @@ keymap("n", "<C-A-n>", "<cmd> tabnext<CR>", fopts)
 keymap("n", "<C-A-p>", "<cmd> tabprevious<CR>", fopts)
 
 -- create new tab
-keymap("n", "<leader>tn" , "<cmd> tabnew<CR>", opts)
-keymap("n", "<leader>tc" , "<cmd> tabclose<CR>", opts)
+keymap("n", "<leader>tn", "<cmd> tabnew<CR>", opts)
+keymap("n", "<leader>tc", "<cmd> tabclose<CR>", opts)
 
 
 

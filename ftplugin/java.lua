@@ -160,3 +160,6 @@ keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
+
+keymap("n", "<leader>jdr", [[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]], opts)
