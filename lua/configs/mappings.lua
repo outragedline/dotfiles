@@ -100,6 +100,7 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
+keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 
 
 

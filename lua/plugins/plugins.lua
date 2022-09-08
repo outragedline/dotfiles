@@ -27,7 +27,7 @@ return packer.startup(function()
 
 	--colorschemes
 	use 'navarasu/onedark.nvim'
-	use "EdenEast/nightfox.nvim"
+	use { "ellisonleao/gruvbox.nvim" }
 
 
 
@@ -53,9 +53,9 @@ return packer.startup(function()
 
 	-- tools
 	use {
-	  'nvim-telescope/telescope.nvim',
-	    requires = { {'nvim-lua/plenary.nvim'} }
-	    }
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	}
 	use 'windwp/nvim-autopairs' -- autoclose () , {} , '' , etc
 	use 'matze/vim-move' -- move lines and text
 	use "ahmedkhalf/project.nvim"
@@ -64,7 +64,7 @@ return packer.startup(function()
 	use "nvim-lua/plenary.nvim"
 	use "simrat39/symbols-outline.nvim"
 	use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
-	use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
+	use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
 
 
@@ -88,7 +88,7 @@ return packer.startup(function()
 	use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 	use "mfussenegger/nvim-dap"
 	use "ravenxrz/DAPInstall.nvim"
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 	use 'mfussenegger/nvim-jdtls'
 
 	-- snippets
