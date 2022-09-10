@@ -30,6 +30,9 @@ set.encoding = "utf8"
 set.title = true
 set.smarttab = true
 set.smartcase = true
+set.breakindent = true
+set.formatoptions='l'
+set.lbr = true
 -- }
 
 

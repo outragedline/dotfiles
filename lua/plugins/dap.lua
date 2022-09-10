@@ -36,7 +36,7 @@ dapui.setup({
 				-- Elements can be strings or table with id and size keys.
 				"scopes",
 			},
-			size = 50, -- 40 columns
+			size = 40, -- 40 columns
 			position = "left",
 		},
 		{
