@@ -55,8 +55,6 @@ keymap('t', '<C-x>', [[<C-\><C-n>]], opts)
 
 --tools
 keymap('n', "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)
-keymap('n', "<F4>", "<cmd> RunCode<CR>", opts)
-keymap('n', "<F5>", "<cmd> RunProject<CR>", opts)
 keymap('n', "<C-o>", "<cmd> SymbolsOutline<CR>", opts)
 keymap('n', '<leader>ch', '<cmd>noh<cr>', opts)
 
@@ -123,6 +121,7 @@ keymap("n", "<leader>gt", "<cmd> Gitsigns diffthis<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+keymap("n", "<leader>dru", "<cmd>lua require'dapui'.toggle({reset=true})<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<leader>dr", "<cmd> DapToggleRepl<cr>", opts)
 
