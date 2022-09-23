@@ -91,6 +91,7 @@ local config = {
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	-- or https://github.com/redhat-developer/vscode-java#supported-vs-code-settings
 	-- for a list of options
+	
 
 	flags = {
 		allow_incremental_sync = true,
@@ -107,13 +108,9 @@ local config = {
 		-- bundles = {},
 		bundles = bundles
 	},
-	on_attach = function(client, bufnr)
-		-- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
-		-- you make during a debug session immediately.
-		-- Remove the option if you do not want that.
-		require('jdtls').setup_dap({ hotcodereplace = 'auto' })
-		require('jdtls.dap').setup_dap_main_class_configs()
-	end
+
+	on_attach = require("lsp.handlers").on_attach,
+	capabilities = require("lsp.handlers").capabilities,
 }
 
 -- This starts a new client & server,
@@ -133,10 +130,6 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 keymap("n", "<leader>jo", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
-keymap("n", "<leader>jv", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
-keymap("n", "<leader>jc", "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
-keymap("n", "<leader>jt", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", opts)
-keymap("n", "<leader>jT", "<Cmd>lua require'jdtls'.test_class()<CR>", opts)
 keymap("n", "<leader>ju", "<Cmd>JdtUpdateConfig<CR>", opts)
 keymap("n", "<F4>", "<Cmd>JdtCompile full<CR>", opts)
 
@@ -162,4 +155,6 @@ keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>
 keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 
-keymap("n", "<leader>jdr", [[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]], opts)
+keymap("n", "<leader>jdr",
+	[[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]]
+	, opts)
