@@ -54,7 +54,7 @@ dapui.setup({
 			elements = {
 				"console",
 			},
-			size = 0.25,
+			size = 0.40,
 			position = "bottom",
 		},
 	},
@@ -71,7 +71,6 @@ dapui.setup({
 		max_type_length = 10, -- Can be integer or nil.
 	}
 })
-
 
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
