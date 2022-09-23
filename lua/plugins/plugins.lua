@@ -63,7 +63,6 @@ return packer.startup(function()
 	use 'norcalli/nvim-colorizer.lua'
 	use "nvim-lua/plenary.nvim"
 	use "simrat39/symbols-outline.nvim"
-	use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
 	use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
 
