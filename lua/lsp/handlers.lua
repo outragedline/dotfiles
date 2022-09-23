@@ -82,6 +82,13 @@ M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
+	if client.name == "jdt.ls" then
+		vim.lsp.codelens.refresh()
+		require("jdtls").setup_dap { hotcodereplace = "auto" }
+		require("jdtls.dap").setup_dap_main_class_configs()
+		client.resolved_capabilities.document_formatting = true
+		client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
+	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 
