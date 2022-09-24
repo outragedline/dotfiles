@@ -102,19 +102,10 @@ keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 
 
 
--- formatting code
-keymap("n", "<C-f>", "<cmd> lua vim.lsp.buf.formatting()<cr>", opts)
-
-
--- toggle  signature
-keymap("i", "<C-s>", "<cmd> lua vim.lsp.buf.signature_help() <CR>", opts)
-
-
-
 --Gitsigns
 keymap("n", "<leader>gs", "<cmd> Gitsigns show<CR>", opts)
-keymap("n", "<leader>gd", "<cmd> Gitsigns toggle_deleted<CR>", opts)
-keymap("n", "<leader>gt", "<cmd> Gitsigns diffthis<CR>", opts)
+keymap("n", "<leader>gt", "<cmd> Gitsigns toggle_deleted<CR>", opts)
+keymap("n", "<leader>gd", "<cmd> Gitsigns diffthis<CR>", opts)
 
 
 -- DAP
