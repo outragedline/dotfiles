@@ -1,6 +1,7 @@
 vim.opt_local.shiftwidth = 2
 vim.opt_local.tabstop = 2
 vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt.cc = ""
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -128,7 +129,7 @@ local config = {
 				},
 			},
 			format = {
-				enabled = true,
+				enabled = false,
 				-- settings = {
 				--   profile = "asdf"
 				-- }
@@ -195,6 +196,18 @@ vim.cmd "command! -buffer JdtBytecode lua require('jdtls').javap()"
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
+
+keymap("n", "<leader>jo", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
+keymap("n", "<leader>jv", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
+keymap("n", "<leader>jc", "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
+keymap("n", "<leader>jt", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", opts)
+keymap("n", "<leader>jT", "<Cmd>lua require'jdtls'.test_class()<CR>", opts)
+keymap("n", "<leader>ju", "<Cmd>JdtUpdateConfig<CR>", opts)
+keymap("n", "<F4>", "<Cmd>JdtCompile full<CR>", opts)
+
+keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
+keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
+keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 
 keymap("n", "<leader>jdr",
 	[[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]]
