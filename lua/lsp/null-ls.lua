@@ -15,6 +15,7 @@ null_ls.setup({
 		formatting.autopep8, -- python
 		formatting.djhtml, --htmldjango
 		formatting.google_java_format,
+		formatting.stylua, --lua
 
 
 		-- linters / diagnostics binaries

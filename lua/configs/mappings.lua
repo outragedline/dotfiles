@@ -119,3 +119,8 @@ keymap("n", "<leader>dr", "<cmd> DapToggleRepl<cr>", opts)
 
 -- Packer
 keymap("n", "<leader>ps", "<cmd>PackerSync<cr>", opts)
+
+-- Copilot
+keymap("n", "<leader>cp", "<cmd>CopilotPanel<cr>", opts)
+keymap("i", "<C-c>", "<cmd>CopilotPanel<cr>", opts)
+
