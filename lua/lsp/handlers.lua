@@ -117,8 +117,7 @@ M.on_attach = function(client, bufnr)
 		require("jdtls").setup_dap({ hotcodereplace = "auto" })
 		require("jdtls.dap").setup_dap_main_class_configs()
 	end
-	client.resolved_capabilities.document_formatting = false
-	client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
+	client.server_capabilities.document_formatting = false
 end
 
 function M.enable_format_on_save()
