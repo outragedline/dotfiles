@@ -58,6 +58,8 @@ keymap('n', "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)
 keymap('n', "<C-o>", "<cmd> SymbolsOutline<CR>", opts)
 keymap('n', '<leader>ch', '<cmd>noh<cr>', opts)
 
+keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
+
 
 
 -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering

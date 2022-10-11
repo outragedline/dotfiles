@@ -16,6 +16,7 @@ null_ls.setup({
 		formatting.djhtml, --htmldjango
 		formatting.google_java_format,
 		formatting.stylua, --lua
+		formatting.xmllint, -- XML
 
 
 		-- linters / diagnostics binaries
