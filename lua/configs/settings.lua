@@ -14,6 +14,7 @@ set.cursorline = true -- highlight the current line
 set.numberwidth = 3 -- set 3 characters to number column
 set.cmdheight = 2
 set.cc = "80"
+set.showmode = false
 
 -- }
 
