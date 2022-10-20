@@ -1,3 +1,5 @@
+
+
 local opts = { noremap = true, silent = true }
 local fopts = { noremap = false, silent = true }
 
@@ -11,6 +13,13 @@ local keymap = vim.api.nvim_set_keymap
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c"
+
+
+--Remap space as leader key
+keymap("n", "<Space>", "", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 
 keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save file
 keymap("n", "<A-s>", "<cmd> wa<CR>", opts) -- save all files
