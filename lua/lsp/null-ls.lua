@@ -13,15 +13,11 @@ null_ls.setup({
 	sources = {
 		--formatting binaries
 		formatting.autopep8, -- python
-		formatting.djhtml, --htmldjango
 		formatting.google_java_format,
 		formatting.stylua, --lua
 		formatting.xmllint, -- XML
 
-
 		-- linters / diagnostics binaries
 		diagnostics.flake8, -- python
-		diagnostics.djlint, --htmldjango
-
 	},
 })
