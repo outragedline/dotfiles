@@ -10,7 +10,7 @@ if not status_cmp_ok then
 	return
 end
 capabilities.textDocument.completion.completionItem.snippetSupport = false
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
@@ -129,10 +129,10 @@ local config = {
 				},
 			},
 			format = {
-				enabled = false,
-				-- settings = {
-				--   profile = "asdf"
-				-- }
+				enabled = true,
+				 settings = {
+				   profile = "asdf"
+				 }
 			},
 		},
 		signatureHelp = { enabled = true },
