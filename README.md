@@ -1,14 +1,14 @@
 # Setting the links with GNU stow
 
-Install GNU stow
-
-`sudo pacman -S stow` in arch linux
-
-just cd the dotfiles folder and use the stow in there
-
+Install GNU stow in arch linux
 ```
+sudo pacman -S stow
+```
+
+Now copy and paste this in the terminal
+```
+git clone https://github.com/outragedline/dotfiles ~/.dotfiles/
 cd ~/.dotfiles/
+MSYS=winsymlinks:nativestrict
 stow .
 ```
-
-Alright, you just created all the links with a few commands
