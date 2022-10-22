@@ -10,7 +10,7 @@ PS1='[\u@\h \W]\$ '
 fc-match 'Fira Code Medium Nerd Font Complete Mono.ttf'
 
 clear
-PATH=$PATH:~/.local/bin/
+PATH=$PATH:~/.local/share/nvim/mason/bin/
 MSYS=winsymlinks:nativestrict
 
 alias la='ls -a'
