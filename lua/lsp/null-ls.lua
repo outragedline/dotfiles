@@ -19,5 +19,6 @@ null_ls.setup({
 
 		-- linters / diagnostics binaries
 		diagnostics.flake8, -- python
+		diagnostics.tidy, -- XML
 	},
 })

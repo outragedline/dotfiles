@@ -17,12 +17,12 @@ if not status then
 	return
 end
 
-local home = os.getenv "HOME"
+local home = os.getenv("HOME")
 WORKSPACE_PATH = home .. "/workspace/"
 CONFIG = "linux"
 
 -- Find root of project
-local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle", ".project" }
+local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
 	return
@@ -36,12 +36,22 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = WORKSPACE_PATH .. project_name
 
 local bundles = {
-	vim.fn.glob(home ..
-		"/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
-};
+	vim.fn.glob(
+		home
+			.. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+	),
+}
 
 -- This is the new part
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
+vim.list_extend(
+	bundles,
+	vim.split(
+		vim.fn.glob(
+			home .. "/.local/share/nvim/mason/packages/java-test/extension/server/com.microsoft.java.test.plugin-*.jar"
+		),
+		"\n"
+	)
+)
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -58,7 +68,7 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+		"-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
 		"-Xms1g",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
@@ -68,14 +78,14 @@ local config = {
 
 		-- 💀
 		"-jar",
-		vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+		vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
 		-- Must point to the                                                     Change this to
 		-- eclipse.jdt.ls installation                                           the actual version
 
 		-- 💀
 		"-configuration",
-		home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
+		home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. CONFIG,
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
 		-- Must point to the                      Change to one of `linux`, `win` or `mac`
 		-- eclipse.jdt.ls installation            Depending on your system.
@@ -130,9 +140,9 @@ local config = {
 			},
 			format = {
 				enabled = true,
-				 settings = {
-				   profile = "asdf"
-				 }
+				settings = {
+					profile = "asdf",
+				},
 			},
 		},
 		signatureHelp = { enabled = true },
@@ -186,11 +196,11 @@ jdtls.start_or_attach(config)
 
 -- require('jdtls').setup_dap()
 
-vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
-vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
-vim.cmd "command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()"
+vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
+vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)")
+vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
 -- vim.cmd "command! -buffer JdtJol lua require('jdtls').jol()"
-vim.cmd "command! -buffer JdtBytecode lua require('jdtls').javap()"
+vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
 -- vim.cmd "command! -buffer JdtJshell lua require('jdtls').jshell()"
 
 local keymap = vim.keymap.set
@@ -209,6 +219,9 @@ keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)
 keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 
-keymap("n", "<leader>jdr",
-	[[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]]
-	, opts)
+keymap(
+	"n",
+	"<leader>sd",
+	[[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]],
+	opts
+)

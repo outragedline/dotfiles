@@ -68,7 +68,6 @@ return packer.startup(function()
 		end,
 	})
 
-
 	-- file explorer
 	use("kyazdani42/nvim-tree.lua") -- enable nvimtree
 
@@ -82,11 +81,15 @@ return packer.startup(function()
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"jayp0521/mason-null-ls.nvim",
+		"jayp0521/mason-nvim-dap.nvim",
+	})
 	use("mfussenegger/nvim-dap")
-	use("ravenxrz/DAPInstall.nvim")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("mfussenegger/nvim-jdtls")
 
