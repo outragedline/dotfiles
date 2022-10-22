@@ -50,7 +50,7 @@ return packer.startup(function()
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("windwp/nvim-autopairs") -- autoclose () , {} , '' , etc
-	use("matze/vim-move") -- move lines and text
+	use("fedepujol/move.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("norcalli/nvim-colorizer.lua")
