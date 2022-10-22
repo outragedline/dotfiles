@@ -17,4 +17,4 @@ package = `dunst`
 package = `xfce4-terminal`
 
 # Screenshot
-package = 'xfce4-screenshooter'
+package = `xfce4-screenshooter`
