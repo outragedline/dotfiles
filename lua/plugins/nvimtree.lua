@@ -1,4 +1,5 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
+local icons = require("ui.icons")
 if not status_ok then
 	return
 end
@@ -34,10 +35,10 @@ nvim_tree.setup({
 	diagnostics = {
 		enable = true,
 		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+			hint = icons.diagnostics.Hint,
+			info = icons.diagnostics.Information,
+			warning = icons.diagnostics.Warning,
+			error = icons.diagnostics.Error,
 		},
 	},
 	update_focused_file = {

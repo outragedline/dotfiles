@@ -1,4 +1,5 @@
 local dap_status_ok, dap = pcall(require, "dap")
+local icons = require("ui.icons")
 if not dap_status_ok then
 	return
 end
@@ -59,8 +60,7 @@ dapui.setup({
 	windows = { indent = 1 },
 	render = {
 		max_type_length = 10, -- Can be integer or nil.
-	}
+	},
 })
 
-
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
