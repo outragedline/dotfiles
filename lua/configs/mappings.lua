@@ -1,5 +1,3 @@
-
-
 local opts = { noremap = true, silent = true }
 local fopts = { noremap = false, silent = true }
 
@@ -14,12 +12,10 @@ local keymap = vim.api.nvim_set_keymap
 --   term_mode = "t",
 --   command_mode = "c"
 
-
 --Remap space as leader key
 keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 
 keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save file
 keymap("n", "<A-s>", "<cmd> wa<CR>", opts) -- save all files
@@ -48,6 +44,7 @@ keymap("v", "<", "<gv", opts) -- unindent lines
 keymap("v", ">", ">gv", opts) -- indent lines
 
 keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text with the yanked text
+keymap("n", "<leader>e", '"*P', fopts) --"paste"  in visual mode replace selected text with the yanked text
 
 -- terminal mappings
 keymap("t", "<esc>", [[<C-\><C-n>]], opts)
@@ -94,6 +91,7 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
+keymap("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", opts)
 
 --Gitsigns
 keymap("n", "<leader>gs", "<cmd> Gitsigns show<CR>", opts)
@@ -115,16 +113,15 @@ keymap("n", "<leader>ps", "<cmd>PackerSync<cr>", opts)
 keymap("n", "<leader>cp", "<cmd>CopilotPanel<cr>", opts)
 keymap("i", "<C-c>", "<cmd>CopilotPanel<cr>", opts)
 
-
 -- Move lines
 -- Normal-mode commands
-keymap('n', '<A-j>', ':MoveLine(1)<CR>', opts)
-keymap('n', '<A-k>', ':MoveLine(-1)<CR>', opts)
-keymap('n', '<A-h>', ':MoveHChar(-1)<CR>', opts)
-keymap('n', '<A-l>', ':MoveHChar(1)<CR>', opts)
+keymap("n", "<A-j>", ":MoveLine(1)<CR>", opts)
+keymap("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
+keymap("n", "<A-h>", ":MoveHChar(-1)<CR>", opts)
+keymap("n", "<A-l>", ":MoveHChar(1)<CR>", opts)
 
 -- Visual-mode commands
-keymap('v', '<A-j>', ':MoveBlock(1)<CR>', opts)
-keymap('v', '<A-k>', ':MoveBlock(-1)<CR>', opts)
-keymap('v', '<A-h>', ':MoveHBlock(-1)<CR>', opts)
-keymap('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
+keymap("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
+keymap("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
+keymap("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
+keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
