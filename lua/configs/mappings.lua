@@ -46,9 +46,10 @@ keymap("v", ">", ">gv", opts) -- indent lines
 keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text with the yanked text
 keymap("n", "<leader>e", '"*P', fopts) --"paste"  in visual mode replace selected text with the yanked text
 
--- terminal mappings
-keymap("t", "<esc>", [[<C-\><C-n>]], opts)
-keymap("t", "<C-x>", [[<C-\><C-n>]], opts)
+-- ToggleTerm mappings
+keymap("t", "<C-q>", [[<C-\><C-n>]], opts)
+keymap("n", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
+keymap("n", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)
 
 --tools
 keymap("n", "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)

@@ -5,7 +5,7 @@ end
 
 toggleterm.setup({
 	size = 10,
-	open_mapping = [[<c-t>]],
+	open_mapping = [[<C-t>]],
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
@@ -13,7 +13,7 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "float",
+	direction = "horizontal",
 	close_on_exit = true,
 	shell = vim.o.shell,
 	float_opts = {
@@ -26,9 +26,31 @@ toggleterm.setup({
 	},
 })
 
-function _G.set_terminal_keymaps()
-	local opts = { noremap = true }
-	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
+	cmd = "lazygit",
+	direction = "float",
+})
+
+function _lazygit_toggle()
+	lazygit:toggle()
 end
 
+local ranger = Terminal:new({
+	cmd = "ranger",
+	direction = "float",
+})
+
+function _ranger_toggle()
+	ranger:toggle()
+end
+
+function _G.set_terminal_keymaps()
+	local opts = { buffer = 0, noremap = false, silent = true }
+	local keymap = vim.keymap.set
+	keymap("t", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
+	keymap("t", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
