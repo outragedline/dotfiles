@@ -82,7 +82,6 @@ return packer.startup(function()
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
