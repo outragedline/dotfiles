@@ -93,6 +93,10 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", opts)
+keymap("i", "<C-e>", "<cmd>Telescope emoji<cr>", opts)
+keymap("n", "<C-e>", "<cmd>Telescope emoji<cr>", opts)
+
+keymap("n", "<C-p><C-e>", '"*p', opts)
 
 --Gitsigns
 keymap("n", "<leader>gs", "<cmd> Gitsigns show<CR>", opts)

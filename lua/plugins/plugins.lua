@@ -49,6 +49,8 @@ return packer.startup(function()
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	use("pwntester/octo.nvim")
+	use "xiyaowong/telescope-emoji.nvim"
 	use("windwp/nvim-autopairs") -- autoclose () , {} , '' , etc
 	use("fedepujol/move.nvim")
 	use("ahmedkhalf/project.nvim")
