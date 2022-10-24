@@ -21,7 +21,6 @@ keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save file
 keymap("n", "<A-s>", "<cmd> wa<CR>", opts) -- save all files
 keymap("n", "<C-A-x>", "<cmd> qa <CR>", opts) -- close all files
 keymap("n", "<C-A-q>", "<cmd> q<CR>", fopts) -- close current file
-keymap("n", "<C-u>", "<cmd> u <CR>", opts) --undo
 keymap("n", "<C-r>", "<cmd> redo <CR>", opts) --redo
 
 --create splits
@@ -44,7 +43,6 @@ keymap("v", "<", "<gv", opts) -- unindent lines
 keymap("v", ">", ">gv", opts) -- indent lines
 
 keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text with the yanked text
-keymap("n", "<leader>e", '"*P', fopts) --"paste"  in visual mode replace selected text with the yanked text
 
 -- ToggleTerm mappings
 keymap("t", "<C-q>", [[<C-\><C-n>]], opts)
@@ -78,8 +76,8 @@ keymap("n", "<leader>tc", "<cmd> tabclose<CR>", opts)
 keymap("n", "<leader>td", "<cmd> tabclose!<CR>", opts)
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
-keymap("n", "<leader>mn", "<cmd> BufferLineMoveNext<CR>", opts)
-keymap("n", "<leqder>mp", "<cmd> BufferLineMovePrev<CR>", opts)
+keymap("n", "<C-m><C-n>", "<cmd> BufferLineMoveNext<CR>", opts)
+keymap("n", "<C-m><C-p>", "<cmd> BufferLineMovePrev<CR>", opts)
 
 -- These commands will sort buffers by directory, language, or a custom criteria
 keymap("n", "<leader>se", "<cmd> BufferLineSortByExtension<CR>", opts)
@@ -113,10 +111,6 @@ keymap("n", "<leader>dr", "<cmd> DapToggleRepl<cr>", opts)
 
 -- Packer
 keymap("n", "<leader>ps", "<cmd>PackerSync<cr>", opts)
-
--- Copilot
-keymap("n", "<leader>cp", "<cmd>CopilotPanel<cr>", opts)
-keymap("i", "<C-c>", "<cmd>CopilotPanel<cr>", opts)
 
 -- Move lines
 -- Normal-mode commands
