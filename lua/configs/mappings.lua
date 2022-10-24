@@ -124,3 +124,10 @@ keymap("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
 keymap("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
 keymap("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
 keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
+
+
+-- Translator
+keymap("n", "<leader>t", "<cmd>Translate en<CR>", opts)
+keymap("v", "<leader>t", "<cmd>Translate en<CR>", opts)
+keymap("n", "<leader>tp", "<cmd>Translate pt<CR>", opts)
+keymap("v", "<leader>tp", "<cmd>Translate pt<CR>", opts)

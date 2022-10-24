@@ -50,7 +50,7 @@ return packer.startup(function()
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("pwntester/octo.nvim")
-	use "xiyaowong/telescope-emoji.nvim"
+	use("xiyaowong/telescope-emoji.nvim")
 	use("windwp/nvim-autopairs") -- autoclose () , {} , '' , etc
 	use("fedepujol/move.nvim")
 	use("ahmedkhalf/project.nvim")
@@ -59,6 +59,8 @@ return packer.startup(function()
 	use("nvim-lua/plenary.nvim")
 	use("simrat39/symbols-outline.nvim")
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
+	use("uga-rosa/translate.nvim")
+
 	-- Copilot
 	use({
 		"zbirenbaum/copilot.lua",
