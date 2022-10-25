@@ -21,7 +21,6 @@ keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save file
 keymap("n", "<A-s>", "<cmd> wa<CR>", opts) -- save all files
 keymap("n", "<C-A-x>", "<cmd> qa <CR>", opts) -- close all files
 keymap("n", "<C-A-q>", "<cmd> q<CR>", fopts) -- close current file
-keymap("n", "<C-r>", "<cmd> redo <CR>", opts) --redo
 
 --create splits
 keymap("n", "<C-h>", "<cmd> split<CR>", opts) --hotizontal split

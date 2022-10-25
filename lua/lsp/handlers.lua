@@ -103,11 +103,7 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	attach_navic(client, bufnr)
 
-	if client.name == "tsserver" then
-		require("lsp-inlayhints").on_attach(client, bufnr)
-	end
-
-	if client.name == "jdt.ls" then
+	if client.name == "jdtls" then
 		vim.lsp.codelens.refresh()
 		require("jdtls").setup_dap({ hotcodereplace = "auto" })
 		require("jdtls.dap").setup_dap_main_class_configs()
