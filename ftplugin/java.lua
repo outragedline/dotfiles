@@ -222,10 +222,3 @@ keymap("n", "<F4>", "<Cmd>JdtCompile full<CR>", opts)
 keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
 keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
-
-keymap(
-	"n",
-	"<leader>sd",
-	[[<cmd>lua require('jdtls').setup_dap({ hotcodereplace = 'auto' })<cr> <cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<cr>]],
-	opts
-)
