@@ -59,7 +59,7 @@ return packer.startup(function()
 	use("nvim-lua/plenary.nvim")
 	use("simrat39/symbols-outline.nvim")
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
-	use("uga-rosa/translate.nvim")
+	use("potamides/pantran.nvim")
 
 	-- Copilot
 	use({

@@ -11,6 +11,7 @@ require("plugins.outline")
 require("plugins.toggleterm")
 require("plugins.dap")
 require("plugins.octo")
+require("plugins.pantran")
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
