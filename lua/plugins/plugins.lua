@@ -60,6 +60,7 @@ return packer.startup(function()
 	use("simrat39/symbols-outline.nvim")
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
 	use("potamides/pantran.nvim")
+	use("ThePrimeagen/harpoon")
 
 	-- Copilot
 	use({

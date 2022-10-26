@@ -127,8 +127,18 @@ keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
 -- Translator
 keymap("n", "<C-t>", "<cmd>Pantran<CR>", opts)
 
-
-keymap("n", "<leader>ct", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+-- Harpoon
+keymap("n", "<leader>ht", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts)
+keymap("n", "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts)
+keymap("n", "<leader>h3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", opts)
+keymap("n", "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<CR>", opts)
+keymap("n", "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<CR>", opts)
 
 -- unmapping
 keymap("n", "<C-z>", "", fopts)
+
+-- Other
+keymap("n", "<leader>ct", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
