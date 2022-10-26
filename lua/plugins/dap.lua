@@ -26,21 +26,11 @@ dapui.setup({
 			elements = {
 				-- Elements can be strings or table with id and size keys.
 				"scopes",
-			},
-			size = 40, -- 40 columns
-			position = "left",
-		},
-		{
-			elements = {
-				-- Elements can be strings or table with id and size keys.
-				"breakpoints",
-				"stacks",
-				"watches",
+				{ id = "breakpoints", size = 0.4 },
 			},
 			size = 40, -- 40 columns
 			position = "right",
 		},
-
 		{
 			elements = {
 				"console",
