@@ -1,3 +1,2 @@
-vscode-java-test/
-java-debug/
 plugin/
+.luarc.json
