@@ -30,6 +30,7 @@ local servers = {
 local debuggers = {
 	"javatest",
 	"javadbg",
+	"debugpy",
 }
 
 local null_ls ={
