@@ -47,6 +47,12 @@ keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text w
 keymap("t", "<C-q>", [[<C-\><C-n>]], opts)
 keymap("n", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
 keymap("n", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)
+keymap("t", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
+keymap("t", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)
+keymap("t", "<C-A-Left>", "<cmd>wincmd h<cr>", opts)
+keymap("t", "<C-A-Down>", "<cmd>wincmd j<cr>", opts)
+keymap("t", "<C-A-Up>", "<cmd>wincmd k<cr>", opts)
+keymap("t", "<C-A-Right>", "<cmd>wincmd l<cr>", opts)
 
 --tools
 keymap("n", "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)

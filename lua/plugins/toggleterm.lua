@@ -44,17 +44,3 @@ local ranger = Terminal:new({
 function _ranger_toggle()
 	ranger:toggle()
 end
-
-function _G.set_terminal_keymaps()
-	local opts = { buffer = 0, noremap = false, silent = true }
-	local keymap = vim.keymap.set
-	keymap("t", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
-	keymap("t", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)
-	keymap("t", "<C-A-Left>", "<cmd>wincmd h<cr>", opts)
-	keymap("t", "<C-A-Down>", "<cmd>wincmd j<cr>", opts)
-	keymap("t", "<C-A-Up>", "<cmd>wincmd k<cr>", opts)
-	keymap("t", "<C-A-Right>", "<cmd>wincmd l<cr>", opts)
-end
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
