@@ -12,7 +12,7 @@ copilot.setup({
 		auto_trigger = true,
 		debounce = 75,
 		keymap = {
-			accept = "<tab>",
+			accept = "<A-Tab>",
 			next = "<A-]>",
 			prev = "<A-[>",
 			dismiss = "<C-]>",
