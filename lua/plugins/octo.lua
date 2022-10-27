@@ -1,4 +1,8 @@
-require("octo").setup({
+local status_ok, octo = pcall(require, "octo")
+if not status_ok then
+	return
+end
+octo.setup({
 	default_remote = { "origin", "upstream" }, -- order to try remotes
 	ssh_aliases = {}, -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`
 	reaction_viewer_hint_icon = "", -- marker for user reactions
