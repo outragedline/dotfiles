@@ -58,6 +58,7 @@ keymap("t", "<C-A-Right>", "<cmd>wincmd l<cr>", opts)
 keymap("n", "<C-a>", "<cmd> NvimTreeToggle<CR>", opts)
 keymap("n", "<C-o>", "<cmd> SymbolsOutline<CR>", opts)
 keymap("n", "<leader>ch", "<cmd>noh<cr>", opts)
+keymap("n", "<leader>ct", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
 
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 
@@ -144,6 +145,3 @@ keymap("n", "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<CR>", opts)
 
 -- unmapping
 keymap("n", "<C-z>", "", fopts)
-
--- Other
-keymap("n", "<leader>ct", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)

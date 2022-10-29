@@ -13,11 +13,10 @@ set.splitbelow = true -- new horizontal splits are created bellow
 set.cursorline = true -- highlight the current line
 set.numberwidth = 3 -- set 3 characters to number column
 set.cmdheight = 2
-set.cc = "80"
+set.cc = ""
 set.showmode = false
 
 -- }
-
 
 -- system options {
 set.signcolumn = "yes"
@@ -32,10 +31,9 @@ set.title = true
 set.smarttab = true
 set.smartcase = true
 set.breakindent = true
-set.formatoptions='l'
+set.formatoptions = "l"
 set.lbr = true
 -- }
-
 
 -- filetype {
 set.filetype = "on"
@@ -43,12 +41,10 @@ set.filetype = "plugin"
 set.filetype = "indent"
 -- }
 
-
 -- fold {
 set.foldmethod = "indent" -- create folds by indent level
 set.foldenable = false -- dont close folds whe open file
 --}
-
 
 --other {
 -- i dont know  what it  do, but its  good,i hope...
