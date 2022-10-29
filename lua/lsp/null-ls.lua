@@ -13,7 +13,6 @@ null_ls.setup({
 	sources = {
 		--formatting binaries
 		formatting.autopep8, -- python
-		formatting.google_java_format,
 		formatting.stylua, --lua
 		formatting.xmllint, -- XML
 
