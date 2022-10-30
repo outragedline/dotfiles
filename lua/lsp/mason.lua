@@ -36,7 +36,8 @@ local debuggers = {
 local null_ls ={
 "autopep8",
 	"flake8",
-	"stylua"
+	"stylua",
+	"jq",
 }
 
 

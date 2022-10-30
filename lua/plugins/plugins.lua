@@ -39,7 +39,7 @@ return packer.startup(function()
 	use("goolord/alpha-nvim")
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter"})
+	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "p00f/nvim-ts-rainbow", requires = "nvim-treesitter" }) -- enable rainbow parenthese
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- convenient line commenting
 	use("numToStr/Comment.nvim")
@@ -61,6 +61,7 @@ return packer.startup(function()
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
 	use("potamides/pantran.nvim")
 	use("ThePrimeagen/harpoon")
+	use("NTBBloodbath/rest.nvim")
 
 	-- Copilot
 	use({
