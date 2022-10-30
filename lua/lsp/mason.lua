@@ -33,13 +33,12 @@ local debuggers = {
 	"debugpy",
 }
 
-local null_ls ={
-"autopep8",
+local null_ls = {
+	"autopep8",
 	"flake8",
 	"stylua",
 	"jq",
 }
-
 
 local settings = {
 	ui = {
