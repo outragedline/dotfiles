@@ -182,8 +182,7 @@ bindsym Print exec xfce4-screenshooter
 
 
 # Set inner/outer gaps
-# for_window [class="^.*"] border pixel 0
-# gaps inner 12
-# gaps outer 1
-# smart_gaps on
-
+for_window [class="^.*"] border pixel 0
+gaps inner 3
+gaps outer 1
+smart_gaps on
