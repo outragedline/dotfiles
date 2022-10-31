@@ -1,0 +1,11 @@
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = outragedline
+	email = diegojanson31@outlook.com
+[core]
+	editor = nvim
