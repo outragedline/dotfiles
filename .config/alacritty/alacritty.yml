@@ -1,0 +1,30 @@
+window:
+  dimensions:
+   columns: 60
+   lines: 20
+   # opacity: 0.5
+
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+font:
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Light
+  bold:
+    family: FiraCode Nerd Font Mono
+    style: Bold
+  size: 8
+
+colors:
+
+  search:
+    focused_match:
+     background: '#f00000'
+
+
+  save_to_clipboard: true
+
+shell:
+ program: /bin/zsh
