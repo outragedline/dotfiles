@@ -185,5 +185,5 @@ gaps inner 3
 gaps outer 1
 smart_gaps on
 
-# exec --no-startup-id picom --experimental-backends -b --config ~/.config/picom/picom.conf
-exec --no-startup-id polybar mybar -r
+exec --no-startup-id picom --experimental-backends -b --config ~/.config/picom/picom.conf
+exec --no-startup-id polybar mybar
