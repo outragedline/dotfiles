@@ -175,7 +175,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
-}
 
 default_border none
 bindsym Print exec xfce4-screenshooter
@@ -186,3 +185,4 @@ for_window [class="^.*"] border pixel 0
 gaps inner 3
 gaps outer 1
 smart_gaps on
+exec --no-startup-id polybar mybar -r
