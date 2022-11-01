@@ -2,7 +2,7 @@ window:
   dimensions:
    columns: 60
    lines: 20
-   # opacity: 0.5
+  opacity: 0.6
 
   class:
     instance: Alacritty
