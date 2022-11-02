@@ -3,10 +3,11 @@ window:
    columns: 60
    lines: 20
   opacity: 0.6
-
   class:
     instance: Alacritty
     general: Alacritty
+  title: Alacritty
+  #dynamic_title: true
 
 font:
   normal:
@@ -18,33 +19,55 @@ font:
   size: 7.5
 
 colors:
-
-  search:
-    focused_match:
-     background: '#f00000'
   primary:
     background: "#11121D"
     foreground: "#a9b1d6"
+  cursor:
+    text: '#191919'
+    cursor: '#d8dee9'
+
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  selection:
+    text: '#191919'
+    background: '#d8dee9'
+
+  # Normal colors
   normal:
-    black: "#32344a"
-    red: "#f7768e"
-    green: "#9ece6a"
-    yellow: "#e0af68"
-    blue: "#7aa2f7"
-    magenta: "#ad8ee6"
-    cyan: "#449dab"
-    white: "#787c99"
+    black:   '#191919'
+    red:     '#b02626'
+    green:   '#40a62f'
+    yellow:  '#f2e635'
+    blue:    '#314ad0'
+    magenta: '#b30ad0'
+    cyan:    '#32d0fc'
+    white:   '#acadb1'
+
+  # Bright colors
   bright:
-    black: "#444b6a"
-    red: "#ff7a93"
-    green: "#b9f27c"
-    yellow: "#ff9e64"
-    blue: "#7da6ff"
-    magenta: "#bb9af7"
-    cyan: "#0db9d7"
-    white: "#acb0d0"
+    black:   '#36393d'
+    red:     '#ce2727'
+    green:   '#47c930'
+    yellow:  '#fff138'
+    blue:    '#2e4bea'
+    magenta: '#cc15ed'
+    cyan:    '#54d9ff'
+    white:   '#dbdbdb'
+  dim:
+    black:   '#676f78'
+    red:     '#b55454'
+    green:   '#78a670'
+    yellow:  '#faf380'
+    blue:    '#707fd0'
+    magenta: '#c583d0'
+    cyan:    '#8adaf1'
+    white:   '#e0e3e7'
 
   save_to_clipboard: true
 
 shell:
  program: /bin/zsh
+
+mouse:
+    hide_when_typing: true
