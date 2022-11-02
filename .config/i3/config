@@ -15,6 +15,8 @@ set $mod Mod4
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+font Fira Code Medium Nerd Font Complete Mono.ttf'
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -97,8 +99,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -176,7 +176,8 @@ bindsym $mod+r mode "resize"
 
 
 default_border none
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec flameshot gui
+bindsym $mod+a exec alacritty -e ranger
 
 
 # Set inner/outer gaps
