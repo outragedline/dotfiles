@@ -25,6 +25,9 @@ local servers = {
 	"pyright",
 	"bashls",
 	"lemminx",
+	"yamlls",
+	"sqls",
+	"html",
 }
 
 local debuggers = {
@@ -36,6 +39,7 @@ local debuggers = {
 local null_ls = {
 	"autopep8",
 	"flake8",
+	"djlint",
 	"stylua",
 	"jq",
 }
