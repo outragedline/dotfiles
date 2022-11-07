@@ -99,6 +99,10 @@ return packer.startup(function()
 	use("mfussenegger/nvim-jdtls")
 	use("mfussenegger/nvim-dap-python")
 
+	-- Database
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+
 	-- snippets
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
