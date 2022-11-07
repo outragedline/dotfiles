@@ -17,21 +17,14 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save file
-keymap("n", "<A-s>", "<cmd> wa<CR>", opts) -- save all files
-keymap("n", "<C-A-x>", "<cmd> qa <CR>", opts) -- close all files
-keymap("n", "<C-A-q>", "<cmd> q<CR>", fopts) -- close current file
 
---create splits
-keymap("n", "<C-h>", "<cmd> split<CR>", opts) --hotizontal split
-keymap("n", "<C-j>", "<cmd> vsplit<CR>", opts) -- vertical split
-
--- Resize splits with arrows
+-- Resize windows with arrows
 keymap("n", "<C-Up>", "<cmd> resize +2<CR>", opts)
 keymap("n", "<C-Down>", "<cmd> resize -2<CR>", opts)
 keymap("n", "<C-Left>", "<cmd> vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", "<cmd> vertical resize +2<CR>", opts)
 
+-- move between windows
 keymap("n", "<C-A-Left>", "<C-w>h", opts)
 keymap("n", "<C-A-Down>", "<C-w>j", opts)
 keymap("n", "<C-A-Up>", "<C-w>k", opts)
@@ -62,8 +55,7 @@ keymap("n", "<leader>ct", "<cmd>lua require('copilot.suggestion').toggle_auto_tr
 keymap("n", "<leader>r", "<Plug>RestNvim", opts)
 keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>rl", "<Plug>RestNvimLast", opts)
-keymap("v", "<leader>r", "<Plug>RestNvim", opts)
-keymap("v", "<leader>rp", "<Plug>RestNvimPreview", opts)
+keymap("n", "<leader>db", "<cmd>DBUIToggle", opts)
 
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 
@@ -77,22 +69,10 @@ keymap("n", "<C-A-d>", "<cmd> bdelete!<CR>", opts)
 -- move around tabs
 keymap("n", "<C-A-n>", "<cmd>tabnext<CR>", fopts)
 keymap("n", "<C-A-p>", "<cmd>tabprevious<CR>", fopts)
-keymap("n", "<leader>ts", "<cmd>tab split<CR>", fopts)
-
--- create new tab
-keymap("n", "<leader>tn", "<cmd> tabnew<CR>", opts)
-keymap("n", "<leader>tc", "<cmd> tabclose<CR>", opts)
-
--- close current tab
-keymap("n", "<leader>td", "<cmd> tabclose!<CR>", opts)
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
 keymap("n", "<C-m><C-n>", "<cmd> BufferLineMoveNext<CR>", opts)
 keymap("n", "<C-m><C-p>", "<cmd> BufferLineMovePrev<CR>", opts)
-
--- These commands will sort buffers by directory, language, or a custom criteria
-keymap("n", "<leader>se", "<cmd> BufferLineSortByExtension<CR>", opts)
-keymap("n", "<leader>sd", "<cmd> BufferLineSortByDirectory<CR>", opts)
 
 --Telescope mappings
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
@@ -113,11 +93,9 @@ keymap("n", "<leader>gt", "<cmd> Gitsigns toggle_deleted<CR>", opts)
 keymap("n", "<leader>gd", "<cmd> Gitsigns diffthis<CR>", opts)
 
 -- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd> DapToggleRepl<cr>", opts)
 
 -- Packer
 keymap("n", "<leader>ps", "<cmd>PackerSync<cr>", opts)
