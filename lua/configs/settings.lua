@@ -10,7 +10,6 @@ set.sidescrolloff = 8
 set.updatetime = 100
 set.splitright = true -- new vertical splits are created at right
 set.splitbelow = true -- new horizontal splits are created bellow
-set.cursorline = true -- highlight the current line
 set.numberwidth = 3 -- set 3 characters to number column
 set.cmdheight = 2
 set.cc = ""
