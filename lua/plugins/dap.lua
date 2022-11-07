@@ -24,18 +24,21 @@ dapui.setup({
 	layouts = {
 		{
 			elements = {
-				-- Elements can be strings or table with id and size keys.
+
+				"breakpoints",
 				"scopes",
-				{ id = "breakpoints", size = 0.3 },
+				"stacks",
+				"watches",
 			},
-			size = 40, -- 40 columns
+			size = 50, -- 40 columns
 			position = "right",
 		},
 		{
 			elements = {
 				"console",
+				"repl"
 			},
-			size = 0.3,
+			size = 0.3, -- 25% of total lines
 			position = "bottom",
 		},
 	},
@@ -54,3 +57,8 @@ dapui.setup({
 })
 
 vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
