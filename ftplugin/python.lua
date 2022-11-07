@@ -1,4 +1,3 @@
-vim.opt.cc="80"
 local status_ok, dap_python = pcall(require, "dap-python")
 if not status_ok then
 	return
