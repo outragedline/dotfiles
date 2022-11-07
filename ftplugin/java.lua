@@ -35,24 +35,16 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
 local workspace_dir = WORKSPACE_PATH .. project_name
 
-local bundles = {
-	vim.fn.glob(
-		home
-			.. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
-	),
-}
-
--- This is the new part
+local bundles = {}
+local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
+vim.list_extend(bundles, vim.split(vim.fn.glob(mason_path .. "packages/java-test/extension/server/*.jar"), "\n"))
 vim.list_extend(
 	bundles,
 	vim.split(
-		vim.fn.glob(
-			home .. "/.local/share/nvim/mason/packages/java-test/extension/server/com.microsoft.java.test.plugin-*.jar"
-		),
+		vim.fn.glob(mason_path .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"),
 		"\n"
 	)
 )
-
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
 	-- The command that starts the language server
@@ -203,9 +195,9 @@ vim.cmd(
 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
 )
 vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
--- vim.cmd "command! -buffer JdtJol lua require('jdtls').jol()"
+vim.cmd "command! -buffer JdtJol lua require('jdtls').jol()"
 vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
--- vim.cmd "command! -buffer JdtJshell lua require('jdtls').jshell()"
+vim.cmd "command! -buffer JdtJshell lua require('jdtls').jshell()"
 
 local keymap = vim.keymap.set
 -- Silent keymap option
@@ -214,8 +206,9 @@ local opts = { silent = true }
 keymap("n", "<leader>jo", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
 keymap("n", "<leader>jv", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
 keymap("n", "<leader>jc", "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
-keymap("n", "<leader>jt", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", opts)
-keymap("n", "<leader>jT", "<Cmd>lua require'jdtls'.test_class()<CR>", opts)
+keymap("n", "<leader>jm", "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+keymap("n", "<leader>tm", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", opts)
+keymap("n", "<leader>tc", "<Cmd>lua require'jdtls'.test_class()<CR>", opts)
 keymap("n", "<leader>ju", "<Cmd>JdtUpdateConfig<CR>", opts)
 keymap("n", "<F4>", "<Cmd>JdtCompile full<CR>", opts)
 
