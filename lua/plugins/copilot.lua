@@ -18,4 +18,8 @@ copilot.setup({
 			dismiss = "<C-]>",
 		},
 	},
+	filetypes = {
+		["dap-repl"] = false,
+		["*"] = true,
+	},
 })
