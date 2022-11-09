@@ -55,7 +55,7 @@ keymap("n", "<leader>ct", "<cmd>lua require('copilot.suggestion').toggle_auto_tr
 keymap("n", "<leader>r", "<Plug>RestNvim", opts)
 keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>rl", "<Plug>RestNvimLast", opts)
-keymap("n", "<leader>db", "<cmd>DBUIToggle", opts)
+keymap("n", "<leader>db", "<cmd>DBUIToggle<cr>", opts)
 
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 
