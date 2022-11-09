@@ -13,6 +13,7 @@ require("plugins.dap")
 require("plugins.octo")
 require("plugins.pantran")
 require("plugins.rest")
+require("plugins.notify")
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then

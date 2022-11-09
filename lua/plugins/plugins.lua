@@ -28,7 +28,7 @@ return packer.startup(function()
 	use("navarasu/onedark.nvim")
 	use({ "ellisonleao/gruvbox.nvim" })
 
-	-- interface
+	-- UI
 	use("kyazdani42/nvim-web-devicons") -- icons
 	use("lukas-reineke/indent-blankline.nvim") -- enable indent  line
 	use({
@@ -43,6 +43,7 @@ return packer.startup(function()
 	use({ "p00f/nvim-ts-rainbow" }) -- enable rainbow parenthese
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- convenient line commenting
 	use("numToStr/Comment.nvim")
+	use("rcarriga/nvim-notify")
 
 	-- tools
 	use({
