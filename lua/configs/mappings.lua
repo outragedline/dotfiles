@@ -18,6 +18,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
+keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save buffer
+keymap("n", "<C-A-q>", "<cmd>q<CR>", fopts) -- close current window
+
+
 -- Resize windows with arrows
 keymap("n", "<C-Up>", "<cmd> resize +2<CR>", opts)
 keymap("n", "<C-Down>", "<cmd> resize -2<CR>", opts)
@@ -70,7 +74,14 @@ keymap("n", "<C-A-d>", "<cmd> bdelete!<CR>", opts)
 keymap("n", "<C-A-n>", "<cmd>tabnext<CR>", fopts)
 keymap("n", "<C-A-p>", "<cmd>tabprevious<CR>", fopts)
 
--- These commands will move the current buffer backwards or forwards in the bufferline
+-- create new tab
+keymap("n", "<leader>tn", "<cmd> tabnew<CR>", opts)
+keymap("n", "<leader>tc", "<cmd> tabclose<CR>", opts)
+
+-- close current tab
+keymap("n", "<leader>td", "<cmd> tabclose!<CR>", opts)
+
+-- Buffer navigation
 keymap("n", "<C-m><C-n>", "<cmd> BufferLineMoveNext<CR>", opts)
 keymap("n", "<C-m><C-p>", "<cmd> BufferLineMovePrev<CR>", opts)
 
