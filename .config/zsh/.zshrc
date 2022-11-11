@@ -1,8 +1,4 @@
 #!/bin/sh
-
-clear
-neofetch | lolcat
-
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -43,7 +39,6 @@ zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
 
 # Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
@@ -51,6 +46,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 
 # Key-bindings
 bindkey -s '^o' 'ranger^M'
+bindkey "^[[3~" delete-char		# Delete key.
 
 # FZF 
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
@@ -62,4 +58,8 @@ compinit
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
+bindkey '^e' edit-command-line
+
+
+
+HYPHEN_INSENSITIVE="true"
