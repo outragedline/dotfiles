@@ -16,7 +16,7 @@ unsetopt BEEP
 # completions
 autoload -Uz compinit
 zstyle ':completion:*' menu select
-# zstyle ':completion::complete:lsof:*' menu yes select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zmodload zsh/complist
 # compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -59,7 +59,6 @@ compinit
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
 
 
 HYPHEN_INSENSITIVE="true"
