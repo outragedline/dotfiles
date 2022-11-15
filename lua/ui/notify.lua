@@ -9,7 +9,7 @@ vim.notify = notify
 
 notify.setup {
   -- Animation style (see below for details)
-  stages = "fade_in_slide_out",
+  stages = "slide",
 
   -- Function called when a new window is opened, use for changing win settings/config
   on_open = nil,
@@ -21,7 +21,7 @@ notify.setup {
   render = "default",
 
   -- Default timeout for notifications
-  timeout = 300,
+  timeout = 1000,
 
   -- For stages that change opacity this is treated as the highlight behind the window
   -- Set this to either a highlight group or an RGB hex value e.g. "#000000"
