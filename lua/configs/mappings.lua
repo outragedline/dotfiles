@@ -17,10 +17,8 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save buffer
 keymap("n", "<C-A-q>", "<cmd>q<CR>", fopts) -- close current window
-
 
 -- Resize windows with arrows
 keymap("n", "<C-Up>", "<cmd> resize +2<CR>", opts)
@@ -64,8 +62,10 @@ keymap("n", "<leader>db", "<cmd>DBUIToggle<cr>", opts)
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 
 -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-keymap("n", "<C-n>", "<cmd> BufferLineCycleNext<CR>", opts)
-keymap("n", "<C-p>", "<cmd> BufferLineCyclePrev<CR>", opts)
+keymap("n", "<C-n>", "<cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "<C-p>", "<cmd>BufferLineCyclePrev<CR>", opts)
+keymap("n", "<leader>bp", "<cmd>BufferLinePick<CR>", opts)
+keymap("n", "<leader>bpc", "<cmd>BufferLinePickClose<CR>", opts)
 
 -- close current buffer
 keymap("n", "<C-A-d>", "<cmd> bdelete!<CR>", opts)
@@ -76,10 +76,8 @@ keymap("n", "<C-A-p>", "<cmd>tabprevious<CR>", fopts)
 
 -- create new tab
 keymap("n", "<leader>tn", "<cmd> tabnew<CR>", opts)
-keymap("n", "<leader>tc", "<cmd> tabclose<CR>", opts)
+keymap("n", "<leader>ts", "<cmd> tab split<CR>", opts)
 
--- close current tab
-keymap("n", "<leader>td", "<cmd> tabclose!<CR>", opts)
 
 -- Buffer navigation
 keymap("n", "<C-m><C-n>", "<cmd> BufferLineMoveNext<CR>", opts)
