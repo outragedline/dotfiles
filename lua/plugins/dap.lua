@@ -25,12 +25,12 @@ dapui.setup({
 		{
 			elements = {
 
-				"breakpoints",
+				{id ="breakpoints", size = 0.2},
 				"scopes",
-				"stacks",
-				"watches",
+				--[[ "stacks", ]]
+				{id = "watches", size = 0.4},
 			},
-			size = 50, -- 40 columns
+			size = 50, -- 50 columns
 			position = "right",
 		},
 		{
@@ -38,7 +38,7 @@ dapui.setup({
 				"console",
 				"repl"
 			},
-			size = 0.3, -- 25% of total lines
+			size = 0.3, -- 30% of total lines
 			position = "bottom",
 		},
 	},

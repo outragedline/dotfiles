@@ -26,7 +26,6 @@ local servers = {
 	"bashls",
 	"lemminx",
 	"yamlls",
-	"sqls",
 	"html",
 }
 

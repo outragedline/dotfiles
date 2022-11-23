@@ -76,7 +76,7 @@ keymap("n", "<C-A-p>", "<cmd>tabprevious<CR>", fopts)
 
 -- create new tab
 keymap("n", "<leader>tn", "<cmd> tabnew<CR>", opts)
-keymap("n", "<leader>ts", "<cmd> tab split<CR>", opts)
+keymap("n", "<leader>ts", ":tab split ", opts)
 
 
 -- Buffer navigation
