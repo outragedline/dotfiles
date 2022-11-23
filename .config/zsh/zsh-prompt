@@ -1,4 +1,0 @@
-#!/bin/sh
-autoload -U colors && colors
-
-PS1='%F{#8400ff}%~%f '
