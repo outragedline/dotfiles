@@ -1,14 +1,9 @@
 #!/bin/sh
 
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;34m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}%!%{\e[0;34m%}%B]%b%{\e[0m%}
-%{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B]%{\e[0m%}%b '
-RPROMPT='[%*]'
-PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
-
-HISTFILE=~/.zsh_history
-setopt appendhistory
+PROMPT=$'%F{%(#.blue.green)}┌──(%B%F{%(#.red.blue)}%n@%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
 
 # Options
+setopt appendhistory
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 stty stop undef		# Disable ctrl-s to freeze terminal.
@@ -60,6 +55,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 PATH=$PATH:~/.local/share/nvim/mason/bin/
 MSYS=winsymlinks:nativestrict
+HISTFILE=~/.zsh_history
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
