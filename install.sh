@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -Syu neovim nodejs-lts-gallium python3 python-pip ripgrep fd lua fzf gcc  npm tree-sitter  jdk17-openjdk  google-java-format
+sudo pacman -Syu neovim nodejs-lts-gallium python3 python-pip ripgrep fd lua fzf gcc npm
 
 pip install wheel pynvim 
 
