@@ -53,7 +53,7 @@ alias mkd='mkdir'
 # Exports
 HISTSIZE=1000000
 SAVEHIST=1000000
-PATH=$PATH:~/.local/share/nvim/mason/bin/
+PATH=$PATH:~/.local/share/nvim/mason/bin/:~/bin/
 MSYS=winsymlinks:nativestrict
 HISTFILE=~/.zsh_history
 export MANPAGER='nvim +Man!'
