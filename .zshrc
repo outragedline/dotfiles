@@ -30,6 +30,8 @@ autoload -Uz colors && colors
 
 
 # Plugins
+# Install the plugin manager with the command bellow
+# sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
