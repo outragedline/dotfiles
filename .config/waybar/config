@@ -1,6 +1,6 @@
 {
-    "layer": "top",
-    "position": "top",
+    "layer": "bottom",
+    "position": "bottom",
     "height": 5,
     "spacing": 4,
 
@@ -17,9 +17,9 @@
 
 		"custom/gpu": {
 				"exec": "radeontop -d - -l 1 | tr -d '\n' | cut -s -d ',' -f3 | cut -s -d ' ' -f3 | tr -d '%' | awk '{ print $1 }' | tr -d '\n'",
-				"format": "{}% ﬙",
+				"format": "GPU {}%",
 				"interval": 3,
-				"format-tooltip": "GPU Usage",
+				"tooltip": false
 		},
 
     "tray": {
@@ -27,31 +27,31 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+         "timezone": "America/Sao_Paulo",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d/%m/%Y}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "CPU {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "RAM {used:0.1f}/{total:0.1f}G",
+				"interval": 1,
+				"tooltip": false
     },
     "temperature": {
          "thermal-zone": 2,
          "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-         "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "{temperatureC}°C"
     },
     "backlight": {
          "device": "acpi_video1",
         "format": "{percent}% {icon}",
 				"on-scroll-up": "light -A 5",
 				"on-scroll-down": "light -U 5",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+				"tooltip": false
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -74,7 +74,7 @@
             "portable": "",
             "default": ["", "", ""]
         },
-        "on-click": "amixer set Master toggle"
+        "on-click": "pamixer -t"
     },
 	},
 }
