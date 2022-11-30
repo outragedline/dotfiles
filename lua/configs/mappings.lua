@@ -41,6 +41,7 @@ keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text w
 -- ToggleTerm mappings
 keymap("t", "<C-q>", [[<C-\><C-n>]], opts)
 keymap("n", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
+keymap("n", "<C-m><C-y>", "<cmd>lua _mycli_toggle()<cr>", opts)
 keymap("n", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)
 keymap("t", "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>", opts)
 keymap("t", "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>", opts)

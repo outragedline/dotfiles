@@ -41,6 +41,15 @@ local ranger = Terminal:new({
 	direction = "float",
 })
 
+local mycli = Terminal:new({
+	cmd = "mycli",
+	direction = "float",
+})
+
 function _ranger_toggle()
 	ranger:toggle()
+end
+
+function _mycli_toggle()
+	mycli:toggle()
 end
