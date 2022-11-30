@@ -14,7 +14,7 @@ pantran.setup{
       -- `:lua require("pantran.async").run(function()
       -- vim.pretty_print(require("pantran.engines").yandex:languages()) end)`
       -- can be used to list available language identifiers.
-      default_source = "auto",
+      default_source = "portuguese",
       default_target = "en"
     },
   },
