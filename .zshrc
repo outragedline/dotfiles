@@ -35,6 +35,7 @@ autoload -Uz colors && colors
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
+plug "zsh-users/zsh-autosuggestions"
 
 
 
