@@ -27,12 +27,14 @@ local servers = {
 	"lemminx",
 	"yamlls",
 	"html",
+	"clangd",
 }
 
 local debuggers = {
 	"javatest",
 	"javadbg",
 	"debugpy",
+	"cpptools",
 }
 
 local null_ls = {
@@ -41,6 +43,7 @@ local null_ls = {
 	"djlint",
 	"stylua",
 	"jq",
+	"clang_format",
 }
 
 local settings = {

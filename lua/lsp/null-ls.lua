@@ -15,6 +15,7 @@ null_ls.setup({
 		formatting.autopep8, -- python
 		formatting.stylua, --lua
 		formatting.xmllint, -- XML
+		formatting.clang_format, -- C/C++
 
 		-- linters / diagnostics binaries
 		diagnostics.flake8, -- python

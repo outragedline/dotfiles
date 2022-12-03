@@ -1,4 +1,7 @@
 local dap_status_ok, dap = pcall(require, "dap")
+if not dap_status_ok then
+	return
+end
 local icons = require("ui.icons")
 if not dap_status_ok then
 	return
@@ -25,10 +28,10 @@ dapui.setup({
 		{
 			elements = {
 
-				{id ="breakpoints", size = 0.2},
+				"breakpoints",
 				"scopes",
-				--[[ "stacks", ]]
-				{id = "watches", size = 0.4},
+				"stacks",
+				"watches",
 			},
 			size = 50, -- 50 columns
 			position = "right",
@@ -36,7 +39,7 @@ dapui.setup({
 		{
 			elements = {
 				"console",
-				"repl"
+				"repl",
 			},
 			size = 0.3, -- 30% of total lines
 			position = "bottom",
@@ -58,7 +61,6 @@ dapui.setup({
 
 vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
+	dapui.open()
 end
