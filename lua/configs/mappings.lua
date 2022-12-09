@@ -18,7 +18,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save buffer
-keymap("n", "<C-A-q>", "<cmd>q<CR>", fopts) -- close current window
+keymap("n", "<A-q>", "<cmd>q<CR>", fopts) -- close current window
+keymap("n", "<C-A-q>", "<cmd>qa<CR>", fopts) -- close current window
 
 -- Resize windows with arrows
 keymap("n", "<C-Up>", "<cmd> resize +2<CR>", opts)
