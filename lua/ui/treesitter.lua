@@ -7,7 +7,7 @@ local synxtax_disable_list = {} --add a language  here to disable TreeSitter hig
 local indent_disable_list = { "python" } --add a language  here to disable TreeSitter indent for this lang
 
 configs.setup({
-	ensure_installed = { "lua", "python", "java", "json", "bash", "http", "html", "sql" },
+	ensure_installed = { "lua", "python", "java", "json", "bash", "http", "html", "sql", "c" },
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		additional_vim_regex_highlighting = true,
