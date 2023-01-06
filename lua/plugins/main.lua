@@ -10,14 +10,10 @@ require("plugins.colorizer")
 require("plugins.outline")
 require("plugins.toggleterm")
 require("plugins.dap")
-require("plugins.octo")
 require("plugins.pantran")
 require("plugins.rest")
-require("plugins.copilot")
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
 	return
 end
-
-telescope.load_extension("emoji")

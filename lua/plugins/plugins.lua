@@ -26,7 +26,6 @@ return packer.startup(function()
 
 	--colorschemes
 	use("navarasu/onedark.nvim")
-	use({ "ellisonleao/gruvbox.nvim" })
 
 	-- UI
 	use("kyazdani42/nvim-web-devicons") -- icons
@@ -50,8 +49,6 @@ return packer.startup(function()
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use("pwntester/octo.nvim")
-	use("xiyaowong/telescope-emoji.nvim")
 	use("windwp/nvim-autopairs") -- autoclose () , {} , '' , etc
 	use("fedepujol/move.nvim")
 	use("ahmedkhalf/project.nvim")
@@ -63,17 +60,6 @@ return packer.startup(function()
 	use("potamides/pantran.nvim")
 	use("ThePrimeagen/harpoon")
 	use("NTBBloodbath/rest.nvim")
-
-	-- Copilot
-	use({
-		"zbirenbaum/copilot.lua",
-		event = { "VimEnter" },
-		config = function()
-			vim.defer_fn(function()
-				require("plugins.copilot")
-			end, 100)
-		end,
-	})
 
 	-- file explorer
 	use("kyazdani42/nvim-tree.lua") -- enable nvimtree
