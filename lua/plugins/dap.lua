@@ -13,6 +13,7 @@ if not dap_ui_status_ok then
 end
 
 dapui.setup({
+	controls = { enabled = false },
 	icons = { expanded = "▾", collapsed = "▸" },
 	mappings = {
 		-- Use a table to apply multiple mappings
