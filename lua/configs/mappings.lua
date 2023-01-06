@@ -101,8 +101,10 @@ keymap("n", "<leader>gt", "<cmd> Gitsigns toggle_deleted<CR>", opts)
 keymap("n", "<leader>gd", "<cmd> Gitsigns diffthis<CR>", opts)
 
 -- DAP
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<leader>dt", "<cmd>DapToggleBreakpoint<cr>", opts)
+keymap("n", "<leader>dc", "<cmd>DapContinue<cr>", opts)
+keymap("n", "<leader>di", "<cmd>DapStepInto<cr>", opts)
+keymap("n", "<leader>do", "<cmd>DapStepOver<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>", opts)
 
 -- Packer
