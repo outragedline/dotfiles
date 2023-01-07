@@ -92,5 +92,9 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Key-bindings
 bindkey -s '^O' 'ranger^M'
 bindkey "^[[3~" delete-char		# Delete key.
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[5~" history-beginning-search-backward
+bindkey "^[[6~" history-beginning-search-forward
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^E' edit-command-line
