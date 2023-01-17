@@ -19,7 +19,6 @@ if not status_ok_3 then
 end
 
 local servers = {
-	"jdtls",
 	"jsonls",
 	"sumneko_lua",
 	"pyright",
@@ -28,22 +27,21 @@ local servers = {
 	"yamlls",
 	"html",
 	"clangd",
+	"rust_analyzer"
 }
 
 local debuggers = {
-	"javatest",
-	"javadbg",
 	"debugpy",
 	"cpptools",
 }
 
 local null_ls = {
 	"autopep8",
-	"flake8",
 	"djlint",
 	"stylua",
 	"jq",
 	"clang_format",
+	"rustfmt"
 }
 
 local settings = {
