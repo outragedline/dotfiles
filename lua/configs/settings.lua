@@ -1,6 +1,7 @@
 local set = vim.opt --short vim.opt in set variable
 
 --  user options {
+set.cursorline = true
 set.number = true -- enable line number
 set.confirm = true -- confirm on exit
 set.smartindent = true -- autoindent new lines
@@ -31,7 +32,6 @@ set.smarttab = true
 set.smartcase = true
 set.breakindent = true
 set.formatoptions = "l"
-set.lbr = true
 -- }
 
 -- filetype {
@@ -46,7 +46,6 @@ set.foldenable = false -- dont close folds whe open file
 --}
 
 --other {
--- i dont know  what it  do, but its  good,i hope...
 set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
