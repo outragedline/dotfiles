@@ -50,6 +50,7 @@ alias ...='cd ../..'
 alias ran='ranger'
 alias lg='lazygit'
 alias mkd='mkdir'
+alias py='python'
 
 
 
