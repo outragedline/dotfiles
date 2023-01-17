@@ -58,7 +58,6 @@ keymap("n", "<leader>ch", "<cmd>noh<cr>", opts)
 keymap("n", "<leader>r", "<Plug>RestNvim", opts)
 keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>rl", "<Plug>RestNvimLast", opts)
-keymap("n", "<leader>db", "<cmd>DBUIToggle<cr>", opts)
 
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 

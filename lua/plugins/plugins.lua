@@ -50,7 +50,6 @@ return packer.startup(function()
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("windwp/nvim-autopairs") -- autoclose () , {} , '' , etc
-	use("fedepujol/move.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("norcalli/nvim-colorizer.lua")
@@ -60,6 +59,7 @@ return packer.startup(function()
 	use("potamides/pantran.nvim")
 	use("ThePrimeagen/harpoon")
 	use("NTBBloodbath/rest.nvim")
+	--[[ use("echasnovski/mini.nvim") ]]
 
 	-- file explorer
 	use("kyazdani42/nvim-tree.lua") -- enable nvimtree
@@ -83,7 +83,7 @@ return packer.startup(function()
 	})
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-	use("mfussenegger/nvim-jdtls")
+	--[[ use("mfussenegger/nvim-jdtls") ]]
 	use("mfussenegger/nvim-dap-python")
 
 	-- snippets
