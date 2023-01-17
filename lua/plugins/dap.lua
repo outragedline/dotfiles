@@ -65,3 +65,31 @@ vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticS
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end
+
+local home = os.getenv("HOME")
+
+dap.adapters.cppdbg = {
+	id = "cppdbg",
+	type = "executable",
+	command = home .. "/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7",
+}
+
+dap.configurations.c = {
+	{
+		name = "Launch file",
+		type = "cppdbg",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
+		cwd = "${workspaceFolder}",
+		stopAtEntry = false,
+	},
+}
+
+local status_ok, dap_python = pcall(require, "dap-python")
+if not status_ok then
+	return
+end
+
+dap_python.setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
