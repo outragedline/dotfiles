@@ -6,7 +6,7 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	name = outragedline
-	email = diegojanson31@outlook.com
+	email = outragedline@proton.me
 [core]
 	editor = nvim
 [filter "lfs"]
