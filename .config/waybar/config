@@ -4,9 +4,15 @@
     "height": 15,
     "spacing": 4,
 
-    "modules-left": ["wlr/workspaces",  "custom/media"],
+    "modules-left": ["wlr/workspaces",  "hyprland/window"],
     "modules-center": [],
     "modules-right": [ "pulseaudio", "network", "cpu", "custom/gpu", "memory", "temperature", "backlight", "clock", "tray"],
+
+
+"hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+},
 
      "wlr/workspaces": {
          "disable-scroll": true,
