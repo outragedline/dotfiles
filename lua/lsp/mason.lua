@@ -19,13 +19,8 @@ if not status_ok_3 then
 end
 
 local servers = {
-	"jsonls",
-	"sumneko_lua",
 	"pyright",
 	"bashls",
-	"lemminx",
-	"yamlls",
-	"html",
 	"clangd",
 	"rust_analyzer"
 }
@@ -37,7 +32,6 @@ local debuggers = {
 
 local null_ls = {
 	"autopep8",
-	"djlint",
 	"stylua",
 	"jq",
 	"clang_format",
