@@ -3,6 +3,7 @@ local set = vim.opt --short vim.opt in set variable
 --  user options {
 set.cursorline = true
 set.number = true -- enable line number
+set.relativenumber = true -- enable line number
 set.confirm = true -- confirm on exit
 set.smartindent = true -- autoindent new lines
 set.ignorecase = false
