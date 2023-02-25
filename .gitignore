@@ -2,3 +2,4 @@
 .config/zsh/.zcompdum*
 .config/zsh/.zsh_history
 .config/mpv/watch_later
+.config/nvim/plugin
