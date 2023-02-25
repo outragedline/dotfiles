@@ -1,7 +1,3 @@
-This is my neovin config, if you want to use, you can install with that command in archlinux
+This is my old neovim config. I merged it into the dotfiles main branch but put this branch here to have a backup
 
-
-```
-bash <(curl -s https://raw.githubusercontent.com/outragedline/nvim/main/install.sh)
-```                              
-In another distro you can see the dependecies and install manually
+if you want a up to date config, see the main branch
