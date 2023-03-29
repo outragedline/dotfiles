@@ -40,7 +40,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 bindsym $mod+n exec alacritty -e nvim
-bindsym $mod+b exec brave
+bindsym $mod+b exec chromium
 bindsym $mod+Shift+b exec tor-browser
 
 # kill focused window
@@ -181,5 +181,5 @@ gaps inner 3
 gaps outer 1
 smart_gaps on
 
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+# exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec --no-startup-id polybar mybar
