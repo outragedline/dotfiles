@@ -1,0 +1,128 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "modules-left": [
+    "wlr/workspaces"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "network",
+    "memory",
+    "cpu",
+		"temperature",
+    "backlight",
+    "pulseaudio",
+    "battery",
+  ],
+  "wlr/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "01": [],
+      "02": [],
+      "03": [],
+      "04": [],
+      "05": [],
+      "06": [],
+      "07": [],
+      "08": [],
+      "09": [],
+      "10": []
+    },
+  },
+  "tray": {
+    "on-click": "",
+    "icon-size": 17,
+    "spacing": 10
+  },
+  "backlight": {
+    "on-click": "",
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "CHARGE-IMMEDIATELY-NOW ",
+      "Charge-immediately ",
+      "Charge-quickly ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "clock": {
+    "on-click": "",
+    // "timezone": "America/Sao_Paulo",
+    "format": "{: %H:%M  %m/%d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    "format-wifi": "直 {essid}",
+    "format-ethernet": " {essid}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Disc.",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    "on-click": "alacritty -e nmtui"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%",
+
+  },
+  "memory": {
+    "on-click": "",
+    "interval": 5,
+    "format": " {used:0.1f}G/{total:0.1f}G"
+  },
+	"temperature": {
+		"thermal-zone":2,
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"format": "{temperatureC}°C"
+	},
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "ﱝ Muted",
+    "on-click": "pamixer -t",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        "墳",
+        ""
+      ]
+    }
+  }
+}
