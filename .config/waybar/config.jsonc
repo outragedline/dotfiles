@@ -63,9 +63,9 @@
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": [
-      "CHARGE-IMMEDIATELY-NOW ",
-      "Charge-immediately ",
-      "Charge-quickly ",
+      "",
+      "",
+      "",
       "",
       "",
       "",
@@ -78,8 +78,8 @@
   },
   "clock": {
     "on-click": "",
-    // "timezone": "America/Sao_Paulo",
-    "format": "{: %H:%M  %m/%d}",
+    "timezone": "America/Sao_Paulo",
+    "format": "{: %H:%M  %d/%m}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "network": {
@@ -106,10 +106,15 @@
 		"format": "{temperatureC}°C"
 	},
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "ﱝ Muted",
+    "format": "{format_source} | {icon} {volume}%",
+    "format-muted": "{format_source} | ﱝ",
+    "format-source": "",
+    "format-source-muted": "",
     "on-click": "pamixer -t",
+    "on-click-right": "pamixer --default-source -t",
+		"on-click-middle": "pavucontrol",
     "scroll-step": 1,
+		"max-volume": 200,
     "format-icons": {
       "headphone": "",
       "hands-free": "",
