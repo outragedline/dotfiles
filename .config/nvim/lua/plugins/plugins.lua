@@ -82,6 +82,7 @@ return packer.startup(function()
 		"jayp0521/mason-nvim-dap.nvim",
 	})
 	use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-jdtls")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	--[[ use("mfussenegger/nvim-jdtls") ]]
 	use("mfussenegger/nvim-dap-python")

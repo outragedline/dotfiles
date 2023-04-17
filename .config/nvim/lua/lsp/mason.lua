@@ -22,7 +22,8 @@ local servers = {
 	"pyright",
 	"bashls",
 	"clangd",
-	"rust_analyzer"
+	"rust_analyzer",
+	"jdtls"
 }
 
 local debuggers = {
@@ -34,8 +35,8 @@ local null_ls = {
 	"autopep8",
 	"stylua",
 	"jq",
-	"clang_format",
-	"rustfmt"
+	"rustfmt",
+
 }
 
 local settings = {

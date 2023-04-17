@@ -127,9 +127,9 @@ local config = {
 			},
 			format = {
 				enabled = true,
-				--[[ settings = { ]]
-				--[[ 	profile = "asdf", ]]
-				--[[ }, ]]
+				settings = {
+					profile = "asdf",
+				},
 			},
 		},
 		signatureHelp = { enabled = true },
