@@ -7,12 +7,12 @@
   font-weight: bold;
   font-size: 12px;
   padding-top: 1px;
-  padding-bottom: 1px;
+  padding-bottom: 0px;
   min-height: 0;
 }
 
 window#waybar {
-  background: #16121c;
+  background: transparent;
   color: #cdd6f4;
 }
 
