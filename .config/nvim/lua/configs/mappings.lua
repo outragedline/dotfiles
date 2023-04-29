@@ -141,3 +141,4 @@ keymap("n", "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<CR>", opts)
 
 -- unmapping
 keymap("n", "<C-z>", "", fopts)
+keymap("n", "<F1>", "", fopts)
