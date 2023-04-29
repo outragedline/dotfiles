@@ -23,7 +23,8 @@ local servers = {
 	"bashls",
 	"clangd",
 	"rust_analyzer",
-	"jdtls"
+	"jdtls",
+	"tsserver"
 }
 
 local debuggers = {
