@@ -54,12 +54,10 @@ return packer.startup(function()
 	use("lewis6991/impatient.nvim")
 	use("norcalli/nvim-colorizer.lua")
 	use("nvim-lua/plenary.nvim")
-	use("simrat39/symbols-outline.nvim")
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
 	use("potamides/pantran.nvim")
 	use("ThePrimeagen/harpoon")
 	use("NTBBloodbath/rest.nvim")
-	--[[ use("echasnovski/mini.nvim") ]]
 
 	-- file explorer
 	use("kyazdani42/nvim-tree.lua") -- enable nvimtree
@@ -82,11 +80,10 @@ return packer.startup(function()
 		"jayp0521/mason-nvim-dap.nvim",
 	})
 	use("mfussenegger/nvim-dap")
-	use("mfussenegger/nvim-jdtls")
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	--[[ use("mfussenegger/nvim-jdtls") ]]
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("mfussenegger/nvim-dap-python")
-	use("simrat39/rust-tools.nvim")
+	--[[ use("simrat39/rust-tools.nvim") ]]
 
 	-- snippets
 	use("L3MON4D3/LuaSnip")
