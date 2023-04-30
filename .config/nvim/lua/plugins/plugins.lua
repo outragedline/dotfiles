@@ -26,7 +26,7 @@ return packer.startup(function()
 
 	--colorschemes
 	use("navarasu/onedark.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin"})
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- UI
 	use("kyazdani42/nvim-web-devicons") -- icons
@@ -59,6 +59,14 @@ return packer.startup(function()
 	use("potamides/pantran.nvim")
 	use("ThePrimeagen/harpoon")
 	use("NTBBloodbath/rest.nvim")
+	use({
+		"jackMort/ChatGPT.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 
 	-- file explorer
 	use("kyazdani42/nvim-tree.lua") -- enable nvimtree
