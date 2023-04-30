@@ -4,7 +4,6 @@ window:
   dimensions:
    columns: 200
    lines: 40
-  # opacity: 0.6
   class:
     instance: Alacritty
     general: Alacritty

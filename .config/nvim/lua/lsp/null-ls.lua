@@ -15,9 +15,8 @@ null_ls.setup({
 		formatting.autopep8, -- python
 		formatting.stylua, --lua
 		formatting.xmllint, -- XML
-		--[[ formatting.clang_format, -- C/C++ ]]
+		formatting.clang_format, -- C/C++
 		formatting.rustfmt,
-		--[[ formatting.google_java_format, ]]
 
 		-- linters / diagnostics binaries
 		diagnostics.tidy, -- XML

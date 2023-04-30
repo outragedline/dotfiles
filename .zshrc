@@ -103,4 +103,4 @@ bindkey "^[[6~" history-beginning-search-forward
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^E' edit-command-line
 
-source "openai.zsh"
+source "$HOME/openai.zsh"
