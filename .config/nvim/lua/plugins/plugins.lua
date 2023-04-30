@@ -26,6 +26,7 @@ return packer.startup(function()
 
 	--colorschemes
 	use("navarasu/onedark.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin"})
 
 	-- UI
 	use("kyazdani42/nvim-web-devicons") -- icons
