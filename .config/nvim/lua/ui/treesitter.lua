@@ -3,7 +3,7 @@ if not TS_status_ok then
 	return
 end
 
-local synxtax_disable_list = {} --add a language  here to disable TreeSitter highlight for this lang
+local synxtax_disable_list = {'http'} --add a language  here to disable TreeSitter highlight for this lang
 local indent_disable_list = { "python" } --add a language  here to disable TreeSitter indent for this lang
 
 configs.setup({
