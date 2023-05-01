@@ -1,9 +1,4 @@
-local status_ok, pantran = pcall(require, "pantran")
-if not status_ok then
-	return
-end
-
-pantran.setup{
+require('pantran').setup{
   -- Default engine to use for translation. To list valid engine names run
   -- `:lua =vim.tbl_keys(require("pantran.engines"))`.
   default_engine = "google",

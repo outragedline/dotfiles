@@ -1,9 +1,4 @@
-local TS_status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not TS_status_ok then
-	return
-end
-
-configs.setup({
+require('nvim-treesitter.configs').setup({
 	ensure_installed = { "lua", "python", "java", "json", "bash", "http", "html", "sql", "c", "rust" },
 	highlight = {
 		enable = true, -- false will disable the whole extension

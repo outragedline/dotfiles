@@ -1,12 +1,9 @@
-local icons = require("ui.icons")
+local icons = require("icons")
 local M = {}
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp_ok then
-	return
-end
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 

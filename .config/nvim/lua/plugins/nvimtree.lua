@@ -1,14 +1,5 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-	return
-end
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	return
-end
-
-local icons = require("ui.icons")
+local nvim_tree_config = require('nvim-tree.config')
+local icons = require("icons")
 
 -- Replaces auto_close
 local tree_cb = nvim_tree_config.nvim_tree_callback
@@ -21,7 +12,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
-nvim_tree.setup({
+require('nvim-tree').setup({
 	disable_netrw = true,
 	hijack_netrw = true,
 	open_on_tab = false,
@@ -62,7 +53,7 @@ nvim_tree.setup({
 			custom_only = false,
 		},
 		number = false,
-		relativenumber = false,
+		relativenumber = true,
 	},
 	trash = {
 		cmd = "trash",

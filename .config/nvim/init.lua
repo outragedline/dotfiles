@@ -1,5 +1,6 @@
-require("configs.settings")
-require("configs.mappings")
-require("plugins.main")
-require("ui.main")
-require("lsp.main")
+require("settings")
+require("mappings")
+require("plugins")
+require("lsp")
+
+vim.cmd.colorscheme("catppuccin")

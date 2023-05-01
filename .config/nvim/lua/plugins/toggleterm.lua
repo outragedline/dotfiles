@@ -1,9 +1,4 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-	return
-end
-
-toggleterm.setup({
+require('toggleterm').setup({
 	size = 10,
 	open_mapping = [[<C-\>]],
 	hide_numbers = true,
@@ -41,15 +36,6 @@ local ranger = Terminal:new({
 	direction = "float",
 })
 
-local mycli = Terminal:new({
-	cmd = "mycli",
-	direction = "float",
-})
-
 function _ranger_toggle()
 	ranger:toggle()
-end
-
-function _mycli_toggle()
-	mycli:toggle()
 end
