@@ -117,6 +117,7 @@ plugins = {
 	{
 		"akinsho/toggleterm.nvim",
 		keys = {
+			{ [[<C-\>]], "<cmd>ToggleTerm<cr>" },
 			{ mode = "t", "<C-q>", [[<C-\><C-n>]] },
 			{ mode = { "n", "t" }, "<A-1>", "<cmd>ToggleTerm 1<cr>" },
 			{ mode = { "n", "t" }, "<A-2>", "<cmd>ToggleTerm 2<cr>" },
@@ -132,7 +133,7 @@ plugins = {
 		"potamides/pantran.nvim",
 		keys = {
 
-		{"<C-t>", "<cmd>Pantran<CR>"},
+			{ "<C-t>", "<cmd>Pantran<CR>" },
 		},
 		config = function()
 			require("plugins.pantran")
