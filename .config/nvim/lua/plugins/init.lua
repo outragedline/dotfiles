@@ -140,6 +140,7 @@ plugins = {
 	},
 	{
 		"NTBBloodbath/rest.nvim",
+		ft = "http",
 		keys = {
 			{ "<leader>r", "<Plug>RestNvim" },
 		},
