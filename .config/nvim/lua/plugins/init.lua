@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 plugins = {
 	{ "nvim-lua/plenary.nvim" },
-	{ "MunifTanjim/nui.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{
 		"catppuccin/nvim",
@@ -149,10 +148,6 @@ plugins = {
 		end,
 	},
 	{
-		"jackMort/ChatGPT.nvim",
-	},
-
-	{
 		"kyazdani42/nvim-tree.lua",
 		keys = {
 			{ "<C-a>", "<cmd> NvimTreeToggle<CR>" },
@@ -179,6 +174,7 @@ plugins = {
 	{ "jayp0521/mason-null-ls.nvim" },
 	{
 		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
 		keys = {
 
 			{ "<leader>dt", "<cmd>DapToggleBreakpoint<cr>" },
@@ -193,6 +189,7 @@ plugins = {
 	},
 	{
 		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
 		keys = {
 			{ "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>" },
 		},
@@ -202,6 +199,7 @@ plugins = {
 	},
 	{
 		"mfussenegger/nvim-dap-python",
+		event = "VeryLazy",
 		config = function()
 			require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 		end,
@@ -222,13 +220,6 @@ plugins = {
 		},
 		config = function()
 			require("plugins.git")
-		end,
-	},
-	{
-		"jackMort/ChatGPT.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.chatgpt")
 		end,
 	},
 }
