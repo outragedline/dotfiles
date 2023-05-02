@@ -109,12 +109,14 @@ plugins = {
 	},
 	{
 		"norcalli/nvim-colorizer.lua",
+		event = "VeryLazy",
 		config = function()
 			require("colorizer").setup()
 		end,
 	},
 	{
 		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
 		keys = {
 			{ [[<C-\>]], "<cmd>ToggleTerm<cr>" },
 			{ mode = "t", "<C-q>", [[<C-\><C-n>]] },
@@ -130,6 +132,7 @@ plugins = {
 	},
 	{
 		"potamides/pantran.nvim",
+		event = "VeryLazy",
 		keys = {
 
 			{ "<C-t>", "<cmd>Pantran<CR>" },
@@ -140,6 +143,7 @@ plugins = {
 	},
 	{
 		"NTBBloodbath/rest.nvim",
+		event = "VeryLazy",
 		ft = "http",
 		keys = {
 			{ "<leader>r", "<Plug>RestNvim" },
@@ -183,7 +187,6 @@ plugins = {
 			{ "<leader>di", "<cmd>DapStepInto<cr>" },
 			{ "<leader>do", "<cmd>DapStepOver<cr>" },
 		},
-		event = "VeryLazy",
 		config = function()
 			require("plugins.dap")
 		end,
@@ -200,6 +203,7 @@ plugins = {
 	},
 	{
 		"mfussenegger/nvim-dap-python",
+		ft = 'py',
 		event = "VeryLazy",
 		config = function()
 			require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
@@ -222,6 +226,15 @@ plugins = {
 		config = function()
 			require("plugins.git")
 		end,
+	},
+
+	{
+		"tpope/vim-dadbod",
+		event = "VeryLazy",
+	},
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		event = "VeryLazy",
 	},
 }
 require("lazy").setup(plugins, opts)
