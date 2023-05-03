@@ -52,6 +52,13 @@ plugins = {
 		end,
 	},
 	{
+		"famiu/bufdelete.nvim",
+		evente = "VeryLazy",
+		keys = {
+			{ "<C-A-d>", "<cmd>Bdelete!<CR>" },
+		},
+	},
+	{
 		"goolord/alpha-nvim",
 		config = function()
 			require("plugins.alpha")
@@ -83,6 +90,7 @@ plugins = {
 
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		keys = {
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
@@ -203,7 +211,7 @@ plugins = {
 	},
 	{
 		"mfussenegger/nvim-dap-python",
-		ft = 'py',
+		ft = "py",
 		event = "VeryLazy",
 		config = function()
 			require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")

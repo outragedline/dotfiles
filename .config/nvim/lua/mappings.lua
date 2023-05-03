@@ -43,8 +43,6 @@ keymap("n", "<leader>ch", "<cmd>noh<cr>", opts)
 
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 
--- close current buffer
-keymap("n", "<C-A-d>", "<cmd> bdelete!<CR>", opts)
 
 -- move around tabs
 keymap("n", "<A-Tab>", "<cmd>tabnext<CR>", fopts)
