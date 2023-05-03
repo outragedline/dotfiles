@@ -12,11 +12,17 @@ window:
 
 font:
   normal:
-    family: FiraCode Nerd Font Mono
-    style: Light
+    family: JetBrainsMono Nerd Font
+    style: light 
   bold:
-    family: FiraCode Nerd Font Mono
-    style: Bold
+    family: JetBrainsMono Nerd Font
+    style:  Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style:  Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
   size: 7
 
 colors:
