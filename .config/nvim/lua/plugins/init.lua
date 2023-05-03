@@ -100,6 +100,9 @@ plugins = {
 			{ "<leader>fp", "<cmd>Telescope projects<cr>" },
 			{ "<leader>fk", "<cmd>Telescope keymaps<cr>" },
 		},
+		config = function()
+			require("plugins.telescope")
+		end
 	},
 	{
 		"windwp/nvim-autopairs",
