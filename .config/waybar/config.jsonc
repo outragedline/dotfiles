@@ -44,9 +44,9 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": [
-      "",
-      "",
-      ""
+      "󰃞",
+      "󰃟",
+      "󰃠"
     ],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
@@ -63,17 +63,17 @@
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ]
   },
   "clock": {
@@ -83,10 +83,10 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "network": {
-    "format-wifi": "直 {essid}",
+    "format-wifi": "󰤨  {essid}",
     "format-ethernet": " {essid}",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "睊 Disc.",
+    "format-disconnected": "󰤮 Disc.",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     "on-click": "alacritty -e nmtui"
   },
@@ -107,7 +107,7 @@
 	},
   "pulseaudio": {
     "format": "{format_source} | {icon} {volume}%",
-    "format-muted": "{format_source} | ﱝ",
+    "format-muted": "{format_source} | 󰝟",
     "format-source": "",
     "format-source-muted": "",
     "on-click": "pamixer -t",
@@ -125,7 +125,6 @@
       "default": [
         "",
         "",
-        "墳",
         ""
       ]
     }
