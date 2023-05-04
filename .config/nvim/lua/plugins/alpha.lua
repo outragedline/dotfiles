@@ -12,7 +12,7 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
 	dashboard.button("f", icons.ui.Search .. "  Find file", ":Telescope find_files <CR>"),
 	dashboard.button("e", icons.documents.File .. "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", icons.documents.Folder .. " Find project", ":Telescope projects <CR>"),
+	dashboard.button("p", icons.documents.Folder .. "  Find project", ":Telescope projects <CR>"),
 	dashboard.button("r", icons.ui.History .. "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", icons.kind.Text .. "  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("c", icons.ui.Gear .. "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),

@@ -11,6 +11,7 @@ null_ls.setup({
 		formatting.autopep8, -- python
 		formatting.stylua, --lua
 		formatting.xmllint, -- XML
+		formatting.jq, -- JSON
 		formatting.clang_format, -- C/C++
 		formatting.rustfmt,
 
