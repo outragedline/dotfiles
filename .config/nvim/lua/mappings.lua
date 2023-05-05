@@ -22,16 +22,16 @@ keymap("n", "<A-q>", "<cmd>q<CR>", fopts) -- close current window
 keymap("n", "<C-A-q>", "<cmd>qa<CR>", fopts) -- close current window
 
 -- Resize windows with arrows
-keymap("n", "<C-Up>", "<cmd> resize +2<CR>", opts)
-keymap("n", "<C-Down>", "<cmd> resize -2<CR>", opts)
-keymap("n", "<C-Left>", "<cmd> vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", "<cmd> vertical resize +2<CR>", opts)
+keymap("n", "<C-A-Up>", "<cmd> resize +2<CR>", opts)
+keymap("n", "<C-A-Down>", "<cmd> resize -2<CR>", opts)
+keymap("n", "<C-A-Left>", "<cmd> vertical resize -2<CR>", opts)
+keymap("n", "<C-A-Right>", "<cmd> vertical resize +2<CR>", opts)
 
 -- move between windows
-keymap({ "n", "t" }, "<C-A-Left>", "<C-w>h", opts)
-keymap({ "n", "t" }, "<C-A-Down>", "<C-w>j", opts)
-keymap({ "n", "t" }, "<C-A-Up>", "<C-w>k", opts)
-keymap({ "n", "t" }, "<C-A-Right>", "<C-w>l", opts)
+keymap({ "n", "t" }, "<C-Left>", "<C-w>h", opts)
+keymap({ "n", "t" }, "<C-Down>", "<C-w>j", opts)
+keymap({ "n", "t" }, "<C-Up>", "<C-w>k", opts)
+keymap({ "n", "t" }, "<C-Right>", "<C-w>l", opts)
 
 -- visual mappings
 keymap("v", "<", "<gv", opts) -- unindent lines
