@@ -3,7 +3,6 @@ local servers = {
 	"bashls",
 	"clangd",
 	"rust_analyzer",
-	"jdtls",
 	"tsserver",
 }
 
