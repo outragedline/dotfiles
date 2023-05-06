@@ -96,6 +96,7 @@ shotwin() {
 }
 
 shotarea() {
+	sleep 0.5
 	hyprpicker -r -z &
 	grim -t png -g "$(slurp)" "$file"
 	killall hyprpicker
