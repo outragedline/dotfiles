@@ -8,4 +8,4 @@ yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm
 pip install wheel pynvim 
 
 # Other important applications
-yay -S zathura zathura-cb zathura-pdf-poppler qbittorrent ranger telegram-desktop ungoogled-chromium-bin mpv viewnior htop thunderbird zsh
+yay -S zathura zathura-cb zathura-pdf-poppler qbittorrent ranger udisks2 telegram-desktop ungoogled-chromium-bin mpv viewnior htop thunderbird zsh
