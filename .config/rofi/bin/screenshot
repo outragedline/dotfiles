@@ -77,7 +77,7 @@ countdown() {
 
 # take shots
 shotnow() {
-	sleep 0.5 && grim "$file"
+	sleep 1 && grim "$file"
 	copy_shot <"$file"
 	notify_view
 }
@@ -96,7 +96,7 @@ shotwin() {
 }
 
 shotarea() {
-	sleep 0.5
+	sleep 1
 	hyprpicker -r -z &
 	grim -t png -g "$(slurp)" "$file"
 	killall hyprpicker
