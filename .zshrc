@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
