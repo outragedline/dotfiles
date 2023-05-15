@@ -6,7 +6,7 @@ yay -S hyprland xdg-desktop-portal-hyprland-git grimblast-git waybar-hyprland-gi
 yay -S catppuccin-gtk-theme-mocha
 
 # Neovim
-yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm
+yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm unzip
 
 pip install wheel pynvim 
 
