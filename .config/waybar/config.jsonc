@@ -84,7 +84,7 @@
   },
   "network": {
     "format-wifi": "󰤨  {essid}",
-    "format-ethernet": " {essid}",
+    "format-ethernet": "󰈀  Ethernet",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "󰤮 Disc.",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
