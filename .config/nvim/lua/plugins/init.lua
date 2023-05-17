@@ -53,7 +53,7 @@ plugins = {
 	},
 	{
 		"famiu/bufdelete.nvim",
-		evente = "VeryLazy",
+		event = "VeryLazy",
 		keys = {
 			{ "<C-A-d>", "<cmd>Bdelete!<CR>" },
 		},
