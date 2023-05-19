@@ -10,10 +10,10 @@ mesg="Uptime : $(uptime -p | sed -e 's/up //g')"
 
 # Options
 option_1="<span size='xx-large' rise='-2000'></span> Lock"
-option_2="<span size='xx-large'></span> Logout"
+option_2="<span size='xx-large'>󰗼</span> Logout"
 option_3="<span size='large' rise='-1000'></span> Suspend"
 option_4="<span size='xx-large'>⏼</span> Hibernate"
-option_5="<span size='xx-large'>ﯩ</span> Reboot"
+option_5="<span size='xx-large'></span> Reboot"
 option_6="<span size='xx-large' rise='-2000'>⏻</span> Shutdown"
 
 yes='  Yes'
