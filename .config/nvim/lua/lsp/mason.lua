@@ -4,6 +4,7 @@ local servers = {
 	"clangd",
 	"rust_analyzer",
 	"tsserver",
+	"html",
 }
 
 local debuggers = {
@@ -16,6 +17,7 @@ local null_ls = {
 	"stylua",
 	"jq",
 	"rustfmt",
+	"prettier",
 }
 
 local settings = {
@@ -44,7 +46,7 @@ require("mason-nvim-dap").setup({
 	automatic_installation = true,
 })
 
-require('mason-null-ls').setup({
+require("mason-null-ls").setup({
 	ensure_installed = null_ls,
 	automatic_installation = true,
 })

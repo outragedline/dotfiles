@@ -13,6 +13,7 @@ null_ls.setup({
 		formatting.xmllint, -- XML
 		formatting.jq, -- JSON
 		formatting.clang_format, -- C/C++
+		formatting.prettier, -- html
 		formatting.rustfmt,
 
 		-- linters / diagnostics binaries
