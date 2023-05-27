@@ -1,5 +1,19 @@
-require('nvim-treesitter.configs').setup({
-	ensure_installed = { "lua", "python", "javascript", "json", "bash", "http", "html", "sql", "c", "rust" },
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+		"lua",
+		"python",
+		"javascript",
+		"typescript",
+		"json",
+		"bash",
+		"http",
+		"html",
+		"css",
+		"sql",
+		"c",
+		"rust",
+	},
+
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		additional_vim_regex_highlighting = true,
