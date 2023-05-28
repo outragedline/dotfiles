@@ -129,7 +129,6 @@ plugins = {
 		"akinsho/toggleterm.nvim",
 		event = "VeryLazy",
 		keys = {
-			{ [[<C-\>]], "<cmd>ToggleTerm<cr>" },
 			{ mode = "t", "<C-q>", [[<C-\><C-n>]] },
 			{ mode = { "n", "t" }, "<A-1>", "<cmd>ToggleTerm 1<cr>" },
 			{ mode = { "n", "t" }, "<A-2>", "<cmd>ToggleTerm 2<cr>" },
