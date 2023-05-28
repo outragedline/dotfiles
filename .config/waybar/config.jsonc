@@ -2,19 +2,18 @@
   "layer": "top",
   "position": "top",
   "height": 24,
-  "modules-left": [
-    "wlr/workspaces"
-  ],
+  "modules-left": ["wlr/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "network",
+    "bluetooth",
     "memory",
     "cpu",
-		"temperature",
+    "temperature",
     "backlight",
     "pulseaudio",
-    "battery",
+    "battery"
   ],
   "wlr/workspaces": {
     "disable-scroll": false,
@@ -32,7 +31,7 @@
       "08": [],
       "09": [],
       "10": []
-    },
+    }
   },
   "tray": {
     "on-click": "",
@@ -43,11 +42,7 @@
     "on-click": "",
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
     "min-length": 6
@@ -62,19 +57,7 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ]
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "clock": {
     "on-click": "",
@@ -90,21 +73,26 @@
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     "on-click": "alacritty -e nmtui"
   },
+  "bluetooth": {
+    "format": "",
+		"format-disabled": "󰂲",
+    "format-connected": " {device_alias}",
+		"on-click": "blueberry",
+  },
   "cpu": {
     "interval": 5,
-    "format": " {usage}%",
-
+    "format": " {usage}%"
   },
   "memory": {
     "on-click": "",
     "interval": 5,
     "format": " {used:0.1f}G/{total:0.1f}G"
   },
-	"temperature": {
-		"thermal-zone":2,
-		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-		"format": "{temperatureC}°C"
-	},
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "format": "{temperatureC}°C"
+  },
   "pulseaudio": {
     "format": "{format_source} | {icon} {volume}%",
     "format-muted": "{format_source} | 󰝟",
@@ -112,9 +100,9 @@
     "format-source-muted": "",
     "on-click": "pamixer -t",
     "on-click-right": "pamixer --default-source -t",
-		"on-click-middle": "pavucontrol",
+    "on-click-middle": "pavucontrol",
     "scroll-step": 1,
-		"max-volume": 200,
+    "max-volume": 200,
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -122,11 +110,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     }
   }
 }

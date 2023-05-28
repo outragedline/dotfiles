@@ -52,6 +52,7 @@ tooltip {
   border-radius: 10px;
 }
 
+#bluetooth,
 #clock,
 #battery,
 #pulseaudio,
@@ -67,7 +68,6 @@ tooltip {
   margin: 3px 0px;
 }
 
-
 #tray {
   border-radius: 10px;
   margin-right: 4px;
@@ -81,8 +81,6 @@ tooltip {
   padding-left: 5px;
   margin-left: 5px;
 }
-
-
 
 #cpu {
   background: #1e1e2e;
