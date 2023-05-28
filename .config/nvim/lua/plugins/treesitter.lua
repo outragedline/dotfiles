@@ -9,7 +9,6 @@ require("nvim-treesitter.configs").setup({
 		"http",
 		"html",
 		"css",
-		"sql",
 		"c",
 		"rust",
 	},
