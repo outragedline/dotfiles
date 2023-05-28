@@ -106,8 +106,5 @@ colors:
 
   save_to_clipboard: true
 
-shell:
- program: /bin/zsh
-
 mouse:
     hide_when_typing: true
