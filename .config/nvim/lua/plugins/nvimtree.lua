@@ -1,4 +1,4 @@
-local nvim_tree_config = require('nvim-tree.config')
+local nvim_tree_config = require("nvim-tree.config")
 local icons = require("icons")
 
 -- Replaces auto_close
@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
-require('nvim-tree').setup({
+require("nvim-tree").setup({
 	disable_netrw = true,
 	hijack_netrw = true,
 	open_on_tab = false,
@@ -27,6 +27,48 @@ require('nvim-tree').setup({
 			error = icons.diagnostics.Error,
 		},
 	},
+	renderer = {
+		icons = {
+			webdev_colors = true,
+			git_placement = "before",
+			modified_placement = "after",
+			padding = " ",
+			symlink_arrow = " -> ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true,
+				modified = true,
+			},
+			glyphs = {
+				default = icons.documents.File,
+				symlink = icons.documents.Symlink,
+				bookmark = icons.ui.Bookmark,
+				modified = icons.git.Mod,
+				folder = {
+					arrow_closed = icons.ui.ArrowClosed,
+					arrow_open = icons.ui.ArrowOpen,
+					default = icons.documents.Folder,
+					open = icons.documents.OpenFolder,
+					empty = icons.documents.EmptyFolder,
+					empty_open = icons.documents.EmptyFolderOpen,
+					symlink = icons.documents.FolderSymlink,
+					symlink_open = icons.documents.FolderSymlinkOpen,
+				},
+				git = {
+					unstaged = icons.git.Mod,
+					staged = icons.git.Staged,
+					unmerged = icons.git.Unmerged,
+					renamed = icons.git.Rename,
+					untracked = icons.git.Untracked,
+					deleted = icons.git.Remove,
+					ignored = icons.git.Ignore,
+				},
+			},
+		},
+	},
+
 	update_focused_file = {
 		enable = true,
 		update_cwd = true,

@@ -5,6 +5,7 @@ local servers = {
 	"rust_analyzer",
 	"tsserver",
 	"html",
+	"lua_ls"
 }
 
 local debuggers = {
