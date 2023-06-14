@@ -10,7 +10,6 @@ local servers = {
 
 local debuggers = {
 	"debugpy",
-	"cpptools",
 }
 
 local null_ls = {
