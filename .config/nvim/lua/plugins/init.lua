@@ -72,7 +72,7 @@ plugins = {
 			require("plugins.treesitter")
 		end,
 	},
-	{ "HiPhish/nvim-ts-rainbow2" },
+	{ "HiPhish/rainbow-delimiters.nvim" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{
 		"numToStr/Comment.nvim",
@@ -102,7 +102,7 @@ plugins = {
 		},
 		config = function()
 			require("plugins.telescope")
-		end
+		end,
 	},
 	{
 		"windwp/nvim-autopairs",
@@ -119,10 +119,15 @@ plugins = {
 		end,
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		event = "VeryLazy",
+		"uga-rosa/ccc.nvim",
+		lazy = false,
 		config = function()
-			require("colorizer").setup()
+			require("ccc").setup({
+				highlighter = {
+					auto_enable = true,
+					lsp = true,
+				},
+			})
 		end,
 	},
 	{
