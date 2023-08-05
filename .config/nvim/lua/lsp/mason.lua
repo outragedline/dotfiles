@@ -3,7 +3,8 @@ local servers = {
 	"clangd",
 	"tsserver",
 	"html",
-	"cssls"
+	"lua_ls",
+	"cssls",
 }
 
 local debuggers = {
