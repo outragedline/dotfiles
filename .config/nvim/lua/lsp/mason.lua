@@ -5,6 +5,7 @@ local servers = {
 	"html",
 	"lua_ls",
 	"cssls",
+	"jdtls"
 }
 
 local debuggers = {

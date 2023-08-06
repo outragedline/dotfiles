@@ -11,6 +11,7 @@ require("nvim-treesitter.configs").setup({
 		"css",
 		"c",
 		"rust",
+		"java",
 	},
 
 	highlight = {
