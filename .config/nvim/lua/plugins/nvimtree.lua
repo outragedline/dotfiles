@@ -1,8 +1,8 @@
-local nvim_tree_config = require("nvim-tree.config")
+local api = require("nvim-tree.api")
 local icons = require("icons")
 
 -- Replaces auto_close
-local tree_cb = nvim_tree_config.nvim_tree_callback
+local tree_cb = api.nvim_tree_callback
 vim.api.nvim_create_autocmd("BufEnter", {
 	nested = true,
 	callback = function()
@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 require("nvim-tree").setup({
+	create_in_closed_folder = false,
 	disable_netrw = true,
 	hijack_netrw = true,
 	open_on_tab = false,
@@ -28,6 +29,9 @@ require("nvim-tree").setup({
 		},
 	},
 	renderer = {
+		indent_markers = {
+			enable = true,
+		},
 		icons = {
 			webdev_colors = true,
 			git_placement = "before",
@@ -89,11 +93,7 @@ require("nvim-tree").setup({
 	},
 	view = {
 		width = 40,
-		hide_root_folder = false,
 		side = "left",
-		mappings = {
-			custom_only = false,
-		},
 		number = false,
 		relativenumber = true,
 	},
