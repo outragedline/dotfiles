@@ -15,24 +15,7 @@
     "pulseaudio",
     "battery"
   ],
-  "wlr/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
-    "on-click": "activate",
-    "format": "{icon}",
-    "persistent_workspaces": {
-      "01": [],
-      "02": [],
-      "03": [],
-      "04": [],
-      "05": [],
-      "06": [],
-      "07": [],
-      "08": [],
-      "09": [],
-      "10": []
-    }
-  },
+
   "tray": {
     "on-click": "",
     "icon-size": 17,
@@ -75,9 +58,9 @@
   },
   "bluetooth": {
     "format": "",
-		"format-disabled": "󰂲",
+    "format-disabled": "󰂲",
     "format-connected": " {device_alias}",
-		"on-click": "blueberry",
+    "on-click": "blueberry"
   },
   "cpu": {
     "interval": 5,
