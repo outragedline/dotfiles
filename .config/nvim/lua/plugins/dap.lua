@@ -21,5 +21,11 @@ dap.configurations.c = {
   },
 }
 
+dap.adapters.godot = {
+  type = "server",
+  host = '127.0.0.1',
+  port = 6006,
+}
+
 dap.configurations.cpp = dap.configurations.c
 dap.configurations.rust = dap.configurations.c
