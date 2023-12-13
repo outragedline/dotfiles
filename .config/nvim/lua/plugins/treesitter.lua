@@ -27,8 +27,9 @@ require("nvim-treesitter.configs").setup({
 	autopairs = {
 		enable = true,
 	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
+})
+
+require("ts_context_commentstring").setup({
+	enable = true,
+	enable_autocmd = false,
 })
