@@ -178,15 +178,12 @@ plugins = {
 	},
 
 	-- cmp plugins
-	{ "hrsh7th/nvim-cmp" },   -- The completion plugin
-	{ "hrsh7th/cmp-buffer" }, -- buffer completions
-	{ "hrsh7th/cmp-path" },   -- path completions
-	{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
-	{
-		"L3MON4D3/LuaSnip",
-		build = "make install_jsregexp"
-	},
-	{ "hrsh7th/cmp-nvim-lsp" }, -- enable lsp autocomplete with cmp
+	{ "hrsh7th/nvim-cmp" },        -- The completion plugin
+	{ "hrsh7th/cmp-buffer" },      -- buffer completions
+	{ "hrsh7th/cmp-path" },        -- path completions
+	{ "hrsh7th/cmp-cmdline" },     -- cmdline completions
+	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
+	{ "hrsh7th/cmp-nvim-lsp" },    -- enable lsp autocomplete with cmp
 	{ "mfussenegger/nvim-jdtls" },
 
 	-- LSP
@@ -229,7 +226,13 @@ plugins = {
 		end,
 	},
 
-	{ "L3MON4D3/LuaSnip" },
+	{
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
+	},
 	{ "rafamadriz/friendly-snippets" },
 
 	-- Git
