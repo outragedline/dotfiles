@@ -1,5 +1,6 @@
 local icons = require("icons")
-require('dapui').setup({
+local dap, dapui = require("dap"), require("dapui")
+dapui.setup({
 	controls = { enabled = false },
 	icons = { expanded = "▾", collapsed = "▸" },
 	mappings = {
@@ -48,7 +49,6 @@ require('dapui').setup({
 })
 
 vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-
-require('dap').listeners.after.event_initialized["dapui_config"] = function()
-	dapui.open()
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
 end
