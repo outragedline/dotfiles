@@ -67,7 +67,7 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="librewolf"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 
