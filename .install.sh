@@ -10,5 +10,5 @@ yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm unzi
 sudo npm i -g neovim
 
 # Other important applications
-yay -S zathura zathura-cb zathura-pdf-poppler qbittorrent ranger udisks2 telegram-desktop librewolf-bin uget uget uget-integrator uget-integrator-libreworlf mpv viewnior htop thunderbird zsh lazygit stow github-cli blender gimp discord
+yay -S zathura zathura-cb zathura-pdf-poppler qbittorrent ranger ueberzugpp udisks2 telegram-desktop librewolf-bin uget uget uget-integrator uget-integrator-libreworlf mpv viewnior htop thunderbird zsh lazygit stow github-cli blender gimp discord
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
