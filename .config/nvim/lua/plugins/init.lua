@@ -79,7 +79,7 @@ plugins = {
 			require("plugins.treesitter")
 		end,
 	},
-	{ "HiPhish/rainbow-delimiters.nvim" },
+	{ "hiphish/rainbow-delimiters.nvim" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{
 		"numToStr/Comment.nvim",
