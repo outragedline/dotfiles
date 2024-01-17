@@ -35,6 +35,7 @@ dap.configurations.python = {
 		type = 'python',
 		request = 'launch',
 		name = "launch module",
+		justMyCode = false,
 
 
 		module = function()

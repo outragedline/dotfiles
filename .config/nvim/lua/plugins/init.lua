@@ -204,7 +204,7 @@ plugins = {
 
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
-	{ "jose-elias-alvarez/null-ls.nvim" },
+	{ "nvimtools/none-ls.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "williamboman/mason.nvim" },
 	{ "jayp0521/mason-nvim-dap.nvim" },
