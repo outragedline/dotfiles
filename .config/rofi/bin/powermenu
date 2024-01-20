@@ -64,7 +64,7 @@ run_cmd() {
 		swaylock --effect-blur 7x2 --screenshot --fade-in 0.5
 	elif [[ "$1" == '--opt2' ]]; then
 		# logout
-		confirm_run 'killall Hyprland'
+		confirm_run 'hyprctl dispatch exit'
 	elif [[ "$1" == '--opt3' ]]; then
 		#suspend
 		confirm_run 'systemctl suspend'
