@@ -4,7 +4,7 @@
 yay -S hyprland xdg-desktop-portal-hyprland grimblast-git waybar  rofi-lbonn-wayland-git pavucontrol nwg-look-bin alacritty grim slurp hyprpicker-git  pipewire pipewire-pulse wireplumber wl-clipboard pamixer dunst libnotify blueberry  brightnessctl hyprland-workspaces swayidle waypaper-git
 
 # Hyprland extra packages
-yay -S watershot ttf-jetbrains-mono-nerd ripdrag gammastep  swww
+yay -S watershot ttf-jetbrains-mono-nerd ripdrag gammastep  swaybg
 
 # Theme
 yay -S catppuccin-gtk-theme-mocha
