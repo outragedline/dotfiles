@@ -5,3 +5,4 @@
 .config/nvim/plugin
 .config/gh
 .config/lazygit
+.config/btop/btop.log
