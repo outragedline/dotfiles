@@ -13,13 +13,13 @@
     "temperature",
     "backlight",
     "pulseaudio",
-    "battery"
+    "battery",
   ],
 
   "tray": {
     "on-click": "",
     "icon-size": 17,
-    "spacing": 10
+    "spacing": 10,
   },
   "backlight": {
     "on-click": "",
@@ -28,19 +28,19 @@
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6
+    "min-length": 6,
   },
   "battery": {
     "states": {
       "good": 80,
       "warning": 30,
-      "critical": 20
+      "critical": 20,
     },
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
   "clock": {
     "on-click": "",
@@ -58,44 +58,44 @@
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
         "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
   "network": {
-    "format-wifi": "󰤨  {essid}",
-    "format-ethernet": "󰈀  Ethernet",
+    "format-wifi": "󰤨 ",
+    "format-ethernet": "󰈀 ",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "󰤮 Disc.",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
-    "on-click": "alacritty -e nmtui"
+    "format-disconnected": "󰤮 ",
+    "tooltip-format-wifi": "Network: {essid} | Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    "on-click": "alacritty -e nmtui",
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": " {device_alias}",
-    "on-click": "blueberry"
+    "on-click": "blueberry",
   },
   "cpu": {
     "interval": 5,
-    "format": " {usage}%"
+    "format": " {usage}%",
   },
   "memory": {
     "on-click": "",
     "interval": 5,
-    "format": " {used:0.1f}G/{total:0.1f}G"
+    "format": " {used:0.1f}G/{total:0.1f}G",
   },
   "temperature": {
     "thermal-zone": 2,
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-    "format": "{temperatureC}°C"
+    "format": "{temperatureC}°C",
   },
   "pulseaudio": {
     "format": "{format_source} | {icon} {volume}%",
@@ -114,7 +114,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
-    }
-  }
+      "default": ["", "", ""],
+    },
+  },
 }
