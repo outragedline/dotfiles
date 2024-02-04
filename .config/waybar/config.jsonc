@@ -37,10 +37,11 @@
       "critical": 20,
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": " ",
+    "format-plugged": " ",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-icons": ["󰁺 CHARGE NOW", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		"tooltip-format": "{capacity}%"
   },
   "clock": {
     "on-click": "",
