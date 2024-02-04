@@ -1,15 +1,22 @@
-local home = os.getenv("HOME")
 local dap = require("dap")
+local nvim_path = vim.fn.stdpath("data")
 
-dap.adapters.lldb = {
-	type = 'executable',
-	command = '/usr/bin/lldb-vscode', -- adjust as needed, must be absolute path
-	name = 'lldb'
+dap.adapters.codelldb = {
+	type = 'server',
+	port = "${port}",
+	executable = {
+		-- CHANGE THIS to your path!
+		command = nvim_path .. '/mason/bin/codelldb',
+		args = { "--port", "${port}" },
+
+		-- On windows you may have to uncomment this:
+		-- detached = false,
+	}
 }
 dap.configurations.c = {
 	{
 		name = 'Launch',
-		type = 'lldb',
+		type = 'codelldb',
 		request = 'launch',
 		program = function()
 			return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')

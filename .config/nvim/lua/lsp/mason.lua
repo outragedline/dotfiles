@@ -10,6 +10,7 @@ local servers = {
 
 local debuggers = {
 	"debugpy",
+	"codelldb"
 }
 
 local null_ls = {
