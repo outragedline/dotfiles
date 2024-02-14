@@ -274,5 +274,11 @@ plugins = {
 		"kristijanhusak/vim-dadbod-ui",
 		event = "VeryLazy",
 	},
+	{
+		'rmagatti/auto-session',
+		config = function()
+			require("plugins.autosession")
+		end
+	}
 }
 require("lazy").setup(plugins, opts)
