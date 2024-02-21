@@ -1,7 +1,7 @@
 #!/bin/sh
 # Hyprland basic packages
 # Waypaper is a gui tool to define wallpapers and needs a backend, you can use swaybg if you dont have time to compile swww, but if your cpu isnt very old it doesnt lasts reaaally long
-yay -S hyprland xdg-desktop-portal-hyprland grimblast-git waybar rofi-lbonn-wayland-git pavucontrol nwg-look-bin alacritty grim slurp hyprpicker  pipewire pipewire-pulse wireplumber wl-clipboard pamixer dunst libnotify blueberry  brightnessctl hyprland-workspaces swayidle waypaper-git
+yay -S hyprland xdg-desktop-portal-hyprland grimblast-git waybar rofi-lbonn-wayland-git pavucontrol nwg-look-bin alacritty grim slurp hyprpicker  pipewire pipewire-pulse wireplumber wl-clipboard pamixer dunst libnotify blueberry  brightnessctl hyprland-workspaces hypridle waypaper-git
 
 # Hyprland extra packages
 yay -S watershot ttf-jetbrains-mono-nerd  gammastep  swaybg
