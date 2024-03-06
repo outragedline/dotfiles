@@ -14,8 +14,6 @@ local debuggers = {
 }
 
 local null_ls = {
-	"autopep8",
-	"jq",
 	"prettier",
 }
 

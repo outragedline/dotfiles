@@ -8,13 +8,9 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		--formatting binaries
-		formatting.autopep8, -- python
 		formatting.stylua, --lua
-		formatting.xmllint, -- XML
-		formatting.jq, -- JSON
 		formatting.clang_format, -- C/C++
 		formatting.prettier, -- html
-		formatting.rustfmt,
 
 		-- linters / diagnostics binaries
 		diagnostics.tidy, -- XML
