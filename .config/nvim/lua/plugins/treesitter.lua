@@ -13,6 +13,7 @@ require("nvim-treesitter.configs").setup({
 		"rust",
 		"java",
 		"gdscript",
+		"make"
 	},
 
 	highlight = {
