@@ -276,6 +276,7 @@ plugins = {
 	},
 	{
 		'rmagatti/auto-session',
+		lazy = false,
 		config = function()
 			require("plugins.autosession")
 		end
