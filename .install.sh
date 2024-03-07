@@ -14,5 +14,5 @@ yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm unzi
 sudo npm i -g neovim
 
 # Other important applications
-yay -S okular qbittorrent ranger  64gram-desktop ungoogled-chromium-bin chromium-extension-web-store uget  mpv viewnior btop thunderbird zsh lazygit stow github-cli blender gimp discord kdenlive
+yay -S okular qbittorrent ranger  64gram-desktop ungoogled-chromium-bin chromium-extension-web-store uget  mpv viewnior btop thunderbird zsh lazygit stow github-cli blender gimp discord kdenlive syncthing dust  bat 
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
