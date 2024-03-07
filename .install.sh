@@ -4,7 +4,7 @@
 yay -S hyprland xdg-desktop-portal-hyprland grimblast-git waybar rofi-lbonn-wayland-git pavucontrol nwg-look-bin alacritty grim slurp hyprpicker  pipewire pipewire-pulse wireplumber wl-clipboard pamixer dunst libnotify blueberry  brightnessctl hyprland-workspaces hypridle waypaper-git
 
 # Hyprland extra packages
-yay -S watershot ttf-jetbrains-mono-nerd  gammastep  swaybg
+yay -S watershot ttf-jetbrains-mono-nerd  ttf-noto-nerd noto-fonts-cjk noto-fonts-emoji noto-fonts-extra gammastep  swaybg
 
 # Theme
 yay -S catppuccin-gtk-theme-mocha
@@ -14,5 +14,5 @@ yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm unzi
 sudo npm i -g neovim
 
 # Other important applications
-yay -S okular qbittorrent ranger  64gram-desktop ungoogled-chromium-bin chromium-extension-web-store uget  mpv viewnior btop thunderbird zsh lazygit stow github-cli blender gimp discord kdenlive syncthing dust  bat 
+yay -S okular qbittorrent ranger  64gram-desktop ungoogled-chromium-bin chromium-extension-web-store uget  mpv viewnior btop thunderbird zsh lazygit stow github-cli blender gimp discord kdenlive syncthing dust  bat ttf-noto-nerd noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
