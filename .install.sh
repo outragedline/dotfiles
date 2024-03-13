@@ -11,7 +11,7 @@ yay -S ttf-jetbrains-mono-nerd  ttf-noto-nerd noto-fonts-cjk noto-fonts-emoji no
 yay -S catppuccin-gtk-theme-mocha kvantum
 
 # Neovim
-yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm unzip tidy wget lldb clang python-pynvim
+yay -S neovim nodejs-lts-hydrogen python3 python-pip ripgrep fd lua gcc npm unzip tidy wget lldb clang python-pynvim bear
 sudo npm i -g neovim
 
 # Other important applications

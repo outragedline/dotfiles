@@ -28,12 +28,3 @@ local lazygit = Terminal:new({
 function _lazygit_toggle()
 	lazygit:toggle()
 end
-
-local ranger = Terminal:new({
-	cmd = "ranger",
-	direction = "float",
-})
-
-function _ranger_toggle()
-	ranger:toggle()
-end

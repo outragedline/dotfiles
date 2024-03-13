@@ -16,6 +16,7 @@ plugins = {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
+		lazy = false,
 		config = function()
 			require("plugins.catpuccin")
 		end,
@@ -67,6 +68,7 @@ plugins = {
 	},
 	{
 		"goolord/alpha-nvim",
+		lazy = false,
 		config = function()
 			require("plugins.alpha")
 		end,
@@ -83,7 +85,7 @@ plugins = {
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{
 		"numToStr/Comment.nvim",
-		lazy = false,
+		lazy = "VeryLazy",
 		config = function()
 			require("plugins.comment")
 		end,
@@ -113,7 +115,7 @@ plugins = {
 	},
 	{
 		"windwp/nvim-autopairs",
-		lazy = false,
+		lazy = "VeryLazy",
 		config = function()
 			require("plugins.autopairs")
 		end,
@@ -127,7 +129,7 @@ plugins = {
 	},
 	{
 		"uga-rosa/ccc.nvim",
-		lazy = false,
+		lazy = "VeryLazy",
 		config = function()
 			require("ccc").setup({
 				highlighter = {
@@ -154,6 +156,7 @@ plugins = {
 	},
 	{
 		"kelly-lin/ranger.nvim",
+		lazy = "VeryLazy",
 		config = function()
 			require("plugins.ranger")
 		end,
@@ -185,6 +188,7 @@ plugins = {
 	},
 	{
 		"kyazdani42/nvim-tree.lua",
+		lazy = "VeryLazy",
 		keys = {
 			{ "<C-a>", "<cmd> NvimTreeToggle<CR>" },
 		},
