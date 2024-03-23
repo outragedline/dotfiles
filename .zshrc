@@ -66,9 +66,6 @@ HISTFILE=~/.zsh_history
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="chromium"
-export QT_QPA_PLATFORMTHEME=qt5ct
 
 
 
