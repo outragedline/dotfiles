@@ -85,7 +85,7 @@ plugins = {
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{
 		"numToStr/Comment.nvim",
-		lazy = "VeryLazy",
+		lazy = false,
 		config = function()
 			require("plugins.comment")
 		end,
