@@ -10,9 +10,10 @@ require("nvim-treesitter.configs").setup({
 		"html",
 		"css",
 		"c",
+		"cpp",
 		"rust",
 		"java",
-		"gdscript",
+		"kotlin",
 		"make"
 	},
 

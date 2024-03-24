@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 plugins = {
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
+	{ "nvim-neotest/nvim-nio" },
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -176,11 +177,17 @@ plugins = {
 		end,
 	},
 	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
+	},
+	{
 		"NTBBloodbath/rest.nvim",
+		dependencies = { "luarocks.nvim" },
 		event = "VeryLazy",
 		ft = "http",
 		keys = {
-			{ "<leader>r", "<Plug>RestNvim" },
+			{ "<leader>r", "<cmd>Rest run<cr>" },
 		},
 		config = function()
 			require("plugins.rest")
