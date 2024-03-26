@@ -12,6 +12,8 @@ local servers = {
 local debuggers = {
 	"debugpy",
 	"codelldb",
+	"java_test",
+	"java_debug"
 }
 
 local null_ls = {
