@@ -11,6 +11,7 @@ null_ls.setup({
 		formatting.stylua, --lua
 		formatting.clang_format, -- C/C++
 		formatting.prettier, -- html
+		formatting.npm_groovy_lint,
 
 		-- linters / diagnostics binaries
 		diagnostics.tidy, -- XML

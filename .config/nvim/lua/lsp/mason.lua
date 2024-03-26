@@ -5,16 +5,19 @@ local servers = {
 	"html",
 	"lua_ls",
 	"cssls",
-	"jdtls"
+	"jdtls",
+	"gradle_ls",
 }
 
 local debuggers = {
 	"debugpy",
-	"codelldb"
+	"codelldb",
 }
 
 local null_ls = {
 	"prettier",
+	"stylua",
+	"npm_groovy_lint",
 }
 
 local settings = {

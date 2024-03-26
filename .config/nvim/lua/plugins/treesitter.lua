@@ -13,7 +13,7 @@ require("nvim-treesitter.configs").setup({
 		"cpp",
 		"rust",
 		"java",
-		"kotlin",
+		"groovy",
 		"make"
 	},
 
