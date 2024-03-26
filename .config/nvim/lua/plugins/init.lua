@@ -130,7 +130,6 @@ plugins = {
 	},
 	{
 		"uga-rosa/ccc.nvim",
-		lazy = "VeryLazy",
 		config = function()
 			require("ccc").setup({
 				highlighter = {
