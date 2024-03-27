@@ -14,7 +14,8 @@ require("nvim-treesitter.configs").setup({
 		"rust",
 		"java",
 		"groovy",
-		"make"
+		"make",
+		"kotlin"
 	},
 
 	highlight = {

@@ -7,6 +7,7 @@ local servers = {
 	"cssls",
 	"jdtls",
 	"gradle_ls",
+	"kotlin_language_server"
 }
 
 local debuggers = {
