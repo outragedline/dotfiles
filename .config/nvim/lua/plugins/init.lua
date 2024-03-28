@@ -18,6 +18,7 @@ plugins = {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		lazy = false,
+		priority = 900,
 		config = function()
 			require("plugins.catpuccin")
 		end,
@@ -29,7 +30,7 @@ plugins = {
 		opts = {},
 		config = function()
 			require("plugins.indentline")
-		end
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
@@ -42,12 +43,12 @@ plugins = {
 		"akinsho/bufferline.nvim",
 		lazy = false,
 		keys = {
-			{ "<Tab>",       "<cmd>BufferLineCycleNext<CR>" },
-			{ "<S-Tab>",     "<cmd>BufferLineCyclePrev<CR>" },
-			{ "<leader>bp",  "<cmd>BufferLinePick<CR>" },
+			{ "<Tab>", "<cmd>BufferLineCycleNext<CR>" },
+			{ "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>" },
+			{ "<leader>bp", "<cmd>BufferLinePick<CR>" },
 			{ "<leader>bpc", "<cmd>BufferLinePickClose<CR>" },
-			{ "<C-m><C-n>",  "<cmd> BufferLineMoveNext<CR>" },
-			{ "<C-m><C-p>",  "<cmd> BufferLineMovePrev<CR>" },
+			{ "<C-m><C-n>", "<cmd> BufferLineMoveNext<CR>" },
+			{ "<C-m><C-p>", "<cmd> BufferLineMovePrev<CR>" },
 		},
 		config = function()
 			require("bufferline").setup()
@@ -63,6 +64,7 @@ plugins = {
 	{
 		"famiu/bufdelete.nvim",
 		event = "VeryLazy",
+		lazy = true,
 		keys = {
 			{ "<C-A-d>", "<cmd>Bdelete!<CR>" },
 		},
@@ -101,6 +103,7 @@ plugins = {
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "VeryLazy",
+		lazy = true,
 		keys = {
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
@@ -116,7 +119,8 @@ plugins = {
 	},
 	{
 		"windwp/nvim-autopairs",
-		lazy = "VeryLazy",
+		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			require("plugins.autopairs")
 		end,
@@ -142,10 +146,11 @@ plugins = {
 	{
 		"akinsho/toggleterm.nvim",
 		event = "VeryLazy",
+		lazy = true,
 		keys = {
-			{ mode = "t",          "<C-q>",      [[<C-\><C-n>]] },
-			{ mode = { "n", "t" }, "<A-1>",      "<cmd>ToggleTerm 1<cr>" },
-			{ mode = { "n", "t" }, "<A-2>",      "<cmd>ToggleTerm 2<cr>" },
+			{ mode = "t", "<C-q>", [[<C-\><C-n>]] },
+			{ mode = { "n", "t" }, "<A-1>", "<cmd>ToggleTerm 1<cr>" },
+			{ mode = { "n", "t" }, "<A-2>", "<cmd>ToggleTerm 2<cr>" },
 			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
 			--[[ { mode = { "n", "t" }, "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>" }, ]]
 			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
@@ -156,17 +161,19 @@ plugins = {
 	},
 	{
 		"kelly-lin/ranger.nvim",
-		lazy = "VeryLazy",
+		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			require("plugins.ranger")
 		end,
 		keys = {
-			{ mode = "n", "<C-r><C-a>", "<cmd>lua 		require('ranger-nvim').open(true)<cr>" }
-		}
+			{ mode = "n", "<C-r><C-a>", "<cmd>lua 		require('ranger-nvim').open(true)<cr>" },
+		},
 	},
 	{
 		"potamides/pantran.nvim",
 		event = "VeryLazy",
+		lazy = true,
 		keys = {
 
 			{ "<C-t>", "<cmd>Pantran<CR>" },
@@ -184,6 +191,7 @@ plugins = {
 		"NTBBloodbath/rest.nvim",
 		dependencies = { "luarocks.nvim" },
 		event = "VeryLazy",
+		lazy = true,
 		ft = "http",
 		keys = {
 			{ "<leader>r", "<cmd>Rest run<cr>" },
@@ -194,7 +202,8 @@ plugins = {
 	},
 	{
 		"kyazdani42/nvim-tree.lua",
-		lazy = "VeryLazy",
+		event = "VeryLazy",
+		lazy = true,
 		keys = {
 			{ "<C-a>", "<cmd> NvimTreeToggle<CR>" },
 		},
@@ -204,12 +213,12 @@ plugins = {
 	},
 
 	-- cmp plugins
-	{ "hrsh7th/nvim-cmp" },        -- The completion plugin
-	{ "hrsh7th/cmp-buffer" },      -- buffer completions
-	{ "hrsh7th/cmp-path" },        -- path completions
-	{ "hrsh7th/cmp-cmdline" },     -- cmdline completions
+	{ "hrsh7th/nvim-cmp" }, -- The completion plugin
+	{ "hrsh7th/cmp-buffer" }, -- buffer completions
+	{ "hrsh7th/cmp-path" }, -- path completions
+	{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
 	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
-	{ "hrsh7th/cmp-nvim-lsp" },    -- enable lsp autocomplete with cmp
+	{ "hrsh7th/cmp-nvim-lsp" }, -- enable lsp autocomplete with cmp
 	{ "mfussenegger/nvim-jdtls" },
 
 	-- LSP
@@ -222,6 +231,7 @@ plugins = {
 	{
 		"mfussenegger/nvim-dap",
 		event = "VeryLazy",
+		lazy = true,
 		keys = {
 
 			{ "<leader>dt", "<cmd>DapToggleBreakpoint<cr>" },
@@ -236,6 +246,7 @@ plugins = {
 	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
+		lazy = true,
 		keys = {
 			{ "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>" },
 		},
@@ -247,6 +258,7 @@ plugins = {
 		"mfussenegger/nvim-dap-python",
 		ft = "py",
 		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 		end,
@@ -279,17 +291,20 @@ plugins = {
 	{
 		"tpope/vim-dadbod",
 		event = "VeryLazy",
+		lazy = true,
 	},
 	{
 		"kristijanhusak/vim-dadbod-ui",
 		event = "VeryLazy",
+		lazy = true,
 	},
 	{
-		'rmagatti/auto-session',
+		"rmagatti/auto-session",
 		lazy = false,
+		priority = 1000,
 		config = function()
 			require("plugins.autosession")
-		end
-	}
+		end,
+	},
 }
 require("lazy").setup(plugins, opts)
