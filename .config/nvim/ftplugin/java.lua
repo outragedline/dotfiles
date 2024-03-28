@@ -122,7 +122,7 @@ local config = {
 			format = {
 				enabled = true,
 				settings = {
-					profile = "asdf",
+					profile = "GoogleStyle",
 				},
 			},
 		},
