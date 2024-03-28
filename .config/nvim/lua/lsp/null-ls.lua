@@ -9,9 +9,20 @@ null_ls.setup({
 	sources = {
 		--formatting binaries
 		formatting.stylua, --lua
-		formatting.clang_format, -- C/C++
+		formatting.clang_format.with({
+			filetypes = {
+				"c",
+				"cpp",
+				"cs",
+				"cuda",
+			},
+		}),
 		formatting.prettier, -- html
-		formatting.npm_groovy_lint,
+		formatting.npm_groovy_lint.with({
+			filetypes = {
+				"groovy"
+			}
+		}),
 
 		-- linters / diagnostics binaries
 		diagnostics.tidy, -- XML
