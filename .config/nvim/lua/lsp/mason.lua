@@ -7,14 +7,16 @@ local servers = {
 	"cssls",
 	"jdtls",
 	"gradle_ls",
-	"kotlin_language_server"
+	"kotlin_language_server",
 }
 
 local debuggers = {
+	-- For some reason these java daps dont install, i dont know why yet, but you can install through mason manually
+	-- TODO: fix this somehow, dunno
+	"java-test",
+	"java-debug-adapter",
 	"debugpy",
 	"codelldb",
-	"java_test",
-	"java_debug"
 }
 
 local null_ls = {
