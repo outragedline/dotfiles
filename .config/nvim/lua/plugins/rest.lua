@@ -3,7 +3,7 @@ require('rest-nvim').setup {
 	env_file = ".env",
 	env_pattern = "\\.env$",
 	env_edit_command = "tabedit",
-	encode_url = true,
+	encode_url = false,
 	skip_ssl_verification = false,
 	custom_dynamic_variables = {},
 	logs = {
