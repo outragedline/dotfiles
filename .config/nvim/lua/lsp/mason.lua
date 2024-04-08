@@ -11,11 +11,9 @@ local servers = {
 }
 
 local debuggers = {
-	-- For some reason these java daps dont install, i dont know why yet, but you can install through mason manually
-	-- TODO: fix this somehow, dunno
-	"java-test",
-	"java-debug-adapter",
-	"debugpy",
+	"javadbg",
+	"javatest",
+	"python",
 	"codelldb",
 }
 

@@ -226,8 +226,18 @@ plugins = {
 	{ "nvimtools/none-ls.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "williamboman/mason.nvim" },
-	{ "jayp0521/mason-nvim-dap.nvim" },
-	{ "jayp0521/mason-null-ls.nvim" },
+	{ "jay-babu/mason-nvim-dap.nvim" },
+	{
+		"jay-babu/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"nvimtools/none-ls.nvim",
+		},
+		config = function()
+			require("lsp.null-ls") -- require your null-ls config here (example below)
+		end,
+	},
 	{
 		"mfussenegger/nvim-dap",
 		event = "VeryLazy",
