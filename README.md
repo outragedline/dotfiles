@@ -1,14 +1,13 @@
-# Setting the links with GNU stow
+# These are my dotfiles
 
-Install GNU stow in arch linux
+## How to install?
+
+On archlinux, simply have yay installed and run the following
+
 ```
-sudo pacman -S stow
+git clone https://github.com/outragedline/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+sh .install.sh
 ```
 
-Now copy and paste this in the terminal
-```
-git clone https://github.com/outragedline/dotfiles ~/.dotfiles/
-cd ~/.dotfiles/
-MSYS=winsymlinks:nativestrict
-stow .
-```
+If you dont want everything, you can just pick the configs you want and run the commands in the script manually to install the dependencies.
