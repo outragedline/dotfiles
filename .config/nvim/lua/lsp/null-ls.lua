@@ -9,6 +9,7 @@ null_ls.setup({
 	sources = {
 		--formatting binaries
 		formatting.stylua, --lua
+		formatting.black, --python
 		formatting.clang_format.with({
 			filetypes = {
 				"c",
@@ -20,8 +21,8 @@ null_ls.setup({
 		formatting.prettier, -- html
 		formatting.npm_groovy_lint.with({
 			filetypes = {
-				"groovy"
-			}
+				"groovy",
+			},
 		}),
 
 		-- linters / diagnostics binaries
