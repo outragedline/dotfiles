@@ -317,13 +317,17 @@ plugins = {
 		end,
 	},
 	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
+		"wallpants/github-preview.nvim",
+		cmd = { "GithubPreviewToggle" },
+		opts = {
+		},
+		config = function(_, opts)
+			local gpreview = require("github-preview")
+			gpreview.setup(opts)
+
+			local fns = gpreview.fns
 		end,
-		keys = { { "<leader>mpt", "<cmd>MarkdownPreviewToggle<cr>" } },
+		keys = { { "<leader>mpt", "<cmd>GithubPreviewToggle<cr>" } },
 	},
 }
 require("lazy").setup(plugins, opts)
