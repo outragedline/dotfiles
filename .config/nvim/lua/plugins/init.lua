@@ -316,18 +316,5 @@ plugins = {
 			require("plugins.autosession")
 		end,
 	},
-	{
-		"wallpants/github-preview.nvim",
-		cmd = { "GithubPreviewToggle" },
-		opts = {
-		},
-		config = function(_, opts)
-			local gpreview = require("github-preview")
-			gpreview.setup(opts)
-
-			local fns = gpreview.fns
-		end,
-		keys = { { "<leader>mpt", "<cmd>GithubPreviewToggle<cr>" } },
-	},
 }
 require("lazy").setup(plugins, opts)
