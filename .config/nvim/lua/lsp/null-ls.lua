@@ -18,7 +18,7 @@ null_ls.setup({
 				"cuda",
 			},
 		}),
-		formatting.prettier, -- html
+		formatting.prettier,
 		formatting.npm_groovy_lint.with({
 			filetypes = {
 				"groovy",
