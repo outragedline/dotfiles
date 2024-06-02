@@ -1,309 +1,52 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+do
+    -- Specifies where to install/use rocks.nvim
+    local install_location = vim.fs.joinpath(vim.fn.stdpath("data"), "rocks")
+
+    -- Set up configuration options related to rocks.nvim (recommended to leave as default)
+    local rocks_config = {
+        rocks_path = vim.fs.normalize(install_location),
+        luarocks_binary = vim.fs.joinpath(install_location, "bin", "luarocks"),
+    }
+
+    vim.g.rocks_nvim = rocks_config
+
+    -- Configure the package path (so that plugin code can be found)
+    local luarocks_path = {
+        vim.fs.joinpath(rocks_config.rocks_path, "share", "lua", "5.1", "?.lua"),
+        vim.fs.joinpath(rocks_config.rocks_path, "share", "lua", "5.1", "?", "init.lua"),
+    }
+    package.path = package.path .. ";" .. table.concat(luarocks_path, ";")
+
+    -- Configure the C path (so that e.g. tree-sitter parsers can be found)
+    local luarocks_cpath = {
+        vim.fs.joinpath(rocks_config.rocks_path, "lib", "lua", "5.1", "?.so"),
+        vim.fs.joinpath(rocks_config.rocks_path, "lib64", "lua", "5.1", "?.so"),
+    }
+    package.cpath = package.cpath .. ";" .. table.concat(luarocks_cpath, ";")
+
+    -- Load all installed plugins, including rocks.nvim itself
+    vim.opt.runtimepath:append(vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "rocks.nvim", "*"))
 end
-vim.opt.rtp:prepend(lazypath)
-plugins = {
-	{ "nvim-lua/plenary.nvim" },
-	{ "kyazdani42/nvim-web-devicons" },
-	{ "nvim-neotest/nvim-nio" },
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
-		priority = 900,
-		config = function()
-			require("plugins.catpuccin")
-		end,
-	},
 
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
-		config = function()
-			require("plugins.indentline")
-		end,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		lazy = false,
-		config = function()
-			require("plugins.lualine")
-		end,
-	},
-	{
-		"akinsho/bufferline.nvim",
-		lazy = false,
-		keys = {
-			{ "<Tab>",       "<cmd>BufferLineCycleNext<CR>" },
-			{ "<S-Tab>",     "<cmd>BufferLineCyclePrev<CR>" },
-			{ "<leader>bp",  "<cmd>BufferLinePick<CR>" },
-			{ "<leader>bpc", "<cmd>BufferLinePickClose<CR>" },
-			{ "<C-m><C-n>",  "<cmd> BufferLineMoveNext<CR>" },
-			{ "<C-m><C-p>",  "<cmd> BufferLineMovePrev<CR>" },
-		},
-		config = function()
-			require("bufferline").setup()
-		end,
-	},
-	{
-		"tiagovla/scope.nvim",
-		config = function()
-			-- init.lua
-			require("scope").setup()
-		end,
-	},
-	{
-		"famiu/bufdelete.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<C-A-d>", "<cmd>Bdelete!<CR>" },
-		},
-	},
-	{
-		"goolord/alpha-nvim",
-		lazy = false,
-		config = function()
-			require("plugins.alpha")
-		end,
-	},
+-- If rocks.nvim is not installed then install it!
+if not pcall(require, "rocks") then
+    local rocks_location = vim.fs.joinpath(vim.fn.stdpath("cache"), "rocks.nvim")
 
-	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		config = function()
-			require("plugins.treesitter")
-		end,
-	},
-	{ "hiphish/rainbow-delimiters.nvim" },
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{
-		"numToStr/Comment.nvim",
-		lazy = false,
-		config = function()
-			require("plugins.comment")
-		end,
-	},
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("plugins.notify")
-		end,
-	},
+    if not vim.uv.fs_stat(rocks_location) then
+        -- Pull down rocks.nvim
+        vim.fn.system({
+            "git",
+            "clone",
+            "--filter=blob:none",
+            "https://github.com/nvim-neorocks/rocks.nvim",
+            rocks_location,
+        })
+    end
 
-	{
-		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
-			{ "<leader>fr", "<cmd>Telescope oldfiles<cr>" },
-			{ "<leader>fp", "<cmd>Telescope projects<cr>" },
-			{ "<leader>fk", "<cmd>Telescope keymaps<cr>" },
-		},
-		config = function()
-			require("plugins.telescope")
-		end,
-	},
-	{
-		"windwp/nvim-autopairs",
-		event = "VeryLazy",
-		lazy = true,
-		config = function()
-			require("plugins.autopairs")
-		end,
-	},
-	{
-		"ahmedkhalf/project.nvim",
-		lazy = false,
-		config = function()
-			require("plugins.project")
-		end,
-	},
-	{
-		"uga-rosa/ccc.nvim",
-		config = function()
-			require("ccc").setup({
-				highlighter = {
-					auto_enable = true,
-					lsp = true,
-				},
-			})
-		end,
-	},
-	{
-		"akinsho/toggleterm.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ mode = "t",          "<C-q>",      [[<C-\><C-n>]] },
-			{ mode = { "n", "t" }, "<A-1>",      "<cmd>ToggleTerm 1<cr>" },
-			{ mode = { "n", "t" }, "<A-2>",      "<cmd>ToggleTerm 2<cr>" },
-			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
-			--[[ { mode = { "n", "t" }, "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>" }, ]]
-			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
-		},
-		config = function()
-			require("plugins.toggleterm")
-		end,
-	},
-	{
-		"kelly-lin/ranger.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		config = function()
-			require("plugins.ranger")
-		end,
-		keys = {
-			{ mode = "n", "<C-r><C-a>", "<cmd>lua 		require('ranger-nvim').open(true)<cr>" },
-		},
-	},
-	{
-		"potamides/pantran.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
+    -- If the clone was successful then source the bootstrapping script
+    assert(vim.v.shell_error == 0, "rocks.nvim installation failed. Try exiting and re-entering Neovim!")
 
-			{ "<C-t>", "<cmd>Pantran<CR>" },
-		},
-		config = function()
-			require("plugins.pantran")
-		end,
-	},
-	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-	},
-	{
-		"NTBBloodbath/rest.nvim",
-		dependencies = { "luarocks.nvim" },
-		event = "VeryLazy",
-		lazy = true,
-		ft = "http",
-		keys = {
-			{ "<leader>r", "<cmd>Rest run<cr>" },
-		},
-		config = function()
-			require("plugins.rest")
-		end,
-	},
-	{
-		"kyazdani42/nvim-tree.lua",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<C-a>", "<cmd> NvimTreeToggle<CR>" },
-		},
-		config = function()
-			require("plugins.nvimtree")
-		end,
-	},
+    vim.cmd.source(vim.fs.joinpath(rocks_location, "bootstrap.lua"))
 
-	-- cmp plugins
-	{ "hrsh7th/nvim-cmp" },        -- The completion plugin
-	{ "hrsh7th/cmp-buffer" },      -- buffer completions
-	{ "hrsh7th/cmp-path" },        -- path completions
-	{ "hrsh7th/cmp-cmdline" },     -- cmdline completions
-	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
-	{ "hrsh7th/cmp-nvim-lsp" },    -- enable lsp autocomplete with cmp
-	{ "mfussenegger/nvim-jdtls" },
-
-	-- LSP
-	{ "neovim/nvim-lspconfig" },
-	{ "nvimtools/none-ls.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "williamboman/mason.nvim" },
-	{ "jay-babu/mason-nvim-dap.nvim" },
-	{
-		"jay-babu/mason-null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"williamboman/mason.nvim",
-			"nvimtools/none-ls.nvim",
-		},
-		config = function()
-			require("lsp.null-ls") -- require your null-ls config here (example below)
-		end,
-	},
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-
-			{ "<leader>dt", "<cmd>DapToggleBreakpoint<cr>" },
-			{ "<leader>dc", "<cmd>DapContinue<cr>" },
-			{ "<leader>di", "<cmd>DapStepInto<cr>" },
-			{ "<leader>do", "<cmd>DapStepOver<cr>" },
-		},
-		config = function()
-			require("plugins.dap")
-		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>" },
-		},
-		config = function()
-			require("plugins.dapui")
-		end,
-	},
-	{
-		"mfussenegger/nvim-dap-python",
-		ft = "py",
-		event = "VeryLazy",
-		lazy = true,
-		config = function()
-			require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
-		end,
-	},
-
-	{
-		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		-- install jsregexp (optional!).
-		build = "make install_jsregexp",
-	},
-	{ "rafamadriz/friendly-snippets" },
-
-	-- Git
-	{
-		"lewis6991/gitsigns.nvim",
-		lazy = false,
-		keys = {
-
-			{ "<leader>gs", "<cmd> Gitsigns show<CR>" },
-			{ "<leader>gt", "<cmd> Gitsigns toggle_deleted<CR>" },
-			{ "<leader>gd", "<cmd> Gitsigns diffthis<CR>" },
-		},
-		config = function()
-			require("plugins.git")
-		end,
-	},
-	{
-		"rmagatti/auto-session",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("plugins.autosession")
-		end,
-	},
-}
-require("lazy").setup(plugins, opts)
+    vim.fn.delete(rocks_location, "rf")
+end
