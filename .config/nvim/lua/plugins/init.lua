@@ -297,17 +297,6 @@ plugins = {
 			require("plugins.git")
 		end,
 	},
-
-	{
-		"tpope/vim-dadbod",
-		event = "VeryLazy",
-		lazy = true,
-	},
-	{
-		"kristijanhusak/vim-dadbod-ui",
-		event = "VeryLazy",
-		lazy = true,
-	},
 	{
 		"rmagatti/auto-session",
 		lazy = false,
