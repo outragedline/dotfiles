@@ -1,5 +1,6 @@
 local servers = {
 	"pyright",
+	"ruff",
 	"clangd",
 	"tsserver",
 	"html",

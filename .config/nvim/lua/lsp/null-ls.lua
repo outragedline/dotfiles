@@ -9,7 +9,6 @@ null_ls.setup({
 	sources = {
 		--formatting binaries
 		formatting.stylua, --lua
-		formatting.black, --python
 		formatting.clang_format.with({
 			filetypes = {
 				"c",
