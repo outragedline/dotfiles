@@ -15,7 +15,9 @@ require("nvim-treesitter.configs").setup({
 		"java",
 		"groovy",
 		"make",
-		"kotlin"
+		"kotlin",
+		"meson",
+		"php",
 	},
 
 	highlight = {

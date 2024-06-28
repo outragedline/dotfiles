@@ -8,7 +8,8 @@ local servers = {
 	"cssls",
 	"jdtls",
 	"gradle_ls",
-	"kotlin_language_server",
+	"mesonlsp",
+	"phpactor",
 }
 
 local debuggers = {
@@ -22,6 +23,7 @@ local null_ls = {
 	"prettier",
 	"stylua",
 	"npm_groovy_lint",
+	"pint",
 }
 
 local settings = {

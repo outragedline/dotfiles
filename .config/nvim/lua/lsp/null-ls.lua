@@ -23,6 +23,7 @@ null_ls.setup({
 				"groovy",
 			},
 		}),
+		formatting.pint, --php
 
 		-- linters / diagnostics binaries
 		diagnostics.tidy, -- XML
