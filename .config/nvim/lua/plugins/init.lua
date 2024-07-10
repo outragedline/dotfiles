@@ -183,24 +183,16 @@ plugins = {
 		end,
 	},
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-		opts = {
-			rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
 		},
 	},
 	{
-		"NTBBloodbath/rest.nvim",
-		dependencies = { "luarocks.nvim" },
-		event = "VeryLazy",
-		lazy = true,
-		ft = "http",
+		"mistweaverco/kulala.nvim",
 		keys = {
-			{ "<leader>r", "<cmd>Rest run<cr>" },
+			{ "<leader>rr",  "<cmd>lua require('kulala').run()<cr>" },
+			{ "<leader>rt", "<cmd>lua require('kulala').toggle_view()<cr>" },
 		},
 		config = function()
-			require("plugins.rest")
+			require("plugins.kulala")
 		end,
 	},
 	{

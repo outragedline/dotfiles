@@ -54,3 +54,9 @@ set.writebackup = false
 set.swapfile = false
 set.backup = false
 -- }
+
+vim.filetype.add({
+	extension = {
+		["http"] = "http",
+	},
+})
