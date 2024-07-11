@@ -191,10 +191,7 @@ plugins = {
 	},
 	{
 		"mistweaverco/kulala.nvim",
-		keys = {
-			{ "<leader>rr",  "<cmd>lua require('kulala').run()<cr>" },
-			{ "<leader>rt", "<cmd>lua require('kulala').toggle_view()<cr>" },
-		},
+		-- Keys defined on ftplugin/http.lua
 		config = function()
 			require("plugins.kulala")
 		end,

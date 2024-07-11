@@ -82,7 +82,7 @@ return {
 		List = "",
 		SignIn = "",
 		SignOut = "",
-		Check = "",
+		Check = "󰄬",
 		Fire = "",
 		Note = "",
 		BookMark = "",
@@ -91,6 +91,7 @@ return {
 		Table = "",
 		Calendar = "",
 		CloudDownload = "",
+		time="⏳"
 	},
 	diagnostics = {
 		Error = "",

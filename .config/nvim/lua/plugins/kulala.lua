@@ -1,3 +1,4 @@
+local icons = require("icons")
 require("kulala").setup({
 	-- default_view, body or headers
 	default_view = "body",
@@ -15,10 +16,10 @@ require("kulala").setup({
 	-- default icons
 	icons = {
 		inlay = {
-			loading = "⏳",
-			done = "✅ ",
+			loading = icons.ui.time,
+			done = icons.ui.Check,
+			error = icons.diagnostics.Error,
 		},
-		lualine = "🐼",
 	},
 	-- additional cURL options
 	-- e.g. { "--insecure", "-A", "Mozilla/5.0" }
