@@ -190,6 +190,19 @@ plugins = {
 		},
 	},
 	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
+	},
+	{
+		"outragedline/rest.nvim",
+		ft = "http",
+		dependencies = { "luarocks.nvim" },
+		config = function()
+			require("rest-nvim").setup()
+		end,
+	},
+	{
 		"mistweaverco/kulala.nvim",
 		-- Keys defined on ftplugin/http.lua
 		config = function()
