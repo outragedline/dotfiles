@@ -11,8 +11,7 @@ If you like my configs, i recommend you to pick what you want and add to your ow
 On archlinux, simply have yay and chezmoi installed and run the following
 
 ```
-chezmoi init https://github.com/outragedline/dotfiles.git
-chezmoi apply
+chezmoi init --apply https://github.com/outragedline/dotfiles.git
 chezmoi cd
 ./.install.sh
 ```
