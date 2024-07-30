@@ -5,8 +5,9 @@
 	helper =
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = outragedline
-	email = outragedline@proton.me
+	name = {{ .user.git.name }}
+	email = {{ .user.git.email }}
+	signingkey = {{ .user.git.signingkey}}
 [core]
 	editor = nvim
 [filter "lfs"]
