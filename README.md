@@ -8,12 +8,13 @@ If you like my configs, i recommend you to pick what you want and add to your ow
 
 ## How to install?
 
-On archlinux, simply have yay installed and run the following
+On archlinux, simply have yay and chezmoi installed and run the following
 
 ```
-git clone https://github.com/outragedline/dotfiles ~/.dotfiles
-cd ~/.dotfiles
-sh .install.sh
+chezmoi init https://github.com/outragedline/dotfiles.git
+chezmoi apply
+chezmoi cd
+./.install.sh
 ```
 
 If you dont want everything, you can just pick the configs you want and run the commands in the script manually to install the dependencies.
