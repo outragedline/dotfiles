@@ -6,6 +6,8 @@ require("auto-session").setup({
 	auto_session_enable_last_session = false,
 	auto_restore_enabled = false,
 	auto_save_enabled = true,
+	pre_save_cmds = { "ScopeSaveState" },
+	post_restore_cmds = { "ScopeLoadState" },
 
 	cwd_change_handling = {
 		pre_cwd_changed_hook = nil,      -- already the default, no need to specify like this, only here as an example

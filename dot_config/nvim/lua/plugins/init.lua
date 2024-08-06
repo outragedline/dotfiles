@@ -57,7 +57,11 @@ plugins = {
 	{
 		"tiagovla/scope.nvim",
 		config = function()
-			-- init.lua
+			vim.opt.sessionoptions = {
+				"buffers",
+				"tabpages",
+				"globals",
+			}
 			require("scope").setup()
 		end,
 	},
