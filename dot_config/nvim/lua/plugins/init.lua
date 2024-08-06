@@ -199,14 +199,6 @@ plugins = {
 		config = true,
 	},
 	{
-		"outragedline/rest.nvim",
-		ft = "http",
-		dependencies = { "luarocks.nvim" },
-		config = function()
-			require("rest-nvim").setup()
-		end,
-	},
-	{
 		"mistweaverco/kulala.nvim",
 		-- Keys defined on ftplugin/http.lua
 		config = function()
