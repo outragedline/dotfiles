@@ -1,0 +1,28 @@
+#!/bin/sh
+
+
+{{ if eq "true" .install.installZsh }}
+	yay -S {{  .packages.yay.zsh | join " " }} --noconfirm
+	zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --keep
+{{end}}
+
+{{ if eq "true" .install.installNvim }}
+	yay -S {{  .packages.yay.nvim | join " " }} --noconfirm
+	sudo npm i -g {{ .packages.npm.nvim | join " "}}
+{{end}}
+
+{{ if eq "true" .install.installHypr }}
+	yay -S {{  .packages.yay.hypr | join " " }} --noconfirm
+{{end}}
+
+{{ if eq "true" .install.installFonts }}
+	yay -S {{  .packages.yay.fonts | join " " }} --noconfirm
+{{end}}
+
+{{ if eq "true" .install.installThemes }}
+	yay -S {{  .packages.yay.themes | join " " }} --noconfirm
+{{end}}
+
+{{ if eq "true" .install.installApps }}
+	yay -S {{  .packages.yay.apps | join " " }} --noconfirm
+{{end}}

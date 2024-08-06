@@ -1,0 +1,82 @@
+packages:
+  yay:
+    zsh:
+      - "zsh"
+      - "btop"
+      - "ranger"
+      - "lazygit"
+      - "github-cli"
+      - "dust"
+      - "bat"
+
+    nvim:
+      - "neovim"
+      - "nodejs"
+      - "python3"
+      - "python-pip"
+      - "ripgrep"
+      - "fd"
+      - "lua"
+      - "gcc"
+      - "npm"
+      - "unzip"
+      - "tidy"
+      - "wget"
+      - "lldb"
+      - "clang"
+      - "python-pynvim"
+      - "bear"
+
+    hypr:
+      - "hyprland"
+      - "xdg-desktop-portal-hyprland"
+      - "grimblast-git"
+      - "waybar"
+      - "rofi-wayland"
+      - "pavucontrol"
+      - "nwg-look"
+      - "alacritty"
+      - "grim"
+      - "slurp"
+      - "pipewire"
+      - "pipewire-pulse"
+      - "wireplumber"
+      - "wl-clipboard"
+      - "pamixer"
+      - "dunst"
+      - "libnotify"
+      - "blueberry"
+      - "brightnessctl"
+      - "hypridle"
+      - "waypaper"
+      - "gammastep"
+      - "swaybg"
+
+    fonts:
+      - "ttf-jetbrains-mono-nerd"
+      - "ttf-noto-nerd"
+      - "noto-fonts-emoji"
+      - "noto-fonts-extra"
+
+    themes:
+      - "catppuccin-gtk-theme-mocha"
+      - "kvantum"
+      - "catppuccin-cursors-mocha"
+
+    apps:
+      - "zathura"
+      - "zathura-pdf-mupdf"
+      - "qbittorrent"
+      - "64gram-desktop-bin"
+      - "firefox"
+      - "mpv"
+      - "viewnior"
+      - "thunderbird"
+      - "gimp"
+      - "syncthing"
+      - "obs-studio"
+      - "anytype-bin"
+
+  npm:
+    nvim:
+      - "neovim"

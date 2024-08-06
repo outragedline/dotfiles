@@ -10,10 +10,6 @@ If you like my configs, i recommend you to pick what you want and add to your ow
 
 On archlinux, simply have yay and chezmoi installed and run the following
 
-```
+```sh
 chezmoi init --apply https://github.com/outragedline/dotfiles.git
-chezmoi cd
-./.install.sh
 ```
-
-If you dont want everything, you can just pick the configs you want and run the commands in the script manually to install the dependencies.
