@@ -24,8 +24,12 @@ null_ls.setup({
 			},
 		}),
 		formatting.pint, --php
+		formatting.sqlfluff.with({
+			extra_args = { "--config", vim.fn.getcwd() .. "/.sqlfluff" },
+		}),
 
 		-- linters / diagnostics binaries
 		diagnostics.tidy, -- XML
+		diagnostics.sqlfluff,
 	},
 })

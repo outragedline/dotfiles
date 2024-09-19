@@ -24,6 +24,7 @@ local null_ls = {
 	"stylua",
 	"npm_groovy_lint",
 	"pint",
+	"sqlfluff",
 }
 
 local settings = {

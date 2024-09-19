@@ -18,6 +18,7 @@ require("nvim-treesitter.configs").setup({
 		"kotlin",
 		"meson",
 		"php",
+		"sql"
 	},
 
 	highlight = {
