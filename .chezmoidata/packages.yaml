@@ -75,7 +75,6 @@ packages:
       - "gimp"
       - "syncthing"
       - "obs-studio"
-      - "anytype-bin"
 
   npm:
     nvim:
