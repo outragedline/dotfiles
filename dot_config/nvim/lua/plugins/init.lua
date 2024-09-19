@@ -228,7 +228,12 @@ plugins = {
 	{ "hrsh7th/cmp-cmdline" },     -- cmdline completions
 	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 	{ "hrsh7th/cmp-nvim-lsp" },    -- enable lsp autocomplete with cmp
-	{ "mfussenegger/nvim-jdtls" },
+	{
+		"mfussenegger/nvim-jdtls",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+	},
 
 	-- LSP
 	{ "neovim/nvim-lspconfig" },

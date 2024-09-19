@@ -63,3 +63,13 @@ dap.configurations.python = {
 
 dap.configurations.cpp = dap.configurations.c
 dap.configurations.rust = dap.configurations.c
+
+dap.configurations.java = {
+	{
+		type = "java",
+		request = "attach",
+		name = "Debug (Attach) - Remote",
+		hostName = "127.0.0.1",
+		port = 5005,
+	},
+}
