@@ -1,4 +1,4 @@
-require('project_nvim').setup({
+require("project_nvim").setup({
 	active = true,
 	on_config_done = nil,
 
@@ -32,4 +32,4 @@ require('project_nvim').setup({
 	datapath = vim.fn.stdpath("data"),
 })
 
-require('telescope').load_extension("projects")
+require("telescope").load_extension("projects")

@@ -1,4 +1,4 @@
-require('toggleterm').setup({
+require("toggleterm").setup({
 	size = 10,
 	hide_numbers = true,
 	shade_filetypes = {},

@@ -14,5 +14,5 @@ ranger_nvim.setup({
 		width = 1,
 		x = 0.5,
 		y = 0.5,
-	}
+	},
 })

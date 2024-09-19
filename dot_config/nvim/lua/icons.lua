@@ -91,7 +91,7 @@ return {
 		Table = "",
 		Calendar = "",
 		CloudDownload = "",
-		time="⏳"
+		time = "⏳",
 	},
 	diagnostics = {
 		Error = "",

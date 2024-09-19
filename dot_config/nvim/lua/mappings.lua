@@ -43,10 +43,10 @@ keymap("n", "<leader>ch", "<cmd>noh<cr>", opts)
 
 keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
 
-
 -- move around tabs
 keymap("n", "<A-Tab>", "<cmd>tabnext<CR>", fopts)
---[[ keymap("n", "<S-A-Tab>", "<cmd>tabprevious<CR>", fopts) ]] -- for some reason this is not working
+--[[ keymap("n", "<S-A-Tab>", "<cmd>tabprevious<CR>", fopts) ]]
+-- for some reason this is not working
 
 -- create new tab
 keymap("n", "<leader>tn", "<cmd> tabnew<CR>", opts)

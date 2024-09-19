@@ -1,4 +1,4 @@
-require('rest-nvim').setup {
+require("rest-nvim").setup({
 	client = "curl",
 	env_file = ".env",
 	env_pattern = "\\.env$",
@@ -28,7 +28,7 @@ require('rest-nvim').setup {
 				enable = true,
 				---@see https://curl.se/libcurl/c/curl_easy_getinfo.html
 				stats = {
-					{ "total_time",      title = "Time taken:" },
+					{ "total_time", title = "Time taken:" },
 					{ "size_download_t", title = "Download size:" },
 				},
 			},
@@ -38,16 +38,22 @@ require('rest-nvim').setup {
 					if vim.fn.executable("tidy") == 0 then
 						return body, { found = false, name = "tidy" }
 					end
-					local fmt_body = vim.fn.system({
-						"tidy",
-						"-i",
-						"-q",
-						"--tidy-mark", "no",
-						"--show-body-only", "auto",
-						"--show-errors", "0",
-						"--show-warnings", "0",
-						"-",
-					}, body):gsub("\n$", "")
+					local fmt_body = vim.fn
+						.system({
+							"tidy",
+							"-i",
+							"-q",
+							"--tidy-mark",
+							"no",
+							"--show-body-only",
+							"auto",
+							"--show-errors",
+							"0",
+							"--show-warnings",
+							"0",
+							"-",
+						}, body)
+						:gsub("\n$", "")
 
 					return fmt_body, { found = true, name = "tidy" }
 				end,
@@ -73,4 +79,4 @@ require('rest-nvim').setup {
 	---```
 	---@see vim.keymap.set
 	keybinds = {},
-}
+})

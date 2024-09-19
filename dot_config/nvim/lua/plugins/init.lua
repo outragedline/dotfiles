@@ -43,12 +43,12 @@ plugins = {
 		"akinsho/bufferline.nvim",
 		lazy = false,
 		keys = {
-			{ "<Tab>",       "<cmd>BufferLineCycleNext<CR>" },
-			{ "<S-Tab>",     "<cmd>BufferLineCyclePrev<CR>" },
-			{ "<leader>bp",  "<cmd>BufferLinePick<CR>" },
+			{ "<Tab>", "<cmd>BufferLineCycleNext<CR>" },
+			{ "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>" },
+			{ "<leader>bp", "<cmd>BufferLinePick<CR>" },
 			{ "<leader>bpc", "<cmd>BufferLinePickClose<CR>" },
-			{ "<C-m><C-n>",  "<cmd> BufferLineMoveNext<CR>" },
-			{ "<C-m><C-p>",  "<cmd> BufferLineMovePrev<CR>" },
+			{ "<C-m><C-n>", "<cmd> BufferLineMoveNext<CR>" },
+			{ "<C-m><C-p>", "<cmd> BufferLineMovePrev<CR>" },
 		},
 		config = function()
 			require("bufferline").setup()
@@ -152,9 +152,9 @@ plugins = {
 		event = "VeryLazy",
 		lazy = true,
 		keys = {
-			{ mode = "t",          "<C-q>",      [[<C-\><C-n>]] },
-			{ mode = { "n", "t" }, "<A-1>",      "<cmd>ToggleTerm 1<cr>" },
-			{ mode = { "n", "t" }, "<A-2>",      "<cmd>ToggleTerm 2<cr>" },
+			{ mode = "t", "<C-q>", [[<C-\><C-n>]] },
+			{ mode = { "n", "t" }, "<A-1>", "<cmd>ToggleTerm 1<cr>" },
+			{ mode = { "n", "t" }, "<A-2>", "<cmd>ToggleTerm 2<cr>" },
 			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
 			--[[ { mode = { "n", "t" }, "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>" }, ]]
 			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
@@ -222,12 +222,12 @@ plugins = {
 	},
 
 	-- cmp plugins
-	{ "hrsh7th/nvim-cmp" },        -- The completion plugin
-	{ "hrsh7th/cmp-buffer" },      -- buffer completions
-	{ "hrsh7th/cmp-path" },        -- path completions
-	{ "hrsh7th/cmp-cmdline" },     -- cmdline completions
+	{ "hrsh7th/nvim-cmp" }, -- The completion plugin
+	{ "hrsh7th/cmp-buffer" }, -- buffer completions
+	{ "hrsh7th/cmp-path" }, -- path completions
+	{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
 	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
-	{ "hrsh7th/cmp-nvim-lsp" },    -- enable lsp autocomplete with cmp
+	{ "hrsh7th/cmp-nvim-lsp" }, -- enable lsp autocomplete with cmp
 	{
 		"mfussenegger/nvim-jdtls",
 		dependencies = {
