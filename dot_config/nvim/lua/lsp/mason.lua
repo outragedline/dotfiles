@@ -2,7 +2,7 @@ local servers = {
 	"pyright",
 	"ruff",
 	"clangd",
-	"tsserver",
+	"ts_ls",
 	"html",
 	"lua_ls",
 	"cssls",
