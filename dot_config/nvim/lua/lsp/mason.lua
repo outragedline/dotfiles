@@ -17,6 +17,7 @@ local debuggers = {
 	"javatest",
 	"python",
 	"codelldb",
+	"php-debug-adapter"
 }
 
 local null_ls = {
