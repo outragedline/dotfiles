@@ -114,14 +114,7 @@ plugins = {
 			require("plugins.telescope")
 		end,
 	},
-	{
-		"windwp/nvim-autopairs",
-		event = "VeryLazy",
-		lazy = true,
-		config = function()
-			require("plugins.autopairs")
-		end,
-	},
+	require("plugins.autopairs"),
 	{
 		"ahmedkhalf/project.nvim",
 		lazy = false,
