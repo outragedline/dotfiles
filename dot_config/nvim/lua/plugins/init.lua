@@ -111,17 +111,7 @@ plugins = {
 			require("plugins.toggleterm")
 		end,
 	},
-	{
-		"kelly-lin/ranger.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		config = function()
-			require("plugins.ranger")
-		end,
-		keys = {
-			{ mode = "n", "<C-r><C-a>", "<cmd>lua 		require('ranger-nvim').open(true)<cr>" },
-		},
-	},
+	require("plugins.ranger"),
 	require("plugins.pantran"),
 	{
 		"OXY2DEV/markview.nvim",
