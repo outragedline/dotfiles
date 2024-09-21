@@ -238,20 +238,7 @@ plugins = {
 	},
 	{ "rafamadriz/friendly-snippets" },
 
-	-- Git
-	{
-		"lewis6991/gitsigns.nvim",
-		lazy = false,
-		keys = {
-
-			{ "<leader>gs", "<cmd> Gitsigns show<CR>" },
-			{ "<leader>gt", "<cmd> Gitsigns toggle_deleted<CR>" },
-			{ "<leader>gd", "<cmd> Gitsigns diffthis<CR>" },
-		},
-		config = function()
-			require("plugins.git")
-		end,
-	},
+	require("plugins.git"),
 	require("plugins.autosession"),
 }
 require("lazy").setup(plugins, opts)
