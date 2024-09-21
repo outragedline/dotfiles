@@ -11,14 +11,49 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 plugins = {
-	{ "nvim-lua/plenary.nvim" },
-	{ "kyazdani42/nvim-web-devicons" },
-	{ "nvim-neotest/nvim-nio" },
-	require("plugins.catpuccin"),
+	"nvim-lua/plenary.nvim",
+	"kyazdani42/nvim-web-devicons",
+	"nvim-neotest/nvim-nio",
+	"hiphish/rainbow-delimiters.nvim",
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"saadparwaiz1/cmp_luasnip",
+	"hrsh7th/cmp-nvim-lsp",
+	"neovim/nvim-lspconfig",
+	"nvimtools/none-ls.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"williamboman/mason.nvim",
+	"jay-babu/mason-nvim-dap.nvim",
+	"rafamadriz/friendly-snippets",
 
+	require("plugins.catpuccin"),
 	require("plugins.indentline"),
 	require("plugins.lualine"),
 	require("plugins.bufferline"),
+	require("plugins.alpha"),
+	require("plugins.treesitter"),
+	require("plugins.comment"),
+	require("plugins.notify"),
+	require("plugins.telescope"),
+	require("plugins.autopairs"),
+	require("plugins.project"),
+	require("plugins.toggleterm"),
+	require("plugins.ranger"),
+	require("plugins.pantran"),
+	require("plugins.kulala"),
+	require("plugins.nvimtree"),
+
+	-- Found no better way of doing that
+	require("plugins.dap").dap,
+	require("plugins.dap").dapui,
+	require("plugins.dap").dap_python,
+
+	require("plugins.git"),
+	require("plugins.autosession"),
+
 	{
 		"tiagovla/scope.nvim",
 		config = function()
@@ -38,16 +73,6 @@ plugins = {
 			{ "<C-A-d>", "<cmd>Bdelete!<CR>" },
 		},
 	},
-	require("plugins.alpha"),
-	require("plugins.treesitter"),
-	{ "hiphish/rainbow-delimiters.nvim" },
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	require("plugins.comment"),
-	require("plugins.notify"),
-
-	require("plugins.telescope"),
-	require("plugins.autopairs"),
-	require("plugins.project"),
 	{
 		"uga-rosa/ccc.nvim",
 		config = function()
@@ -59,9 +84,6 @@ plugins = {
 			})
 		end,
 	},
-	require("plugins.toggleterm"),
-	require("plugins.ranger"),
-	require("plugins.pantran"),
 	{
 		"OXY2DEV/markview.nvim",
 		dependencies = {
@@ -74,29 +96,12 @@ plugins = {
 		priority = 1000,
 		config = true,
 	},
-	require("plugins.kulala"),
-	require("plugins.nvimtree"),
-
-	-- cmp plugins
-	{ "hrsh7th/nvim-cmp" }, -- The completion plugin
-	{ "hrsh7th/cmp-buffer" }, -- buffer completions
-	{ "hrsh7th/cmp-path" }, -- path completions
-	{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
-	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
-	{ "hrsh7th/cmp-nvim-lsp" }, -- enable lsp autocomplete with cmp
 	{
 		"mfussenegger/nvim-jdtls",
 		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
 	},
-
-	-- LSP
-	{ "neovim/nvim-lspconfig" },
-	{ "nvimtools/none-ls.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "williamboman/mason.nvim" },
-	{ "jay-babu/mason-nvim-dap.nvim" },
 	{
 		"jay-babu/mason-null-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -108,21 +113,10 @@ plugins = {
 			require("lsp.null-ls") -- require your null-ls config here (example below)
 		end,
 	},
-
-	-- Found no better way of doing that
-	require("plugins.dap").dap,
-	require("plugins.dap").dapui,
-	require("plugins.dap").dap_python,
 	{
 		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		-- install jsregexp (optional!).
+		version = "v2.*",
 		build = "make install_jsregexp",
 	},
-	{ "rafamadriz/friendly-snippets" },
-
-	require("plugins.git"),
-	require("plugins.autosession"),
 }
 require("lazy").setup(plugins, opts)
