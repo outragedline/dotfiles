@@ -128,18 +128,7 @@ plugins = {
 			{ mode = "n", "<C-r><C-a>", "<cmd>lua 		require('ranger-nvim').open(true)<cr>" },
 		},
 	},
-	{
-		"potamides/pantran.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-
-			{ "<C-t>", "<cmd>Pantran<CR>" },
-		},
-		config = function()
-			require("plugins.pantran")
-		end,
-	},
+	require("plugins.pantran"),
 	{
 		"OXY2DEV/markview.nvim",
 		dependencies = {
