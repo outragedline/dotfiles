@@ -63,12 +63,7 @@ plugins = {
 	{ "hiphish/rainbow-delimiters.nvim" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	require("plugins.comment"),
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("plugins.notify")
-		end,
-	},
+	require("plugins.notify"),
 
 	{
 		"nvim-telescope/telescope.nvim",
