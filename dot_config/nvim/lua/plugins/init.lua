@@ -14,15 +14,7 @@ plugins = {
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{ "nvim-neotest/nvim-nio" },
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
-		priority = 900,
-		config = function()
-			require("plugins.catpuccin")
-		end,
-	},
+	require("plugins.catpuccin"),
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
