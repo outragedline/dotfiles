@@ -75,13 +75,7 @@ plugins = {
 	},
 	{ "hiphish/rainbow-delimiters.nvim" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{
-		"numToStr/Comment.nvim",
-		lazy = false,
-		config = function()
-			require("plugins.comment")
-		end,
-	},
+	require("plugins.comment"),
 	{
 		"rcarriga/nvim-notify",
 		config = function()
