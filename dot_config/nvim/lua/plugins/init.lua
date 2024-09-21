@@ -73,14 +73,7 @@ plugins = {
 			{ "<C-A-d>", "<cmd>Bdelete!<CR>" },
 		},
 	},
-	{
-		"goolord/alpha-nvim",
-		lazy = false,
-		config = function()
-			require("plugins.alpha")
-		end,
-	},
-
+	require("plugins.alpha"),
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
