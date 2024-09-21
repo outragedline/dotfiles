@@ -53,13 +53,7 @@ plugins = {
 		},
 	},
 	require("plugins.alpha"),
-	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		config = function()
-			require("plugins.treesitter")
-		end,
-	},
+	require("plugins.treesitter"),
 	{ "hiphish/rainbow-delimiters.nvim" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	require("plugins.comment"),
