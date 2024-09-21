@@ -17,13 +17,7 @@ plugins = {
 	require("plugins.catpuccin"),
 
 	require("plugins.indentline"),
-	{
-		"nvim-lualine/lualine.nvim",
-		lazy = false,
-		config = function()
-			require("plugins.lualine")
-		end,
-	},
+	require("plugins.lualine"),
 	{
 		"akinsho/bufferline.nvim",
 		lazy = false,
