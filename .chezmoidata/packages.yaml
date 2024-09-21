@@ -26,6 +26,7 @@ packages:
       - "clang"
       - "python-pynvim"
       - "bear"
+      - "rust-analyzer"
 
     hypr:
       - "hyprland"

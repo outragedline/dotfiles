@@ -1,0 +1,25 @@
+return {
+	"mrcjkb/rustaceanvim",
+	version = "^5",
+	lazy = false,
+	config = function()
+		vim.g.rustaceanvim = {
+			tools = {},
+			server = {
+				on_attach = function(client, bufnr)
+					require("lsp.handlers").on_attach(client, bufnr)
+				end,
+				default_settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
+						procMacro = {
+							enabled = true,
+						},
+					},
+				},
+			},
+		}
+	end,
+}

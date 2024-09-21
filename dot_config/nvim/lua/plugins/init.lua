@@ -43,6 +43,7 @@ plugins = {
 	require("plugins.autosession"),
 	require("lsp.null-ls"),
 
+	require("plugins.rustacean"),
 	{
 		"tiagovla/scope.nvim",
 		config = function()
