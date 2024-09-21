@@ -53,6 +53,7 @@ plugins = {
 
 	require("plugins.git"),
 	require("plugins.autosession"),
+	require("lsp.null-ls"),
 
 	{
 		"tiagovla/scope.nvim",
@@ -101,17 +102,6 @@ plugins = {
 		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
-	},
-	{
-		"jay-babu/mason-null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"williamboman/mason.nvim",
-			"nvimtools/none-ls.nvim",
-		},
-		config = function()
-			require("lsp.null-ls") -- require your null-ls config here (example below)
-		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",
