@@ -163,17 +163,7 @@ plugins = {
 		priority = 1000,
 		config = true,
 	},
-	{
-		"mistweaverco/kulala.nvim",
-		-- Most keys defined on ftplugin/http.lua
-		keys = {
-			{ "<leader>ks", "<cmd>lua require('kulala').search()<CR>" },
-			{ "<leader>kc", "<cmd>lua require('kulala').close()<CR>" },
-		},
-		config = function()
-			require("plugins.kulala")
-		end,
-	},
+	require("plugins.kulala"),
 	{
 		"kyazdani42/nvim-tree.lua",
 		event = "VeryLazy",
