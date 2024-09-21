@@ -16,14 +16,7 @@ plugins = {
 	{ "nvim-neotest/nvim-nio" },
 	require("plugins.catpuccin"),
 
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
-		config = function()
-			require("plugins.indentline")
-		end,
-	},
+	require("plugins.indentline"),
 	{
 		"nvim-lualine/lualine.nvim",
 		lazy = false,
