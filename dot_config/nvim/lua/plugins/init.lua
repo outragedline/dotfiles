@@ -79,22 +79,7 @@ plugins = {
 			})
 		end,
 	},
-	{
-		"akinsho/toggleterm.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ mode = "t", "<C-q>", [[<C-\><C-n>]] },
-			{ mode = { "n", "t" }, "<A-1>", "<cmd>ToggleTerm 1<cr>" },
-			{ mode = { "n", "t" }, "<A-2>", "<cmd>ToggleTerm 2<cr>" },
-			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
-			--[[ { mode = { "n", "t" }, "<C-r><C-a>", "<cmd>lua _ranger_toggle()<cr>" }, ]]
-			{ mode = { "n", "t" }, "<C-l><C-a>", "<cmd>lua _lazygit_toggle()<cr>" },
-		},
-		config = function()
-			require("plugins.toggleterm")
-		end,
-	},
+	require("plugins.toggleterm"),
 	require("plugins.ranger"),
 	require("plugins.pantran"),
 	{
