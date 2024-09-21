@@ -224,42 +224,11 @@ plugins = {
 			require("lsp.null-ls") -- require your null-ls config here (example below)
 		end,
 	},
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
 
-			{ "<leader>dt", "<cmd>DapToggleBreakpoint<cr>" },
-			{ "<leader>dc", "<cmd>DapContinue<cr>" },
-			{ "<leader>di", "<cmd>DapStepInto<cr>" },
-			{ "<leader>do", "<cmd>DapStepOver<cr>" },
-		},
-		config = function()
-			require("plugins.dap")
-		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>" },
-		},
-		config = function()
-			require("plugins.dapui")
-		end,
-	},
-	{
-		"mfussenegger/nvim-dap-python",
-		ft = "py",
-		event = "VeryLazy",
-		lazy = true,
-		config = function()
-			require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
-		end,
-	},
-
+	-- Found no better way of doing that
+	require("plugins.dap").dap,
+	require("plugins.dap").dapui,
+	require("plugins.dap").dap_python,
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
