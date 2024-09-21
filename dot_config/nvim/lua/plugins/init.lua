@@ -153,17 +153,7 @@ plugins = {
 		config = true,
 	},
 	require("plugins.kulala"),
-	{
-		"kyazdani42/nvim-tree.lua",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<C-a>", "<cmd> NvimTreeToggle<CR>" },
-		},
-		config = function()
-			require("plugins.nvimtree")
-		end,
-	},
+	require("plugins.nvimtree"),
 
 	-- cmp plugins
 	{ "hrsh7th/nvim-cmp" }, -- The completion plugin
