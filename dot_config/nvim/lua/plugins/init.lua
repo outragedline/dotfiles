@@ -65,23 +65,7 @@ plugins = {
 	require("plugins.comment"),
 	require("plugins.notify"),
 
-	{
-		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
-		lazy = true,
-		keys = {
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
-			{ "<leader>fr", "<cmd>Telescope oldfiles<cr>" },
-			{ "<leader>fp", "<cmd>Telescope projects<cr>" },
-			{ "<leader>fk", "<cmd>Telescope keymaps<cr>" },
-		},
-		config = function()
-			require("plugins.telescope")
-		end,
-	},
+	require("plugins.telescope"),
 	require("plugins.autopairs"),
 	require("plugins.project"),
 	{
