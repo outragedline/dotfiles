@@ -297,13 +297,6 @@ plugins = {
 			require("plugins.git")
 		end,
 	},
-	{
-		"rmagatti/auto-session",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("plugins.autosession")
-		end,
-	},
+	require("plugins.autosession"),
 }
 require("lazy").setup(plugins, opts)
