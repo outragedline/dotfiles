@@ -83,13 +83,7 @@ plugins = {
 		end,
 	},
 	require("plugins.autopairs"),
-	{
-		"ahmedkhalf/project.nvim",
-		lazy = false,
-		config = function()
-			require("plugins.project")
-		end,
-	},
+	require("plugins.project"),
 	{
 		"uga-rosa/ccc.nvim",
 		config = function()
