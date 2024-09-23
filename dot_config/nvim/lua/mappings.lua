@@ -17,8 +17,8 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<C-s>", "<cmd> w<CR>", opts) -- save buffer
-keymap("n", "<A-q>", "<cmd>q<CR>", fopts) -- close current window
+keymap("n", "<C-s>", "<cmd> w<CR>", opts)    -- save buffer
+keymap("n", "<A-q>", "<cmd>q<CR>", fopts)    -- close current window
 keymap("n", "<C-A-q>", "<cmd>qa<CR>", fopts) -- close current window
 
 -- Resize windows with arrows
@@ -34,8 +34,8 @@ keymap({ "n", "t" }, "<C-Up>", "<C-w>k", opts)
 keymap({ "n", "t" }, "<C-Right>", "<C-w>l", opts)
 
 -- visual mappings
-keymap("v", "<", "<gv", opts) -- unindent lines
-keymap("v", ">", ">gv", opts) -- indent lines
+keymap("v", "<", "<gv", opts)  -- unindent lines
+keymap("v", ">", ">gv", opts)  -- indent lines
 
 keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text with the yanked text
 
@@ -55,3 +55,7 @@ keymap("n", "<leader>ts", ":tab split ", opts)
 -- unmapping
 keymap("n", "<C-z>", "", fopts)
 keymap("n", "<F1>", "", fopts)
+
+-- misc
+keymap("n", "<S-w>", "<cmd>call search('\\u', 'W')<cr>", opts)
+keymap("n", "<A-w>", "<cmd>call search('\\u', 'bW')<cr>", opts)
