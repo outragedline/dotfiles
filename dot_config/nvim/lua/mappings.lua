@@ -57,5 +57,5 @@ keymap("n", "<C-z>", "", fopts)
 keymap("n", "<F1>", "", fopts)
 
 -- misc
-keymap("n", "<S-w>", "<cmd>call search('\\u', 'W')<cr>", opts)
-keymap("n", "<A-w>", "<cmd>call search('\\u', 'bW')<cr>", opts)
+keymap({"n", "v"}, "<S-w>", "<cmd>call search('\\u', 'W')<cr>", opts)
+keymap({"n", "v"}, "<A-w>", "<cmd>call search('\\u', 'bW')<cr>", opts)
