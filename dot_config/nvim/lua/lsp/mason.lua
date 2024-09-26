@@ -9,7 +9,7 @@ local servers = {
 	"jdtls",
 	"gradle_ls",
 	"mesonlsp",
-	"phpactor",
+	"intelephense",
 }
 
 local debuggers = {
