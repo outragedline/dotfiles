@@ -50,7 +50,12 @@ local config = {
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
 		"-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-		"-Xms1g",
+		"-XX:+UseSerialGC",
+		"-XX:GCTimeRatio=4",
+		"-XX:AdaptiveSizePolicyWeight=90",
+		"-Dsun.zip.disableMemoryMapping=true",
+		"-Xms128m",
+		"-Xmx1G",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
 		"java.base/java.util=ALL-UNNAMED",
@@ -91,11 +96,6 @@ local config = {
 	-- for a list of options
 	settings = {
 		java = {
-			-- jdt = {
-			--   ls = {
-			--     vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"
-			--   }
-			-- },
 			eclipse = {
 				downloadSources = true,
 			},
