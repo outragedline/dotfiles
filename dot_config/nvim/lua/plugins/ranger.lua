@@ -23,6 +23,6 @@ return {
 		})
 	end,
 	keys = {
-		{ mode = "n", "<C-r><C-a>", "<cmd>lua 		require('ranger-nvim').open(true)<cr>" },
+		{ mode = "n", "<C-r><C-a>", "<cmd>lua	require('ranger-nvim').open(true)<cr>" },
 	},
 }

@@ -18,12 +18,8 @@ M.dap = {
 			type = "server",
 			port = "${port}",
 			executable = {
-				-- CHANGE THIS to your path!
 				command = nvim_path .. "/mason/bin/codelldb",
 				args = { "--port", "${port}" },
-
-				-- On windows you may have to uncomment this:
-				-- detached = false,
 			},
 		}
 		dap.configurations.c = {

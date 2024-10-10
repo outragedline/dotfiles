@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 local fopts = { noremap = false, silent = true }
 
--- Shorten function name
 local keymap = vim.keymap.set
 
 -- Modes
@@ -54,8 +53,8 @@ keymap("n", "<leader>ts", ":tab split ", opts)
 
 -- unmapping
 keymap("n", "<C-z>", "", fopts)
-keymap("n", "<F1>", "", fopts)
+keymap({ "n", "i" }, "<F1>", "", fopts)
 
 -- misc
-keymap({"n", "v"}, "<S-w>", "<cmd>call search('\\u', 'W')<cr>", opts)
-keymap({"n", "v"}, "<A-w>", "<cmd>call search('\\u', 'bW')<cr>", opts)
+keymap({ "n", "v" }, "<S-w>", "<cmd>call search('\\u', 'W')<cr>", opts)
+keymap({ "n", "v" }, "<A-w>", "<cmd>call search('\\u', 'bW')<cr>", opts)

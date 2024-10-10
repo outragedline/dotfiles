@@ -10,9 +10,9 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
-		{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
-		{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-		{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
+		{ name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },
+		{ name = "DiagnosticSignHint",  text = icons.diagnostics.Hint },
+		{ name = "DiagnosticSignInfo",  text = icons.diagnostics.Information },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -20,22 +20,8 @@ M.setup = function()
 	end
 
 	local config = {
-		-- disable virtual text
 		virtual_lines = false,
 		virtual_text = false,
-		-- virtual_text = {
-		--   -- spacing = 7,
-		--   -- update_in_insert = false,
-		--   -- severity_sort = true,
-		--   -- prefix = "<-",
-		--   prefix = " ●",
-		--   source = "if_many", -- Or "always"
-		--   -- format = function(diag)
-		--   --   return diag.message .. "blah"
-		--   -- end,
-		-- },
-
-		-- show signs
 		signs = {
 			active = signs,
 		},
@@ -46,7 +32,6 @@ M.setup = function()
 			focusable = true,
 			style = "minimal",
 			border = "rounded",
-			-- border = {"▄","▄","▄","█","▀","▀","▀","█"},
 			source = "if_many", -- Or "always"
 			header = "",
 			prefix = "",
@@ -88,11 +73,6 @@ end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
-
-	if client.name == "jdtls" then
-		require("jdtls").setup_dap({ hotcodereplace = "auto" })
-		require("jdtls.dap").setup_dap_main_class_configs()
-	end
 	client.server_capabilities.document_formatting = true
 end
 
