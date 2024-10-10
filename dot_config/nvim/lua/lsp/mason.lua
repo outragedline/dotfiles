@@ -1,77 +1,81 @@
-local servers = {
-	"pyright",
-	"ruff",
-	"clangd",
-	"ts_ls",
-	"html",
-	"lua_ls",
-	"cssls",
-	"jdtls",
-	"gradle_ls",
-	"mesonlsp",
-	"intelephense",
-}
+return {
+	setup = function()
+		local servers = {
+			"pyright",
+			"ruff",
+			"clangd",
+			"ts_ls",
+			"html",
+			"lua_ls",
+			"cssls",
+			"jdtls",
+			"gradle_ls",
+			"mesonlsp",
+			"intelephense",
+		}
 
-local debuggers = {
-	"javadbg",
-	"javatest",
-	"python",
-	"codelldb",
-	"php-debug-adapter",
-}
+		local debuggers = {
+			"javadbg",
+			"javatest",
+			"python",
+			"codelldb",
+			"php-debug-adapter",
+		}
 
-local null_ls = {
-	"prettier",
-	"stylua",
-	"npm_groovy_lint",
-	"pint",
-	"sqlfluff",
-}
+		local null_ls = {
+			"prettier",
+			"stylua",
+			"npm_groovy_lint",
+			"pint",
+			"sqlfluff",
+		}
 
-local settings = {
-	ui = {
-		border = "rounded",
-		icons = {
+		local settings = {
 			ui = {
+				border = "rounded",
 				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
+					ui = {
+						icons = {
+							package_installed = "✓",
+							package_pending = "➜",
+							package_uninstalled = "✗",
+						},
+					},
 				},
 			},
-		},
-	},
+		}
+
+		require("mason").setup(settings)
+		require("mason-lspconfig").setup({
+			ensure_installed = servers,
+			automatic_installation = true,
+		})
+
+		require("mason-nvim-dap").setup({
+			ensure_installed = debuggers,
+			automatic_installation = true,
+		})
+
+		require("mason-null-ls").setup({
+			ensure_installed = null_ls,
+			automatic_installation = true,
+		})
+
+		local lspconfig = require("lspconfig")
+		local opts = {}
+
+		for _, server in pairs(servers) do
+			opts = {
+				on_attach = require("lsp.handlers").on_attach,
+				capabilities = require("lsp.handlers").capabilities,
+			}
+
+			if server == "jdtls" then
+				goto continue
+			end
+
+			lspconfig[server].setup(opts)
+			::continue::
+		end
+	end,
 }
-
-require("mason").setup(settings)
-require("mason-lspconfig").setup({
-	ensure_installed = servers,
-	automatic_installation = true,
-})
-
-require("mason-nvim-dap").setup({
-	ensure_installed = debuggers,
-	automatic_installation = true,
-})
-
-require("mason-null-ls").setup({
-	ensure_installed = null_ls,
-	automatic_installation = true,
-})
-
-local lspconfig = require("lspconfig")
-local opts = {}
-
-for _, server in pairs(servers) do
-	opts = {
-		on_attach = require("lsp.handlers").on_attach,
-		capabilities = require("lsp.handlers").capabilities,
-	}
-
-	if server == "jdtls" then
-		goto continue
-	end
-
-	lspconfig[server].setup(opts)
-	::continue::
-end

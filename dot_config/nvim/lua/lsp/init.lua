@@ -1,5 +1,4 @@
 M = {}
-require("lspconfig")
 M.server_capabilities = function()
 	local active_clients = vim.lsp.get_active_clients()
 	local active_client_map = {}
@@ -24,7 +23,10 @@ M.server_capabilities = function()
 	end)
 end
 
-require("lsp.mason")
-require("lsp.handlers").setup()
-require("lsp.null-ls")
-require("lsp.cmp")
+M.setup = function()
+	require("lsp.mason").setup()
+	require("lsp.handlers").setup()
+	require("lsp.null-ls").setup()
+	require("lsp.cmp").setup()
+end
+return M
