@@ -28,6 +28,7 @@ return {
 			"npm_groovy_lint",
 			"pint",
 			"sqlfluff",
+			"ktlint",
 		}
 
 		local settings = {

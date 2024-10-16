@@ -13,7 +13,6 @@ return {
 		null_ls.setup({
 			debug = false,
 			sources = {
-				--formatting binaries
 				formatting.stylua,
 				formatting.clang_format.with({
 					filetypes = {
@@ -34,7 +33,9 @@ return {
 					extra_args = { "--config", vim.fn.getcwd() .. "/.sqlfluff" },
 				}),
 
-				-- linters / diagnostics binaries
+				formatting.ktlint,
+				diagnostics.ktlint,
+
 				diagnostics.tidy,
 				diagnostics.sqlfluff,
 			},
