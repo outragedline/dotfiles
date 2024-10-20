@@ -10,9 +10,9 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
-		{ name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },
-		{ name = "DiagnosticSignHint",  text = icons.diagnostics.Hint },
-		{ name = "DiagnosticSignInfo",  text = icons.diagnostics.Information },
+		{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+		{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
+		{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -69,6 +69,7 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cl", "<cmd>lua vim.lsp.codelens.refresh()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 end
 
 M.on_attach = function(client, bufnr)

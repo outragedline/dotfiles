@@ -40,8 +40,6 @@ keymap("v", "p", "_dP", fopts) --"paste"  in visual mode replace selected text w
 
 keymap("n", "<leader>ch", "<cmd>noh<cr>", opts)
 
-keymap("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", fopts)
-
 -- move around tabs
 keymap("n", "<A-Tab>", "<cmd>tabnext<CR>", fopts)
 --[[ keymap("n", "<S-A-Tab>", "<cmd>tabprevious<CR>", fopts) ]]
