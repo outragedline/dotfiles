@@ -43,8 +43,8 @@ plug "zsh-users/zsh-autosuggestions"
 
 
 # Aliases
-alias ls='ls --color=auto'
-alias la='ls -a'
+alias ls='eza'
+alias la='ls -la'
 alias nv=nvim
 alias reb='shutdown -r now'
 alias shut='shutdown -P now'
