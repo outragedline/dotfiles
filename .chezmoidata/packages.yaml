@@ -47,7 +47,7 @@ packages:
       - "pamixer"
       - "dunst"
       - "libnotify"
-      - "blueberry"
+      - "blueman"
       - "brightnessctl"
       - "hypridle"
       - "waypaper"

@@ -6,8 +6,6 @@
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
-    "network",
-    "bluetooth",
     "memory",
     "cpu",
     "temperature",
