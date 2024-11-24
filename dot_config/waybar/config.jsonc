@@ -68,20 +68,6 @@
       "on-scroll-down": "shift_down",
     },
   },
-  "network": {
-    "format-wifi": "󰤨 ",
-    "format-ethernet": "󰈀 ",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "󰤮 ",
-    "tooltip-format-wifi": "Network: {essid} | Signal Strenght: {signalStrength}%\nDown Speed: {bandwidthDownBits} | Up Speed: {bandwidthUpBits}",
-    "on-click": "alacritty -e nmtui",
-  },
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "󰂲",
-    "format-connected": " {device_alias}",
-    "on-click": "blueberry",
-  },
   "cpu": {
     "interval": 5,
     "format": " {usage}%",
