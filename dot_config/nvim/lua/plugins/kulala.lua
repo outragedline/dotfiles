@@ -8,7 +8,7 @@ return {
 	config = function()
 		local icons = require("icons")
 		require("kulala").setup({
-			default_view = "body",
+			default_view = "headers_body",
 			icons = {
 				inlay = {
 					loading = icons.ui.time,
