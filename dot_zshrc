@@ -51,7 +51,7 @@ alias reb='shutdown -r now'
 alias shut='shutdown -P now'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ran='ranger'
+alias yz='yazi'
 alias lg='lazygit'
 alias mkd='mkdir'
 alias py='python'
@@ -93,7 +93,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
 # Key-bindings
-bindkey -s '^O' 'ranger^M'
+bindkey -s '^O' 'yazi^M'
 bindkey "^[[3~" delete-char		# Delete key.
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
