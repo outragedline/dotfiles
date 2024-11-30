@@ -53,6 +53,7 @@ packages:
       - "waypaper"
       - "gammastep"
       - "swww"
+      - "git-lfs"
 
     fonts:
       - "ttf-jetbrains-mono-nerd"
