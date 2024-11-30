@@ -29,7 +29,7 @@ plugins = {
 	require("plugins.autopairs"),
 	require("plugins.project"),
 	require("plugins.toggleterm"),
-	require("plugins.ranger"),
+	require("plugins.yazi"),
 	require("plugins.pantran"),
 	require("plugins.kulala"),
 	require("plugins.nvimtree"),

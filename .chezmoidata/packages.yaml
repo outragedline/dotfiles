@@ -3,7 +3,8 @@ packages:
     zsh:
       - "zsh"
       - "btop"
-      - "ranger"
+      - "yazi"
+      - "ueberzugpp"
       - "lazygit"
       - "github-cli"
       - "dust"
