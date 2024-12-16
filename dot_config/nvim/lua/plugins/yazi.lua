@@ -17,7 +17,7 @@ return {
 		{
 			-- NOTE: this requires a version of yazi that includes
 			-- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-			"<c-up>",
+			"<c-r><c-a>",
 			"<cmd>Yazi toggle<cr>",
 			desc = "Resume the last yazi session",
 		},
