@@ -55,6 +55,8 @@ packages:
       - "gammastep"
       - "swww"
       - "git-lfs"
+      - "network-manager-applet"
+      - "kwallet"
 
     fonts:
       - "ttf-jetbrains-mono-nerd"
