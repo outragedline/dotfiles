@@ -10,6 +10,7 @@ packages:
       - "dust"
       - "bat"
       - "eza"
+      - "p7zip"
 
     nvim:
       - "neovim"
