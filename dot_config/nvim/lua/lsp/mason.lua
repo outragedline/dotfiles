@@ -12,6 +12,7 @@ return {
 			"gradle_ls",
 			"mesonlsp",
 			"intelephense",
+			"taplo",
 		}
 
 		local debuggers = {
