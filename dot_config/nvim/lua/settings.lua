@@ -16,7 +16,8 @@ set.numberwidth = 3 -- set 3 characters to number column
 set.cmdheight = 2
 set.cc = ""
 set.showmode = false
-set.iskeyword:remove({"_", "A"})
+set.iskeyword:remove({ "_", "A" })
+set.foldenable = false
 -- }
 
 -- system options {
