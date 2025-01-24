@@ -4,17 +4,7 @@ plugins = {
 	"nvim-neotest/nvim-nio",
 	"hiphish/rainbow-delimiters.nvim",
 	"JoosepAlviste/nvim-ts-context-commentstring",
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/cmp-nvim-lsp",
-	"neovim/nvim-lspconfig",
 	"nvimtools/none-ls.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"williamboman/mason.nvim",
-	"jay-babu/mason-nvim-dap.nvim",
 	"rafamadriz/friendly-snippets",
 
 	require("plugins.catpuccin"),
@@ -41,7 +31,10 @@ plugins = {
 
 	require("plugins.git"),
 	require("plugins.autosession"),
-	require("lsp.null-ls"),
+	require("plugins.null-ls"),
+	require("plugins.mason"),
+	require("plugins.cmp"),
+	require("plugins.lspcfg"),
 
 	require("plugins.rustacean"),
 	{

@@ -1,5 +1,10 @@
 return {
-	setup = function()
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"jay-babu/mason-nvim-dap.nvim",
+	},
+	config = function()
 		local servers = {
 			"pyright",
 			"ruff",
@@ -68,8 +73,8 @@ return {
 
 		for _, server in pairs(servers) do
 			opts = {
-				on_attach = require("lsp.handlers").on_attach,
-				capabilities = require("lsp.handlers").capabilities,
+				on_attach = require("handlers").on_attach,
+				capabilities = require("handlers").capabilities,
 			}
 
 			if server == "jdtls" then
