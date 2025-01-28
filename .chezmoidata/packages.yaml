@@ -71,8 +71,6 @@ packages:
       - "catppuccin-cursors-mocha"
 
     apps:
-      - "zathura"
-      - "zathura-pdf-mupdf"
       - "qbittorrent"
       - "64gram-desktop-bin"
       - "firefox"
