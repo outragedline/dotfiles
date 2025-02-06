@@ -23,6 +23,8 @@ return {
 				"meson",
 				"php",
 				"sql",
+				"yaml",
+				"tsx",
 			},
 
 			highlight = {
