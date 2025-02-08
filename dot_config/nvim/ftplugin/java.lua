@@ -1,5 +1,5 @@
 local jdtls = require("jdtls")
-local capabilities = require("lsp.handlers").capabilities
+local capabilities = require("handlers").lsp.capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 local home = os.getenv("HOME")
@@ -56,7 +56,7 @@ local config = {
 		workspace_dir,
 	},
 
-	on_attach = require("lsp.handlers").on_attach,
+	on_attach = require("handlers").lsp.on_attach,
 	capabilities = capabilities,
 	root_dir = root_dir,
 	settings = {

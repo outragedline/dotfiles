@@ -73,8 +73,8 @@ return {
 
 		for _, server in pairs(servers) do
 			opts = {
-				on_attach = require("handlers").on_attach,
-				capabilities = require("handlers").capabilities,
+				on_attach = require("handlers").lsp.on_attach,
+				capabilities = require("handlers").lsp.capabilities(),
 			}
 
 			if server == "jdtls" then

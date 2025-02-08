@@ -41,7 +41,7 @@ return {
 			},
 
 			on_attach = function(client, bufnr)
-				require("lsp.handlers").on_attach(client, bufnr)
+				require("handlers").lsp.on_attach(client, bufnr)
 			end,
 		})
 	end,
