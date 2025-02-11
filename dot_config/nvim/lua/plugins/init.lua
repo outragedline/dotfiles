@@ -12,7 +12,7 @@ plugins = {
 	require("plugins.lualine"),
 	require("plugins.bufferline"),
 	require("plugins.alpha"),
-	require("plugins.treesitter"),
+	--[[ require("plugins.treesitter"), ]]
 	require("plugins.comment"),
 	require("plugins.notify"),
 	require("plugins.telescope"),
