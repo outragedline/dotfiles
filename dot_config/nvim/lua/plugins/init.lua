@@ -12,7 +12,7 @@ plugins = {
 	require("plugins.lualine"),
 	require("plugins.bufferline"),
 	require("plugins.alpha"),
-	--[[ require("plugins.treesitter"), ]]
+	require("plugins.treesitter"),
 	require("plugins.comment"),
 	require("plugins.notify"),
 	require("plugins.telescope"),
@@ -22,7 +22,7 @@ plugins = {
 	require("plugins.yazi"),
 	require("plugins.pantran"),
 	require("plugins.kulala"),
-	require("plugins.nvimtree"),
+	--[[ require("plugins.nvimtree"), ]]
 
 	-- Found no better way of doing that
 	require("plugins.dap").dap,
