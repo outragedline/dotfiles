@@ -18,6 +18,7 @@ return {
 			"mesonlsp",
 			"intelephense",
 			"taplo",
+			"prismals",
 		}
 
 		local debuggers = {

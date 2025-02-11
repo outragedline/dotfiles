@@ -25,6 +25,7 @@ return {
 				"sql",
 				"yaml",
 				"tsx",
+				"prisma"
 			},
 
 			highlight = {
