@@ -73,7 +73,7 @@ packages:
     apps:
       - "qbittorrent"
       - "64gram-desktop-bin"
-      - "firefox"
+      - "zen-browser"
       - "mpv"
       - "viewnior"
       - "thunderbird"
