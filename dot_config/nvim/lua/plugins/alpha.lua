@@ -16,9 +16,9 @@ return {
 		dashboard.section.buttons.val = {
 			dashboard.button("f", icons.ui.Search .. "  Find file", ":Telescope find_files <CR>"),
 			dashboard.button("e", icons.documents.File .. "  New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("s", icons.ui.BookMark .. "  Open last session", "<cmd>SessionRestore<CR>"),
+			dashboard.button("s", icons.ui.BookMark .. "  List sessions ", "<cmd>Telescope session-lens<CR>"),
+			dashboard.button("r", icons.ui.History .. "  Restore last session", "<CMD>SessionRestore<CR>"),
 			dashboard.button("p", icons.documents.Folder .. "  Find project", ":Telescope projects <CR>"),
-			dashboard.button("r", icons.ui.History .. "  Recently used files", ":Telescope oldfiles <CR>"),
 			dashboard.button("t", icons.kind.Text .. "  Find text", ":Telescope live_grep <CR>"),
 			dashboard.button("c", icons.ui.Gear .. "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
 			dashboard.button("q", icons.ui.SignOut .. "  Quit Neovim", ":qa<CR>"),
