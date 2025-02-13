@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	keys = {
 		{
-			"<C-c>",
+			"<C-M-a>",
 			"<cmd>Yazi<cr>",
 			desc = "Open yazi at the current file",
 		},
