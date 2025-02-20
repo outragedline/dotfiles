@@ -22,7 +22,6 @@ plugins = {
 	require("plugins.yazi"),
 	require("plugins.pantran"),
 	require("plugins.kulala"),
-	--[[ require("plugins.nvimtree"), ]]
 
 	-- Found no better way of doing that
 	require("plugins.dap").dap,
