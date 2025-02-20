@@ -10,7 +10,6 @@ return {
 			"ruff",
 			"clangd",
 			"ts_ls",
-			"html",
 			"lua_ls",
 			"cssls",
 			"jdtls",
