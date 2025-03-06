@@ -18,6 +18,7 @@ return {
 			"intelephense",
 			"taplo",
 			"prismals",
+			"buf_ls",
 		}
 
 		local debuggers = {
