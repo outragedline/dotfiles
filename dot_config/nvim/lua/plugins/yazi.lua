@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	keys = {
 		{
-			"<C-M-a>",
+			"<M-a>",
 			"<cmd>Yazi<cr>",
 			desc = "Open yazi at the current file",
 		},
@@ -13,13 +13,14 @@ return {
 			desc = "Resume the last yazi session",
 		},
 		{
-			"<M-a>",
+			"<C-M-a>",
 			"<cmd>Yazi cwd<cr>",
 			desc = "Open the file manager in nvim's working directory",
 		},
 	},
 	opts = {
 		open_for_directories = true,
+		open_multiple_tabs = true,
 		keymaps = {
 			show_help = "<f1>",
 		},
