@@ -73,11 +73,9 @@ packages:
     apps:
       - "qbittorrent"
       - "64gram-desktop-bin"
-      - "zen-browser"
+      - "zen-browser-bin"
       - "mpv"
       - "viewnior"
-      - "thunderbird"
-      - "gimp"
       - "syncthing"
       - "obs-studio"
 
