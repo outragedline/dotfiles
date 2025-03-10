@@ -21,7 +21,6 @@ return {
 				"make",
 				"kotlin",
 				"meson",
-				"php",
 				"sql",
 				"yaml",
 				"tsx",
