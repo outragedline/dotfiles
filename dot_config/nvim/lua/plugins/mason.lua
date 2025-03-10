@@ -26,14 +26,12 @@ return {
 			"javatest",
 			"python",
 			"codelldb",
-			"php-debug-adapter",
 		}
 
 		local null_ls = {
 			"prettier",
 			"stylua",
 			"npm_groovy_lint",
-			"pint",
 			"sqlfluff",
 			"ktlint",
 		}
