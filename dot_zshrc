@@ -101,3 +101,27 @@ bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^E' edit-command-line
+
+function explain() {
+    if [ "$#" -lt 1 ]; then
+        echo -e "\nUsage: explain COMMAND [ARGS]" >&2
+        echo -e "Example: explain tar -xzvf\n" >&2
+        return 1
+    fi
+
+    local query="$(printf "%s " "$@" | sed 's/ $//')"
+    local encoded_query="$(echo -n "$query" | sed -e 's/ /%20/g' -e 's/\"/%22/g' -e "s/'/%27/g")"
+
+    local response=$(curl -s "https://explainshell.com/explain?cmd=$encoded_query")
+
+    if [[ -z "$response" ]]; then
+        echo "Error: Could not retrieve explanation." >&2
+        return 1
+    fi
+    set -o pipefail && echo -e "$(echo "$response" | awk '
+  BEGIN {print ""}
+  /<pre class="help-box" id="help-0">/ {print substr($0, index($0, ">")+1, index($0, "</")-index($0, ">")-1); print "____________________________________________________"}
+  /<pre class="help-box" id="help-[1-9]">/ {gsub(/<\/?[^>]+>/, ""); sub(/^[ \t]+/, ""); print $0; print "____________________________________________________"}
+  END {print ""}
+')\n"
+}
