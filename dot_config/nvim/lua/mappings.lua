@@ -16,15 +16,20 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<C-s>", "<cmd> w<CR>", opts)    -- save buffer
+keymap("n", "<C-s>", "<cmd>w<CR>", opts)    -- save buffer
 keymap("n", "<A-q>", "<cmd>q<CR>", fopts)    -- close current window
 keymap("n", "<C-A-q>", "<cmd>qa<CR>", fopts) -- close current window
 
--- Resize windows with arrows
+-- Resize windows
 keymap("n", "<C-A-Up>", "<cmd> resize +2<CR>", opts)
 keymap("n", "<C-A-Down>", "<cmd> resize -2<CR>", opts)
 keymap("n", "<C-A-Left>", "<cmd> vertical resize -2<CR>", opts)
 keymap("n", "<C-A-Right>", "<cmd> vertical resize +2<CR>", opts)
+
+keymap("n", "<C-A-k>", "<cmd> resize +2<CR>", opts)
+keymap("n", "<C-A-j>", "<cmd> resize -2<CR>", opts)
+keymap("n", "<C-A-h>", "<cmd> vertical resize -2<CR>", opts)
+keymap("n", "<C-A-l>", "<cmd> vertical resize +2<CR>", opts)
 
 -- move between windows
 keymap({ "n", "t" }, "<C-Left>", "<C-w>h", opts)
