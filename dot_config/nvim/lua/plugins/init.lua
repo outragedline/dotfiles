@@ -20,7 +20,6 @@ plugins = {
 	require("plugins.project"),
 	require("plugins.toggleterm"),
 	require("plugins.yazi"),
-	require("plugins.pantran"),
 	require("plugins.kulala"),
 
 	-- Found no better way of doing that
