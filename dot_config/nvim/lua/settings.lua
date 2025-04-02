@@ -18,6 +18,8 @@ set.cc = ""
 set.showmode = false
 set.iskeyword:remove({ "_", "A" })
 set.foldenable = false
+set.spell = true
+set.spelllang = "en_us"
 -- }
 
 -- system options {
