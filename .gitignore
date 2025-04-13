@@ -1,8 +1,0 @@
-.config/zsh/plugins
-.config/zsh/.zcompdum*
-.config/zsh/.zsh_history
-.config/mpv/watch_later
-.config/nvim/plugin
-.config/gh
-.config/lazygit
-.config/btop/btop.log

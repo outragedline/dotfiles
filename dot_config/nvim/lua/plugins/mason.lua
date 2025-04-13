@@ -15,7 +15,6 @@ return {
 			"jdtls",
 			"gradle_ls",
 			"mesonlsp",
-			"intelephense",
 			"taplo",
 			"prismals",
 			"buf_ls",
