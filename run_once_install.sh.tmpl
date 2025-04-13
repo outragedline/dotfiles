@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-{{ if eq "true" .install.installZsh }}
-	yay -S {{  .packages.yay.zsh | join " " }} --noconfirm
-	zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --keep
+{{ if eq "true" .install.installNushell }}
+	yay -S {{  .packages.yay.nushell | join " " }} --noconfirm
+	sudo chsh -s /usr/bin/nu $(whoami)
 {{end}}
 
 {{ if eq "true" .install.installNvim }}
