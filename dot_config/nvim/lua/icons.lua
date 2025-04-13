@@ -68,7 +68,7 @@ return {
 		BigUnfilledCircle = "",
 		Close = "",
 		NewFile = "",
-		Search = "",
+		Search = "",
 		Lightbulb = "",
 		Project = "",
 		Dashboard = "",
@@ -91,7 +91,9 @@ return {
 		Table = "",
 		Calendar = "",
 		CloudDownload = "",
-		time = "⏳",
+		Time = "⏳",
+		Restore = " ",
+		Lazy = "󰒲 "
 	},
 	diagnostics = {
 		Error = "",

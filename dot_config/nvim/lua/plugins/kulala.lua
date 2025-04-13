@@ -11,7 +11,7 @@ return {
 			default_view = "headers_body",
 			icons = {
 				inlay = {
-					loading = icons.ui.time,
+					loading = icons.ui.Time,
 					done = icons.ui.Check,
 					error = icons.diagnostics.Error,
 				},

@@ -8,10 +8,10 @@ plugins = {
 	"rafamadriz/friendly-snippets",
 
 	require("plugins.catpuccin"),
+	require("plugins.snacks"),
 	require("plugins.indentline"),
 	require("plugins.lualine"),
 	require("plugins.bufferline"),
-	require("plugins.alpha"),
 	require("plugins.treesitter"),
 	require("plugins.comment"),
 	require("plugins.notify"),
