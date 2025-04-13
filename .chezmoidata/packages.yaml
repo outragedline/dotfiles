@@ -72,9 +72,8 @@ packages:
 
     apps:
       - "qbittorrent"
-      - "64gram-desktop-bin"
+      - "telegram-desktop"
       - "zen-browser-bin"
-      - "mpv"
       - "viewnior"
       - "syncthing"
       - "obs-studio"
