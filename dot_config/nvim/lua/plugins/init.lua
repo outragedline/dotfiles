@@ -7,7 +7,7 @@ plugins = {
 	"nvimtools/none-ls.nvim",
 	"rafamadriz/friendly-snippets",
 
-	require("plugins.catpuccin"),
+	require("plugins.gruvbox"),
 	require("plugins.snacks"),
 	require("plugins.indentline"),
 	require("plugins.lualine"),
