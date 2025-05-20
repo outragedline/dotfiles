@@ -6,33 +6,31 @@ return {
 	},
 	config = function()
 		local servers = {
-			"pyright",
+			--[[ "pyright", ]]
 			"ruff",
 			"clangd",
 			"ts_ls",
 			"lua_ls",
-			"cssls",
-			"jdtls",
-			"gradle_ls",
-			"mesonlsp",
+			--[[ "cssls", ]]
+			--[[ "jdtls", ]]
+			--[[ "gradle_ls", ]]
+			--[[ "mesonlsp", ]]
 			"taplo",
-			"prismals",
-			"buf_ls",
 		}
 
 		local debuggers = {
-			"javadbg",
-			"javatest",
-			"python",
+			--[[ "javadbg", ]]
+			--[[ "javatest", ]]
+			--[[ "python", ]]
 			"codelldb",
 		}
 
 		local null_ls = {
 			"prettier",
 			"stylua",
-			"npm_groovy_lint",
+			--[[ "npm_groovy_lint", ]]
 			"sqlfluff",
-			"ktlint",
+			--[[ "ktlint", ]]
 		}
 
 		local settings = {
