@@ -28,7 +28,6 @@ return {
 						"groovy",
 					},
 				}),
-				formatting.pint,
 				formatting.sqlfluff.with({
 					extra_args = { "--config", vim.fn.getcwd() .. "/.sqlfluff" },
 				}),
