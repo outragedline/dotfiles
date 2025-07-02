@@ -5,7 +5,6 @@
 {{- $installDevenv		:= promptBoolOnce		. "install.devenv" "Install development enviroment" -}}
 {{- $installHypr		:= promptBoolOnce		. "install.hypr" "Install hyprland basic packages" -}}
 {{- $installFonts		:= promptBoolOnce		. "install.fonts" "Install fonts" -}}
-{{- $installThemes	:= promptBoolOnce		. "install.themes" "Install themes (gtk, qt, whatever)" -}}
 {{- $installApps		:= promptBoolOnce		.	"install.apps" "Install other applications" -}}
 
 [data.user.git]
@@ -17,5 +16,4 @@ signingkey = {{ $signingkey | quote}}
 installDevenv = {{ $installDevenv | quote }}
 installHypr = {{ $installHypr | quote }}
 installFonts = {{ $installFonts | quote }}
-installThemes = {{ $installThemes | quote }}
 installApps = {{ $installApps | quote }}

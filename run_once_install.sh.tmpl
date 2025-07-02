@@ -1,22 +1,18 @@
 #!/bin/sh
 
 {{ if eq "true" .install.installDevenv }}
-	yay -S {{  .packages.yay.devenv | join " " }} --noconfirm
+	paru -S {{  .packages.arch.devenv | join " " }} --noconfirm
 	sudo chsh -s /usr/bin/nu $(whoami)
 {{end}}
 
 {{ if eq "true" .install.installHypr }}
-	yay -S {{  .packages.yay.hypr | join " " }} --noconfirm
+	paru -S {{  .packages.arch.hypr | join " " }} --noconfirm
 {{end}}
 
 {{ if eq "true" .install.installFonts }}
-	yay -S {{  .packages.yay.fonts | join " " }} --noconfirm
-{{end}}
-
-{{ if eq "true" .install.installThemes }}
-	yay -S {{  .packages.yay.themes | join " " }} --noconfirm
+	paru -S {{  .packages.arch.fonts | join " " }} --noconfirm
 {{end}}
 
 {{ if eq "true" .install.installApps }}
-	yay -S {{  .packages.yay.apps | join " " }} --noconfirm
+	paru -S {{  .packages.arch.apps | join " " }} --noconfirm
 {{end}}

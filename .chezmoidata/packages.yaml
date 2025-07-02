@@ -1,5 +1,5 @@
 packages:
-  yay:
+  arch:
     devenv:
       - helix
       - zellij
