@@ -1,7 +1,7 @@
 $env.config.show_banner = false
-$env.config.buffer_editor = "nvim"
-$env.MANPAGER = "nvim +Man!"
-$env.path = ($env.path | prepend "~/.local/bin" | prepend "~/.local/share/nvim/mason/bin/" | prepend "~/.cargo/bin/")
+$env.config.buffer_editor = "helix"
+$env.path = ($env.path | prepend "~/.local/bin" | prepend "~/.cargo/bin/")
+$env.PROMPT_COMMAND = { || $"($env.PWD | path basename)" }
 $env.PROMPT_COMMAND_RIGHT = ""
 
 $env.EDITOR = "helix"
