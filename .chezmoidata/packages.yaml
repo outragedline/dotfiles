@@ -1,35 +1,23 @@
 packages:
   yay:
-    nushell:
+    devenv:
+      - helix
+      - zellij
       - "nushell"
-      - "btop"
+      - "bottom"
       - "yazi"
-      - "ueberzugpp"
       - "lazygit"
       - "github-cli"
       - "dust"
       - "bat"
       - "p7zip"
-
-    nvim:
-      - "neovim"
-      - "nodejs"
-      - "python3"
-      - "python-pip"
-      - "ripgrep"
+      - rustup
+      - taplo
       - "fd"
-      - "lua"
-      - "gcc"
-      - "npm"
-      - "unzip"
-      - "tidy"
-      - "wget"
       - "lldb"
       - "clang"
-      - "python-pynvim"
       - "bear"
-      - "rust-analyzer"
-      - "yazi"
+      - "eza"
 
     hypr:
       - "hyprland"
@@ -51,9 +39,7 @@ packages:
       - "libnotify"
       - "blueman"
       - "brightnessctl"
-      - "hypridle"
       - "waypaper"
-      - "hyprsunset"
       - "swww"
       - "git-lfs"
       - "network-manager-applet"
@@ -65,11 +51,6 @@ packages:
       - "noto-fonts-emoji"
       - "noto-fonts-extra"
 
-    themes:
-      - "catppuccin-gtk-theme-mocha"
-      - "kvantum"
-      - "catppuccin-cursors-mocha"
-
     apps:
       - "qbittorrent"
       - "telegram-desktop"
@@ -77,7 +58,4 @@ packages:
       - "viewnior"
       - "syncthing"
       - "obs-studio"
-
-  npm:
-    nvim:
-      - "neovim"
+      - "ueberzugpp"

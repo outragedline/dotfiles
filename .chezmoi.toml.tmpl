@@ -2,8 +2,7 @@
 {{- $email					:= promptStringOnce . "user.git.email" "Email used in GitHub" -}}
 {{- $signingkey			:= promptStringOnce . "user.git.signingkey" "GPG key to sign commits" -}}
 
-{{- $installNushell := promptBoolOnce   . "install.nushell" "Install nushell and other terminal apps" -}}
-{{- $installNvim		:= promptBoolOnce		. "install.nvim" "Install nvim" -}}
+{{- $installDevenv		:= promptBoolOnce		. "install.devenv" "Install development enviroment" -}}
 {{- $installHypr		:= promptBoolOnce		. "install.hypr" "Install hyprland basic packages" -}}
 {{- $installFonts		:= promptBoolOnce		. "install.fonts" "Install fonts" -}}
 {{- $installThemes	:= promptBoolOnce		. "install.themes" "Install themes (gtk, qt, whatever)" -}}
@@ -15,8 +14,7 @@ email = {{ $email | quote}}
 signingkey = {{ $signingkey | quote}}
 
 [data.install]
-installNushell = {{ $installNushell | quote }}
-installNvim = {{ $installNvim | quote }}
+installDevenv = {{ $installDevenv | quote }}
 installHypr = {{ $installHypr | quote }}
 installFonts = {{ $installFonts | quote }}
 installThemes = {{ $installThemes | quote }}

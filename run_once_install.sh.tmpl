@@ -1,14 +1,8 @@
 #!/bin/sh
 
-
-{{ if eq "true" .install.installNushell }}
-	yay -S {{  .packages.yay.nushell | join " " }} --noconfirm
+{{ if eq "true" .install.installDevenv }}
+	yay -S {{  .packages.yay.devenv | join " " }} --noconfirm
 	sudo chsh -s /usr/bin/nu $(whoami)
-{{end}}
-
-{{ if eq "true" .install.installNvim }}
-	yay -S {{  .packages.yay.nvim | join " " }} --noconfirm
-	sudo npm i -g {{ .packages.npm.nvim | join " "}}
 {{end}}
 
 {{ if eq "true" .install.installHypr }}
