@@ -9,9 +9,7 @@ $env.VISUAL = "helix"
 
 alias la = ls -la
 alias cat = bat
-alias nv = nvim
 alias hx = helix
 alias yz = yazi
 alias lg = lazygit
 alias mkd = mkdir
-alias yay = paru
