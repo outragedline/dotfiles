@@ -29,7 +29,6 @@ render = true
 cursor-line = "warning"
 
 [keys.normal]
-C-y = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/picker.sh"
 y = "yank_joined_to_clipboard"
 p = ["paste_clipboard_after"]
 P = ["replace_selections_with_clipboard"]
