@@ -3,7 +3,6 @@ theme = "gruvbox"
 [editor]
 line-number = "relative"
 cursorline = true
-workspace-lsp-roots = ["cargo.toml", ".git"]
 end-of-line-diagnostics = "hint"
 indent-heuristic = "tree-sitter"
 
