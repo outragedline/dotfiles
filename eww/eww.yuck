@@ -1,0 +1,113 @@
+(defwindow bar
+	:monitor 0
+	:stacking "fg"
+	:exclusive true
+	:windowtype "dock"
+	:wm-ignore false
+	:geometry (geometry :x 5
+		:y 0
+		:width "50px"
+		:height "99%"
+		:anchor "left center")
+	(overlay
+		(box :orientation "vertical" :class "top" :valign "start" :space-evenly false
+			(tray)
+			(workspaces))
+		(box :class "mid" :valign "center"
+			(datetime))
+		(box :orientation "vertical" :class "bot" :valign "end" :spacing 5
+			(cpu)
+			(memory)
+			(brightness)
+			(audio)
+			(battery))))
+
+(defpoll hour :interval "1s" "date +%H")
+(defpoll min  :interval "1s" "date +%M")
+
+(defpoll day_word :interval "10m" "date +%^a")
+(defpoll day      :interval "10m" "date +%d")
+(defpoll month    :interval "1h"  "date +%m")
+
+(defwidget datetime []
+  (box :orientation "v"
+       :valign "center"
+    (label :text day_word)
+    (label :text "${day}/${month}")
+    (label :text "${hour}:${min}")))
+
+(defwidget cpu []
+	(box :orientation "v" 
+       :space-evenly false 
+       :spacing 5
+    (circular-progress :value {round(EWW_CPU.avg, 0)}
+                       :class "cpu"
+                       :thickness 15)
+    (label :text "")
+		(label :text " ${round(EWW_TEMPS.K10TEMP_TCTL, 0)}°C")))              
+
+(defwidget memory []
+	(box :orientation "v" 
+       :space-evenly false 
+       :spacing 5
+			 :class "memory"
+    (circular-progress :value {round(EWW_RAM.used_mem_perc, 0)}
+											 :clockwise false
+                       :thickness 15)
+    (label :text "")))              
+
+
+(defwidget battery []
+	(box :orientation "v" 
+       :space-evenly false 
+       :spacing 5
+			 :class "battery"
+    (circular-progress :value {round(EWW_BATTERY.BAT0.capacity, 0)}
+											 :clockwise false
+                       :thickness 15)
+    (label :text "󰁹")))              
+
+
+;; TODO: find a better way
+(defpoll volume       :interval "100ms" "pamixer --get-volume")
+(defpoll sink_muted   :interval "100ms" "pamixer --get-mute")
+(defpoll source_muted :interval "100ms" "pamixer --default-source --get-mute")
+
+
+(defwidget audio []
+    (eventbox :onscroll "bash ./scripts/volume.sh {}"
+              :onclick "pamixer -t"
+              :onrightclick "pamixer --default-source -t"
+              :onmiddleclick "pavucontrol &"
+        (box :orientation "v"
+             :space-evenly false
+             :spacing 5
+             :valign "center"
+            (label :text "${volume}%")
+            (label :text {sink_muted == "true" ? "󰝟" : (volume > 66 ? "" : (volume > 33 ? "" : ""))})
+            (label :text {source_muted == "true" ? "" : ""}))))
+
+
+(defpoll brightness :interval "1s" "brightnessctl -m | cut -d, -f4 | tr -d '%'")
+(defwidget brightness []
+    (eventbox :onscroll "if [ '{}' = 'up' ]; then brightnessctl set 1%+; else brightnessctl set 1%-; fi"
+        (box :orientation "v"
+             :space-evenly false
+             :spacing 5
+             :valign "center"
+            (label :text {brightness > 66 ? "󰃠" : (brightness > 33 ? "󰃟" : "󰃞")})
+            (label :text "${brightness}%"))))
+
+						
+(deflisten hyprland_workspaces "bash ./scripts/workspaces.sh")
+(defwidget workspaces []
+    (box :orientation "v"
+         :spacing 5
+         :class "workspaces"
+        (for workspace in hyprland_workspaces
+            (button :onclick "hyprctl dispatch workspace ${workspace.id}"
+                    :class "workspace-btn ${workspace.active ? 'active' : ''} ${workspace.occupied ? 'occupied' : ''}"
+                "${workspace.active ? '' : (workspace.occupied ? '${workspace.id}' : '·')}"))))
+(defwidget tray []
+    (box :orientation "v" :class "tray"
+        (systray :orientation "v" :spacing 20 :icon-size 14)))

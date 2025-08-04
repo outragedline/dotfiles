@@ -20,8 +20,8 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "helix";
-    VISUAL = "helix";
+    EDITOR = "hx";
+    VISUAL = "hx";
   };
 
   home.sessionPath = [
