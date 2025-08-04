@@ -42,12 +42,19 @@ in
     papirus-icon-theme
     brave
     bluetui
+    socat
+    jq
   ];
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   services.network-manager-applet.enable = true;
   services.dunst.enable = true;
+  programs.eww = {
+    enable = true;
+    configDir = ./eww;
+  };
+
   gtk = {
     enable = true;
     theme = {
@@ -73,7 +80,7 @@ in
     extraConfig = ''
       exec-once = waypaper --random --backend swww --folder ~/.config/wallpapers
       exec-once = ${pkgs.kdePackages.polkit-kde-agent-1}
-      exec-once = waybar
+      exec-once = sh ${./eww/launch.sh}
     '';
 
     settings = {
@@ -100,6 +107,10 @@ in
 
       animations = {
         enabled = true;
+
+        animation = [
+          "workspaces, 1, 4, default, slidevert"
+        ];
       };
 
       input = {
@@ -213,292 +224,6 @@ in
     };
   };
 
-  programs.waybar = {
-    enable = true;
-    settings = {
-      mainBar = {
-        layer = "top";
-        position = "top";
-        height = 24;
-        modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "clock" ];
-        modules-right = [
-          "tray"
-          "memory"
-          "cpu"
-          "temperature"
-          "backlight"
-          "pulseaudio"
-          "battery"
-        ];
-
-        tray = {
-          "icon-size" = 17;
-          spacing = 10;
-        };
-
-        backlight = {
-          device = "intel_backlight";
-          format = "{icon} {percent}%";
-          "format-icons" = [
-            "󰃞"
-            "󰃟"
-            "󰃠"
-          ];
-          "on-scroll-up" = "brightnessctl set 1%+";
-          "on-scroll-down" = "brightnessctl set 1%-";
-          "min-length" = 6;
-        };
-
-        battery = {
-          states = {
-            good = 80;
-            warning = 30;
-            critical = 20;
-          };
-          format = "{icon} {capacity}%";
-          "format-charging" = " ";
-          "format-plugged" = " ";
-          "format-alt" = "{time} {icon}";
-          "format-icons" = [
-            "󰁺 CHARGE NOW"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-          ];
-          "tooltip-format" = "{capacity}%";
-        };
-
-        clock = {
-          timezone = "America/Sao_Paulo";
-          format = "  {:%H:%M %d/%m}";
-          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
-          calendar = {
-            mode = "month";
-            "mode-mon-col" = 3;
-            "weeks-pos" = "right";
-            "on-scroll" = 1;
-            "on-click-right" = "mode";
-            format = {
-              months = "<span color='#ffead3'><b>{}</b></span>";
-              days = "<span color='#ecc6d9'><b>{}</b></span>";
-              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
-            };
-          };
-          actions = {
-            "on-click-right" = "mode";
-            "on-click-forward" = "tz_up";
-            "on-click-backward" = "tz_down";
-            "on-scroll-up" = "shift_up";
-            "on-scroll-down" = "shift_down";
-          };
-        };
-
-        cpu = {
-          interval = 5;
-          format = " {usage}%";
-        };
-
-        memory = {
-          interval = 5;
-          format = " {used:0.1f}G/{total:0.1f}G";
-        };
-
-        temperature = {
-          "thermal-zone" = 2;
-          "hwmon-path" = "/sys/class/hwmon/hwmon1/temp1_input";
-          format = "{temperatureC}°C";
-        };
-
-        pulseaudio = {
-          format = "{format_source} | {icon} {volume}%";
-          "format-muted" = "{format_source} | 󰝟";
-          "format-source" = "";
-          "format-source-muted" = "";
-          "on-click" = "pamixer -t";
-          "on-click-right" = "pamixer --default-source -t";
-          "on-click-middle" = "pavucontrol";
-          "scroll-step" = 1;
-          "max-volume" = 200;
-          "format-icons" = {
-            headphone = "";
-            "hands-free" = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
-            default = [
-              ""
-              ""
-              ""
-            ];
-          };
-        };
-      };
-    };
-    style = ''
-      /*
-      *
-      * Catppuccin Mocha palette
-      * Maintainer: rubyowo
-      *
-      */
-
-      @define-color base   #1e1e2e;
-      @define-color mantle #181825;
-      @define-color crust  #11111b;
-
-      @define-color text     #cdd6f4;
-      @define-color subtext0 #a6adc8;
-      @define-color subtext1 #bac2de;
-
-      @define-color surface0 #313244;
-      @define-color surface1 #45475a;
-      @define-color surface2 #585b70;
-
-      @define-color overlay0 #6c7086;
-      @define-color overlay1 #7f849c;
-      @define-color overlay2 #9399b2;
-
-      @define-color blue      #89b4fa;
-      @define-color lavender  #b4befe;
-      @define-color sapphire  #74c7ec;
-      @define-color sky       #89dceb;
-      @define-color teal      #94e2d5;
-      @define-color green     #a6e3a1;
-      @define-color yellow    #f9e2af;
-      @define-color peach     #fab387;
-      @define-color maroon    #eba0ac;
-      @define-color red       #f38ba8;
-      @define-color mauve     #cba6f7;
-      @define-color pink      #f5c2e7;
-      @define-color flamingo  #f2cdcd;
-      @define-color rosewater #f5e0dc;
-      * {
-        border: none;
-        border-radius: 0;
-        font-family: "JetBrainsMono Nerd Font";
-        font-weight: bold;
-        font-size: 12px;
-        padding-top: 1px;
-        padding-bottom: 0px;
-        min-height: 0;
-      }
-
-      window#waybar {
-        background: transparent;
-        color: #cdd6f4;
-      }
-
-      tooltip {
-        background: #1e1e2e;
-        border-radius: 10px;
-        border-width: 2px;
-        border-style: solid;
-        border-color: #11111b;
-      }
-
-      #workspaces button {
-        padding: 5px;
-        color: #45475a;
-        margin-right: 5px;
-      }
-
-      #workspaces button.active {
-        color: #cdd6f4;
-      }
-
-      #workspaces button.focused {
-        color: @text;
-        background: #eba0ac;
-        border-radius: 10px;
-      }
-
-      #workspaces button.urgent {
-        color: #11111b;
-        background: #a6e3a1;
-        border-radius: 10px;
-      }
-
-      #workspaces button:hover {
-        background: #11111b;
-        color: #cdd6f4;
-        border-radius: 10px;
-      }
-
-      #clock,
-      #battery,
-      #pulseaudio,
-      #cpu,
-      #memory,
-      #temperature,
-      #workspaces,
-      #tray,
-      #backlight {
-        background: #1e1e2e;
-        padding: 0px 10px;
-        margin: 3px 0px;
-      }
-
-      #tray {
-        border-radius: 10px;
-        margin-right: 4px;
-        font-size: 19px;
-      }
-
-      #workspaces {
-        background: #1e1e2e;
-        border-radius: 10px;
-        padding-right: 0px;
-        padding-left: 5px;
-        margin-left: 5px;
-      }
-
-      #cpu {
-        background: #1e1e2e;
-        padding: 0px 10px;
-        margin: 3px 0px;
-        color: #f5c2e7;
-      }
-
-      #clock {
-        color: #f9e2af;
-        border-radius: 10px;
-        margin-right: 5px;
-        /* padding-right: 5px */
-      }
-
-
-      #pulseaudio {
-        color: @lavender;
-      }
-
-      #memory {
-        color: #7dc4e4;
-        border-bottom-left-radius: 10px;
-        border-top-left-radius: 10px;
-      }
-
-      #battery {
-        color: @lavender;
-        /*border-radius: 0 10px 10px 0;*/
-        /*margin-right: 5px;*/
-      }
-
-      #backlight {
-        color: @lavender;
-      }
-    '';
-  };
   programs.alacritty = {
     enable = true;
     settings = {
