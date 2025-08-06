@@ -43,11 +43,13 @@
     enable = true;
     settings = {
       show_banner = false;
-      buffer_editor = "helix";
+      buffer_editor = "hx";
     };
     envFile.text = ''
       $env.PROMPT_COMMAND = { || $"($env.PWD | path basename)" }
       $env.PROMPT_COMMAND_RIGHT = ""
+      $env.EDITOR = "hx"
+      $env.VISUAL = "hx"
     '';
     shellAliases = {
       la = "ls -la";
