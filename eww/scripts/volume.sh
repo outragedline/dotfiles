@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+ 
 case $1 in
   up)
     pamixer -i 1

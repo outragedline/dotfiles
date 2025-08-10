@@ -22,20 +22,12 @@
 			(audio)
 			(battery))))
 
-(defpoll hour :interval "1s" "date +%H")
-(defpoll min  :interval "1s" "date +%M")
-
-(defpoll day_word :interval "10m" "date +%^a")
-(defpoll day      :interval "10m" "date +%d")
-(defpoll month    :interval "1h"  "date +%m")
-
 (defwidget datetime []
   (box :orientation "v"
        :valign "center"
-    (label :text day_word)
-    (label :text "${day}/${month}")
-    (label :text "${hour}:${min}")))
-
+    (label :text {formattime(EWW_TIME, "%a")})
+    (label :text "${formattime(EWW_TIME, "%d")}/${formattime(EWW_TIME, "%m")}")
+    (label :text {formattime(EWW_TIME, "%H:%M")})))
 (defwidget cpu []
 	(box :orientation "v" 
        :space-evenly false 
@@ -57,23 +49,18 @@
     (label :text "")))              
 
 
+(defpoll battery_data :interval "30s" "bash ./scripts/battery.sh")
 (defwidget battery []
 	(box :orientation "v" 
        :space-evenly false 
        :spacing 5
 			 :class "battery"
-    (circular-progress :value {round(EWW_BATTERY.BAT0.capacity, 0)}
-											 :clockwise false
-                       :thickness 15)
-    (label :text "󰁹")))              
+(eventbox
+    :tooltip "${battery_data.capacity}%"
+    (label :text "${battery_data.icon}"))))
 
 
-;; TODO: find a better way
-(defpoll volume       :interval "100ms" "pamixer --get-volume")
-(defpoll sink_muted   :interval "100ms" "pamixer --get-mute")
-(defpoll source_muted :interval "100ms" "pamixer --default-source --get-mute")
-
-
+(deflisten audio_data "bash ./scripts/audio.sh")
 (defwidget audio []
     (eventbox :onscroll "bash ./scripts/volume.sh {}"
               :onclick "pamixer -t"
@@ -83,20 +70,19 @@
              :space-evenly false
              :spacing 5
              :valign "center"
-            (label :text "${volume}%")
-            (label :text {sink_muted == "true" ? "󰝟" : (volume > 66 ? "" : (volume > 33 ? "" : ""))})
-            (label :text {source_muted == "true" ? "" : ""}))))
+            (label :text "${audio_data.volume}%")
+            (label :text "${audio_data.vol_icon}")
+            (label :text "${audio_data.source_icon}"))))
 
 
-(defpoll brightness :interval "1s" "brightnessctl -m | cut -d, -f4 | tr -d '%'")
+(deflisten brightness_data "bash ./scripts/backlight.sh")
+
 (defwidget brightness []
-    (eventbox :onscroll "if [ '{}' = 'up' ]; then brightnessctl set 1%+; else brightnessctl set 1%-; fi"
-        (box :orientation "v"
-             :space-evenly false
-             :spacing 5
-             :valign "center"
-            (label :text {brightness > 66 ? "󰃠" : (brightness > 33 ? "󰃟" : "󰃞")})
-            (label :text "${brightness}%"))))
+  (eventbox
+    :onscroll "if [ '{}' = 'up' ]; then brightnessctl set 1%+; else brightnessctl set 1%-; fi"
+    (box :orientation "v" :space-evenly false :spacing 5 :valign "center"
+      (label :text "${brightness_data.icon}")
+      (label :text "${brightness_data.percent}%"))))
 
 						
 (deflisten hyprland_workspaces "bash ./scripts/workspaces.sh")
@@ -108,6 +94,8 @@
             (button :onclick "hyprctl dispatch workspace ${workspace.id}"
                     :class "workspace-btn ${workspace.active ? 'active' : ''} ${workspace.occupied ? 'occupied' : ''}"
                 "${workspace.active ? '' : (workspace.occupied ? '${workspace.id}' : '·')}"))))
+
+
 (defwidget tray []
     (box :orientation "v" :class "tray"
         (systray :orientation "v" :spacing 20 :icon-size 14)))

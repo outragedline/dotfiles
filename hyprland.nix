@@ -17,7 +17,6 @@ in
     xdg-desktop-portal-hyprland
     pavucontrol
     rofi-wayland
-    nwg-look
     alacritty
     wl-clipboard
     pamixer
@@ -44,6 +43,7 @@ in
     bluetui
     socat
     jq
+    inotify-tools
   ];
 
   xdg.portal.enable = true;
