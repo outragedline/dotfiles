@@ -37,6 +37,13 @@
       signByDefault = true;
       key = "734D5FE03B99B29F";
     };
+
+    delta.enable = true;
+    delta.options = {
+      "side-by-side" = true;
+      navigate = true;
+    };
+
   };
 
   programs.nushell = {
