@@ -1,6 +1,4 @@
 {
-  description = "Your NixOS Flake";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -12,15 +10,29 @@
 
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = { inherit inputs; };
         modules = [
-          home-manager.nixosModules.home-manager
-          ./configuration.nix
+          ./hosts/nixos/configuration.nix
+          ./hosts/nixos/hardware-configuration.nix
         ];
       };
-    };
 
+      homeConfigurations = {
+        "outragedline" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./modules/home.nix
+          ];
+        };
+      };
+    };
 }

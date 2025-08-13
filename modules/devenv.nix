@@ -2,31 +2,28 @@
 
 {
   home.packages = with pkgs; [
-    taplo
     zellij
     btop
-    lazygit
     dust
     p7zip
     rustup
     fd
-    clang
     bear
     eza
+    gemini-cli
+    lazygit
+    bat
+
+    # helix
+
+    taplo
+    clang
     nil
     nixd
-    bat
-    lazygit
-  ];
+    bash-language-server
+    docker-language-server
+    lldb
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-    VISUAL = "hx";
-  };
-
-  home.sessionPath = [
-    "~/.local/bin"
-    "~/.cargo/bin"
   ];
 
   programs.git = {
@@ -37,13 +34,11 @@
       signByDefault = true;
       key = "734D5FE03B99B29F";
     };
-
     delta.enable = true;
     delta.options = {
       "side-by-side" = true;
       navigate = true;
     };
-
   };
 
   programs.nushell = {
@@ -64,6 +59,7 @@
       yz = "yazi";
       lg = "lazygit";
       mkd = "mkdir";
+      zj = "zellij";
     };
   };
 

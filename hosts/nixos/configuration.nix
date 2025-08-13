@@ -24,7 +24,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --remember-user-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet -r --remember-user-session";
         user = "greeter";
       };
     };
@@ -39,7 +39,7 @@
   };
 
   hardware.graphics.enable = true;
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   networking.networkmanager.enable = true;
 
@@ -48,8 +48,13 @@
     wget
     git
     git-lfs
+    home-manager
   ];
 
+  environment.sessionVariables = {
+    EDITOR = "hx";
+    VISUAL = "hx";
+  };
   virtualisation.docker.enable = true;
 
   programs.gnupg.agent = {
@@ -66,21 +71,13 @@
       "docker"
       "networkmanager"
       "power"
+      "video"
+      "audio"
     ];
+    shell = pkgs.nushell;
   };
 
   users.defaultUserShell = pkgs.nushell;
-  home-manager.users.outragedline =
-    { ... }:
-    {
-      imports = [
-        ./hyprland.nix
-        ./devenv.nix
-      ];
-
-      home.username = "outragedline";
-      home.homeDirectory = "/home/outragedline";
-    };
 
   system.stateVersion = "25.05";
 }

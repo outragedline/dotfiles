@@ -2,18 +2,10 @@
 
 let
   mainMod = "SUPER";
-  wallpapers = ./wallpapers;
 in
 {
-  home.file.".config/wallpapers" = {
-    source = wallpapers;
-    recursive = true;
-  };
-
-  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    hyprland
     xdg-desktop-portal-hyprland
     pavucontrol
     rofi-wayland
@@ -21,7 +13,6 @@ in
     wl-clipboard
     pamixer
     playerctl
-    brightnessctl
     swww
     git-lfs
     networkmanagerapplet
@@ -36,15 +27,17 @@ in
     ueberzugpp
     spotify
     catppuccin-cursors.mochaSapphire
-    gemini-cli
-    gruvbox-gtk-theme
-    papirus-icon-theme
     brave
     bluetui
+
+    # eww
+    brightnessctl
     socat
     jq
     inotify-tools
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
@@ -52,7 +45,7 @@ in
   services.dunst.enable = true;
   programs.eww = {
     enable = true;
-    configDir = ./eww;
+    configDir = ../home/eww;
   };
 
   gtk = {
@@ -80,7 +73,7 @@ in
     extraConfig = ''
       exec-once = waypaper --random --backend swww --folder ~/.config/wallpapers
       exec-once = ${pkgs.kdePackages.polkit-kde-agent-1}
-      exec-once = sh ${./eww/launch.sh}
+      exec-once = sh ${../home/eww/launch.sh}
     '';
 
     settings = {
@@ -287,5 +280,4 @@ in
       };
     };
   };
-  home.stateVersion = "25.05";
 }
