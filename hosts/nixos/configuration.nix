@@ -43,12 +43,14 @@
   hardware.bluetooth.powerOnBoot = true;
   networking.networkmanager.enable = true;
 
+  security.sudo-rs.enable = true;
   environment.systemPackages = with pkgs; [
     helix
     wget
     git
     git-lfs
     home-manager
+    uutils-coreutils-noprefix
   ];
 
   environment.sessionVariables = {
