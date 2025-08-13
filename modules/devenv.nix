@@ -24,6 +24,11 @@
     docker-language-server
     lldb
 
+    # specific things
+    rdkafka
+    cmake
+    gnumake
+
   ];
 
   programs.git = {
