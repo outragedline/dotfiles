@@ -11,8 +11,6 @@ in
     rofi-wayland
     alacritty
     wl-clipboard
-    pamixer
-    playerctl
     swww
     git-lfs
     networkmanagerapplet
@@ -20,24 +18,16 @@ in
     fastfetch
     waypaper
     grimblast
-    telegram-desktop
-    discord
-    obs-studio
-    qbittorrent
-    ueberzugpp
-    spotify
     catppuccin-cursors.mochaSapphire
-    brave
-    bluetui
+    playerctl
 
     # eww
     brightnessctl
     socat
     jq
     inotify-tools
+    pamixer
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];

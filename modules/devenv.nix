@@ -15,7 +15,6 @@
     bat
 
     # helix
-
     taplo
     clang
     nil
@@ -28,7 +27,6 @@
     rdkafka
     cmake
     gnumake
-
   ];
 
   programs.git = {

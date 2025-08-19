@@ -15,6 +15,11 @@
   ];
 
   home.packages = with pkgs; [
+    obs-studio
+    qbittorrent
+    ueberzugpp
+    telegram-desktop
+    brave
   ];
 
   home.stateVersion = "25.05";

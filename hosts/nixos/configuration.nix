@@ -51,6 +51,7 @@
     git-lfs
     home-manager
     uutils-coreutils-noprefix
+    bluetui
   ];
 
   environment.sessionVariables = {
