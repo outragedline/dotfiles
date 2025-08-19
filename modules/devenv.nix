@@ -61,12 +61,18 @@
     shellAliases = {
       la = "ls -la";
       cat = "bat";
-      yz = "yazi";
       lg = "lazygit";
       mkd = "mkdir";
       zj = "zellij";
-      nixos-update = "nix flake update; sudo nixos-rebuild switch --flake .#nixos";
     };
+
+    extraConfig = ''
+      def nixos-update [host: string, user: string] {
+          nix flake update;
+          sudo nixos-rebuild switch --flake .#($host)
+          home-manager switch --flake .#($user)
+      }
+    '';
   };
 
   programs.yazi = {
