@@ -127,9 +127,10 @@ in
       ];
 
       bind = [
-        ", Print, exec, grimblast --cursor --notify --freeze copysave output"
-        "ALT,Print, exec,grimblast --cursor --notify --freeze copysave active"
-        "SHIFT,Print, exec, grimblast --notify --freeze copysave area"
+        ", Print, exec, grimblast --cursor --notify --freeze copy output"
+        "SHIFT,Print, exec, grimblast --notify --freeze copy area"
+        "CTRL, Print, exec, grimblast --cursor --notify --freeze copysave output"
+        "CTRL SHIFT,Print, exec, grimblast --notify --freeze copysave area"
 
         "${mainMod}, Return, exec,alacritty"
         "${mainMod}, B, exec, brave"
