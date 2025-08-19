@@ -65,6 +65,7 @@
       lg = "lazygit";
       mkd = "mkdir";
       zj = "zellij";
+      nixos-update = "nix flake update; sudo nixos-rebuild switch --flake .#nixos";
     };
   };
 
