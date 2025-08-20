@@ -9,6 +9,11 @@
   home.username = "outragedline";
   home.homeDirectory = "/home/outragedline";
 
+  home.file.".config/wallpapers" = {
+    source = ../home/wallpapers;
+    recursive = true;
+  };
+
   home.sessionPath = [
     "~/.local/bin"
     "~/.cargo/bin"
