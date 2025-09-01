@@ -12,6 +12,7 @@
     eza
     gemini-cli
     lazygit
+    lazydocker
     bat
 
     # helix
@@ -21,6 +22,7 @@
     nixd
     bash-language-server
     docker-language-server
+    docker-buildx
     lldb
 
     # specific things
