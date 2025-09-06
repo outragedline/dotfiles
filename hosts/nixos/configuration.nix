@@ -13,6 +13,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.luks.devices."root".device = "/dev/disk/by-label/CRYPTONIX";
 
   zramSwap = {
     enable = true;
@@ -24,8 +25,8 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet -r --remember-user-session";
-        user = "greeter";
+        command = "${pkgs.hyprland}/bin/hyprland";
+        user = "outragedline";
       };
     };
   };
