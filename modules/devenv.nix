@@ -33,7 +33,7 @@
 
   programs.git = {
     enable = true;
-    userName = "outragedline";
+    userName = "degarti";
     userEmail = "outragedline@proton.me";
     signing = {
       signByDefault = true;

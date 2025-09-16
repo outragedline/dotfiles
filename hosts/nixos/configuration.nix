@@ -26,7 +26,7 @@
     settings = {
       default_session = {
         command = "${pkgs.hyprland}/bin/hyprland";
-        user = "outragedline";
+        user = "degarti";
       };
     };
   };
@@ -68,7 +68,7 @@
 
   programs.dconf.enable = true;
 
-  users.users.outragedline = {
+  users.users.degarti = {
     isNormalUser = true;
     extraGroups = [
       "wheel"

@@ -6,8 +6,8 @@
     ./devenv.nix
   ];
 
-  home.username = "outragedline";
-  home.homeDirectory = "/home/outragedline";
+  home.username = "degarti";
+  home.homeDirectory = "/home/degarti";
 
   home.file.".config/wallpapers" = {
     source = ../home/wallpapers;
