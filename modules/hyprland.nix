@@ -8,7 +8,7 @@ in
   home.packages = with pkgs; [
     xdg-desktop-portal-hyprland
     pavucontrol
-    rofi-wayland
+    rofi
     alacritty
     wl-clipboard
     swww
