@@ -27,7 +27,7 @@
       };
 
       homeConfigurations = {
-        "outragedline" = home-manager.lib.homeManagerConfiguration {
+        "degarti" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./modules/home.nix
