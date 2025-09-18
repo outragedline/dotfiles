@@ -29,6 +29,7 @@
     rdkafka
     cmake
     gnumake
+    mold
   ];
 
   programs.git = {
@@ -68,9 +69,12 @@
 
     extraConfig = ''
       def nixos-update [host: string, user: string] {
-          nix flake update;
+          sudo nix flake update;
           sudo nixos-rebuild switch --flake .#($host)
           home-manager switch --flake .#($user)
+          git add flake.lock
+          git commit -m "Update nixos"
+          git push
       }
     '';
   };

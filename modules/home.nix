@@ -21,7 +21,6 @@
 
   home.packages = with pkgs; [
     obs-studio
-    qbittorrent
     ueberzugpp
     telegram-desktop
     brave
