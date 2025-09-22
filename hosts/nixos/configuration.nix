@@ -68,6 +68,9 @@
 
   programs.dconf.enable = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  ];
   users.users.degarti = {
     isNormalUser = true;
     extraGroups = [
