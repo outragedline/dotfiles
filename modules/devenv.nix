@@ -6,7 +6,9 @@
     btop
     dust
     p7zip
-    rustup
+    cargo
+    rustc
+    rust-analyzer
     fd
     bear
     eza
@@ -26,11 +28,15 @@
     lldb
 
     # specific things
-    rdkafka
     cmake
     gnumake
-    mold
   ];
+
+  home.file.".cargo/config.toml".text = ''
+    [target.'cfg(target_os = "linux")']
+    linker = "${pkgs.clang}/bin/clang"
+    rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold-wrapped}/bin/mold"]
+  '';
 
   programs.git = {
     enable = true;
