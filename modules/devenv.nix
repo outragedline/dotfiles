@@ -2,12 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    zellij
     btop
     dust
     p7zip
     cargo
     rustc
+    rustfmt
+    clippy
     rust-analyzer
     fd
     bear
@@ -93,6 +94,9 @@
       };
     };
   };
+
+  programs.zellij.enable = true;
+  home.file.".config/zellij".source = ../home/zellij;
 
   programs.helix = {
     enable = true;
