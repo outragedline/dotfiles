@@ -192,7 +192,20 @@
           };
           auto-format = true;
         }
+
       ];
+      language-server = {
+        "rust-analyzer" = {
+          config = {
+            check = {
+              allTargets = true;
+            };
+            cargo = {
+              allFeatures = true;
+            };
+          };
+        };
+      };
     };
   };
 
