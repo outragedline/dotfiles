@@ -31,6 +31,8 @@
     };
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
   time.timeZone = "America/Sao_Paulo";
 
   services.pipewire = {
