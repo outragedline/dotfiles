@@ -138,13 +138,6 @@
 
       keys = {
         normal = {
-          y = "yank_joined_to_clipboard";
-          p = [ "paste_clipboard_after" ];
-          P = [ "replace_selections_with_clipboard" ];
-          d = [
-            "yank_joined_to_clipboard"
-            "delete_selection"
-          ];
           z = "move_next_word_start";
           "C-s" = ":write";
           w = "move_next_sub_word_start";
@@ -153,17 +146,6 @@
         };
 
         select = {
-          y = "yank_joined_to_clipboard";
-          p = [ "replace_selections_with_clipboard" ];
-          P = [ "replace_selections_with_clipboard" ];
-          d = [
-            "yank_joined_to_clipboard"
-            "delete_selection"
-          ];
-          c = [
-            "trim_selections"
-            "change_selection"
-          ];
           w = "extend_next_sub_word_start";
           b = "extend_prev_sub_word_start";
           e = "extend_next_sub_word_end";
@@ -212,5 +194,4 @@
       };
     };
   };
-
 }
