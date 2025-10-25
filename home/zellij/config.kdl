@@ -264,3 +264,4 @@ auto_layouts false
 auto_session false
 mouse_mode false
 ui_config_reload false
+on_force_close "quit"
