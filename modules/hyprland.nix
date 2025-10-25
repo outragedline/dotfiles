@@ -50,12 +50,6 @@ in
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-    style.name = "gtk2";
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;

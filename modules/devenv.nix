@@ -41,14 +41,21 @@
 
   programs.git = {
     enable = true;
-    userName = "degarti";
-    userEmail = "outragedline@proton.me";
+    settings = {
+      user = {
+        name = "degarti";
+        email = "outragedline@proton.me";
+      };
+    };
     signing = {
       signByDefault = true;
       key = "734D5FE03B99B29F";
     };
-    delta.enable = true;
-    delta.options = {
+  };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
       "side-by-side" = true;
       navigate = true;
     };
