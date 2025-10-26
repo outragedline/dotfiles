@@ -25,14 +25,13 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.hyprland}/bin/hyprland";
+        command = "${pkgs.niri}/bin/niri-session";
         user = "degarti";
       };
     };
   };
+  programs.niri.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
   time.timeZone = "America/Sao_Paulo";
 
   services.pipewire = {
