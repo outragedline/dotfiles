@@ -21,6 +21,21 @@
     algorithm = "zstd";
   };
 
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    autoEnable = true;
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+      sizes = {
+        terminal = 9;
+      };
+    };
+  };
   services.greetd = {
     enable = true;
     settings = {
@@ -72,6 +87,10 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
   ];
+
+  home-manager.users."degarti" = {
+    imports = [ ../../modules/home.nix ];
+  };
   users.users.degarti = {
     isNormalUser = true;
     extraGroups = [

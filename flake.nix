@@ -6,10 +6,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -21,18 +31,13 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
+
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
           ./hosts/nixos/configuration.nix
           ./hosts/nixos/hardware-configuration.nix
         ];
       };
 
-      homeConfigurations = {
-        "degarti" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./modules/home.nix
-          ];
-        };
-      };
     };
 }

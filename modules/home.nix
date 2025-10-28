@@ -7,7 +7,7 @@
   ];
 
   home.packages = with pkgs; [
-    xdg-xdg-desktop-portal-gnome
+    xdg-desktop-portal-gnome
     pavucontrol
     rofi
     alacritty
@@ -15,11 +15,9 @@
     swww
     git-lfs
     networkmanagerapplet
-    nerd-fonts.jetbrains-mono
     fastfetch
     waypaper
     grimblast
-    catppuccin-cursors.mochaSapphire
     playerctl
 
     obs-studio
@@ -39,8 +37,10 @@
     xwayland-satellite
   ];
 
-  home.username = "degarti";
-  home.homeDirectory = "/home/degarti";
+  stylix.targets = {
+    zellij.enable = false;
+    helix.enable = false;
+  };
 
   home.file.".config/wallpapers" = {
     source = ../home/wallpapers;
@@ -57,8 +57,11 @@
   };
 
   xdg.configFile."niri".source = ../home/niri;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  xdg.portal = {
+    enable = true;
+    configPackages = [ pkgs.gnome-session ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
   programs.swaylock.enable = true;
   services.mako.enable = true;
   services.swayidle.enable = true;
@@ -71,16 +74,11 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
-    };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
   };
-
   services.syncthing.enable = true;
 
   home.stateVersion = "25.05";
