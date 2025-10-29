@@ -33,6 +33,7 @@ layout {
     }
 
     default-column-width {}
+    background-color "transparent"
 
     focus-ring {
         width 2
@@ -182,4 +183,14 @@ gestures {
     hot-corners {
         off
     }
+}
+
+
+layer-rule {
+    match namespace="swww-daemon"
+    place-within-backdrop true
+}
+
+overview {
+    backdrop-color "transparent"
 }
