@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    btop
     dust
     p7zip
     cargo
@@ -12,11 +11,7 @@
     rust-analyzer
     fd
     bear
-    eza
     gemini-cli
-    lazygit
-    lazydocker
-    bat
 
     # helix
     taplo
@@ -38,6 +33,14 @@
     linker = "${pkgs.clang}/bin/clang"
     rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold-wrapped}/bin/mold"]
   '';
+
+  programs = {
+    lazygit.enable = true;
+    lazydocker.enable = true;
+    btop.enable = true;
+    bat.enable = true;
+    eza.enable = true;
+  };
 
   programs.git = {
     enable = true;
@@ -82,10 +85,9 @@
     };
 
     extraConfig = ''
-      def nixos-update [host: string, user: string] {
+      def nixos-update [host: string] {
           sudo nix flake update;
-          sudo nixos-rebuild switch --flake .#($host)
-          home-manager switch --flake .#($user)
+          sudo nixos-rebuild switch --flake ~/.nixos#($host)
           git add flake.lock
           git commit -m "Update nixos"
           git push

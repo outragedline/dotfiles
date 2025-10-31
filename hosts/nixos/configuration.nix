@@ -25,7 +25,6 @@
     enable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    autoEnable = true;
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
@@ -66,7 +65,6 @@
     wget
     git
     git-lfs
-    home-manager
     uutils-coreutils-noprefix
     bluetui
   ];
@@ -83,10 +81,6 @@
   };
 
   programs.dconf.enable = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  ];
 
   home-manager.users."degarti" = {
     imports = [ ../../modules/home.nix ];
