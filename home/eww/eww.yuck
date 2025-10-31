@@ -11,8 +11,7 @@
                       :anchor "left center")
   (overlay
     (box :orientation "vertical" :class "top" :valign "start" :space-evenly false
-      (tray)
-      (workspaces))
+      (tray))
     (box :class "mid" :valign "center"
       (datetime))
     (box :orientation "vertical" :class "bot" :valign "end" :spacing 5
@@ -68,14 +67,6 @@
     (box :orientation "v" :space-evenly false :spacing 5 :valign "center"
       (label :text "${brightness_data.icon}")
       (label :text "${brightness_data.percent}%"))))
-
-(deflisten hyprland_workspaces "bash ./scripts/workspaces.sh")
-(defwidget workspaces []
-  (box :orientation "v" :spacing 5 :class "workspaces"
-    (for workspace in hyprland_workspaces
-      (button :onclick "hyprctl dispatch workspace ${workspace.id}"
-              :class "workspace-btn ${workspace.active ? 'active' : ''} ${workspace.occupied ? 'occupied' : ''}"
-        "${workspace.active ? '' : (workspace.occupied ? '${workspace.id}' : '·')}"))))
 
 (defwidget tray []
   (box :orientation "v" :class "tray"
